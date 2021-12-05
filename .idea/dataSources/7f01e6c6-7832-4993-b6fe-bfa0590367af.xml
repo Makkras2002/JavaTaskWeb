@@ -789,8 +789,15 @@ false Zulu
     <database id="2" parent="1" name="Java_Pam_Web_Project">
       <ObjectId>16634</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>912</IntrospectionStateNumber>
+      <IntrospectionStateNumber>960</IntrospectionStateNumber>
       <Current>1</Current>
+      <Relations>sequence|table|16731|16696|1
+sequence|table|16733|16656|1
+sequence|table|16735|16666|1
+sequence|table|16737|16716|1
+sequence|table|16739|16706|1
+sequence|table|16746|16651|1
+</Relations>
     </database>
     <database id="3" parent="1" name="Psp8LabDb">
       <ObjectId>16538</ObjectId>
@@ -873,7 +880,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>913</IntrospectionStateNumber>
+      <IntrospectionStateNumber>961</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="20" parent="2" name="plpgsql">
@@ -973,65 +980,108 @@ UC/10
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
-    <table id="32" parent="19" name="Complete_orders">
+    <sequence id="32" parent="19" name="Product_categories_category_id_seq">
+      <ObjectId>16731</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>919</StateNumber>
+      <SequenceIdentity>0</SequenceIdentity>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="33" parent="19" name="complete_orders_complete_order_id_seq">
+      <ObjectId>16739</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>951</StateNumber>
+      <SequenceIdentity>0</SequenceIdentity>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="34" parent="19" name="component_orders_component_order_id_seq">
+      <ObjectId>16737</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>947</StateNumber>
+      <SequenceIdentity>0</SequenceIdentity>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="35" parent="19" name="products_product_id_seq">
+      <ObjectId>16735</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>938</StateNumber>
+      <SequenceIdentity>0</SequenceIdentity>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="36" parent="19" name="user_roles_role_id_seq">
+      <ObjectId>16733</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>935</StateNumber>
+      <SequenceIdentity>0</SequenceIdentity>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="37" parent="19" name="users_user_id_seq">
+      <ObjectId>16746</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>954</StateNumber>
+      <SequenceIdentity>0</SequenceIdentity>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <table id="38" parent="19" name="complete_orders">
       <ObjectId>16706</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>911</StateNumber>
+      <StateNumber>928</StateNumber>
     </table>
-    <table id="33" parent="19" name="Component_orders">
+    <table id="39" parent="19" name="component_orders">
       <ObjectId>16716</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>905</StateNumber>
+      <StateNumber>947</StateNumber>
     </table>
-    <table id="34" parent="19" name="Product_categories">
+    <table id="40" parent="19" name="product_categories">
       <ObjectId>16696</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>897</StateNumber>
+      <StateNumber>923</StateNumber>
     </table>
-    <table id="35" parent="19" name="Products">
+    <table id="41" parent="19" name="products">
       <ObjectId>16666</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>897</StateNumber>
+      <StateNumber>926</StateNumber>
     </table>
-    <table id="36" parent="19" name="User_roles">
+    <table id="42" parent="19" name="user_roles">
       <ObjectId>16656</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>895</StateNumber>
+      <StateNumber>925</StateNumber>
     </table>
-    <table id="37" parent="19" name="Users">
+    <table id="43" parent="19" name="users">
       <ObjectId>16651</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>880</StateNumber>
+      <StateNumber>924</StateNumber>
     </table>
-    <column id="38" parent="32" name="complete_order_id">
+    <column id="44" parent="38" name="complete_order_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>900</StateNumber>
+      <StateNumber>951</StateNumber>
       <TypeId>23</TypeId>
+      <IdentityKind>by-default</IdentityKind>
     </column>
-    <column id="39" parent="32" name="complete_order_date">
+    <column id="45" parent="38" name="complete_order_date">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>900</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="40" parent="32" name="user_id">
+    <column id="46" parent="38" name="user_id">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>900</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="41" parent="32" name="is_completed">
+    <column id="47" parent="38" name="is_completed">
       <Position>5</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>911</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <index id="42" parent="32" name="Complete_orders_pkey">
+    <index id="48" parent="38" name="Complete_orders_pkey">
       <ObjectId>16709</ObjectId>
       <StateNumber>900</StateNumber>
       <ColNames>complete_order_id</ColNames>
@@ -1041,104 +1091,88 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="43" parent="32" name="Complete_orders_pkey">
+    <key id="49" parent="38" name="Complete_orders_pkey">
       <ObjectId>16710</ObjectId>
       <StateNumber>900</StateNumber>
       <ColNames>complete_order_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>Complete_orders_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="44" parent="32" name="component_order_connection_key">
-      <ObjectId>16726</ObjectId>
-      <StateNumber>906</StateNumber>
-      <ColNames>complete_order_id</ColNames>
-      <RefTableId>16716</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>Component_orders</RefTableName>
-      <RefKeyName>Component_orders_pkey</RefKeyName>
-      <RefColNames>component_order_id</RefColNames>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <foreign-key id="45" parent="32" name="user_id_connection_key">
+    <foreign-key id="50" parent="38" name="user_id_connection_key">
       <ObjectId>16711</ObjectId>
       <StateNumber>900</StateNumber>
       <ColNames>user_id</ColNames>
       <RefTableId>16651</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>Users</RefTableName>
+      <RefTableName>users</RefTableName>
       <RefKeyName>Users_pkey</RefKeyName>
       <RefColNames>user_id</RefColNames>
     </foreign-key>
-    <column id="46" parent="33" name="component_order_id">
+    <column id="51" parent="39" name="component_order_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>901</StateNumber>
+      <StateNumber>947</StateNumber>
       <TypeId>23</TypeId>
+      <IdentityKind>by-default</IdentityKind>
     </column>
-    <column id="47" parent="33" name="product_id">
+    <column id="52" parent="39" name="product_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>901</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="48" parent="33" name="ordered_product_amount">
+    <column id="53" parent="39" name="ordered_product_amount">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>903</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="49" parent="33" name="ordered_product_full_price">
+    <column id="54" parent="39" name="ordered_product_full_price">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>905</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="50" parent="33" name="Component_orders_pkey">
-      <ObjectId>16719</ObjectId>
-      <StateNumber>901</StateNumber>
+    <foreign-key id="55" parent="39" name="component_order_connection_key">
+      <ObjectId>16741</ObjectId>
+      <StateNumber>952</StateNumber>
       <ColNames>component_order_id</ColNames>
-      <Unique>1</Unique>
-      <Primary>1</Primary>
-      <AccessMethodId>403</AccessMethodId>
-      <CollationIds>0</CollationIds>
-      <ClassIds>1978</ClassIds>
-    </index>
-    <key id="51" parent="33" name="Component_orders_pkey">
-      <ObjectId>16720</ObjectId>
-      <StateNumber>901</StateNumber>
-      <ColNames>component_order_id</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>Component_orders_pkey</UnderlyingIndexName>
-    </key>
-    <foreign-key id="52" parent="33" name="product_id_connction_key">
+      <RefTableId>16706</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>complete_orders</RefTableName>
+      <RefKeyName>Complete_orders_pkey</RefKeyName>
+      <RefColNames>complete_order_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="56" parent="39" name="product_id_connction_key">
       <ObjectId>16721</ObjectId>
       <StateNumber>901</StateNumber>
       <ColNames>product_id</ColNames>
       <RefTableId>16666</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>Products</RefTableName>
+      <RefTableName>products</RefTableName>
       <RefKeyName>Products_pkey</RefKeyName>
       <RefColNames>product_id</RefColNames>
     </foreign-key>
-    <column id="53" parent="34" name="category_id">
+    <column id="57" parent="40" name="category_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>896</StateNumber>
+      <StateNumber>922</StateNumber>
       <TypeId>23</TypeId>
+      <IdentityKind>by-default</IdentityKind>
     </column>
-    <column id="54" parent="34" name="category">
+    <column id="58" parent="40" name="category">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>896</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="55" parent="34" name="Product_categories_pkey">
+    <index id="59" parent="40" name="Product_categories_pkey">
       <ObjectId>16699</ObjectId>
       <StateNumber>896</StateNumber>
       <ColNames>category_id</ColNames>
@@ -1148,63 +1182,64 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="56" parent="34" name="Product_categories_pkey">
+    <key id="60" parent="40" name="Product_categories_pkey">
       <ObjectId>16700</ObjectId>
       <StateNumber>896</StateNumber>
       <ColNames>category_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>Product_categories_pkey</UnderlyingIndexName>
     </key>
-    <column id="57" parent="35" name="product_id">
+    <column id="61" parent="41" name="product_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>881</StateNumber>
+      <StateNumber>938</StateNumber>
       <TypeId>23</TypeId>
+      <IdentityKind>by-default</IdentityKind>
     </column>
-    <column id="58" parent="35" name="product_name">
+    <column id="62" parent="41" name="product_name">
       <Position>2</Position>
-      <DataType>varchar(100)|0s</DataType>
+      <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>881</StateNumber>
+      <StateNumber>939</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="59" parent="35" name="product_price">
+    <column id="63" parent="41" name="product_price">
       <Position>4</Position>
       <DataType>numeric|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>893</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <column id="60" parent="35" name="is_in_stock">
+    <column id="64" parent="41" name="is_in_stock">
       <Position>5</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>883</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="61" parent="35" name="picture_path">
+    <column id="65" parent="41" name="picture_path">
       <Position>6</Position>
-      <DataType>varchar(100)|0s</DataType>
+      <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>887</StateNumber>
+      <StateNumber>939</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="62" parent="35" name="comment">
+    <column id="66" parent="41" name="product_comment">
       <Position>7</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>890</StateNumber>
+      <StateNumber>940</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="63" parent="35" name="product_category_id">
+    <column id="67" parent="41" name="product_category_id">
       <Position>8</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>897</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="64" parent="35" name="Products_pkey">
+    <index id="68" parent="41" name="Products_pkey">
       <ObjectId>16669</ObjectId>
       <StateNumber>893</StateNumber>
       <ColNames>product_id</ColNames>
@@ -1214,38 +1249,39 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="65" parent="35" name="Products_pkey">
+    <key id="69" parent="41" name="Products_pkey">
       <ObjectId>16670</ObjectId>
       <StateNumber>881</StateNumber>
       <ColNames>product_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>Products_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="66" parent="35" name="category_connection_key">
+    <foreign-key id="70" parent="41" name="category_connection_key">
       <ObjectId>16701</ObjectId>
       <StateNumber>897</StateNumber>
       <ColNames>product_category_id</ColNames>
       <RefTableId>16696</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>Product_categories</RefTableName>
+      <RefTableName>product_categories</RefTableName>
       <RefKeyName>Product_categories_pkey</RefKeyName>
       <RefColNames>category_id</RefColNames>
     </foreign-key>
-    <column id="67" parent="36" name="role_id">
+    <column id="71" parent="42" name="role_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>879</StateNumber>
+      <StateNumber>935</StateNumber>
       <TypeId>23</TypeId>
+      <IdentityKind>by-default</IdentityKind>
     </column>
-    <column id="68" parent="36" name="role_name">
+    <column id="72" parent="42" name="role_name">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>879</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="69" parent="36" name="User_role_pkey">
+    <index id="73" parent="42" name="User_role_pkey">
       <ObjectId>16659</ObjectId>
       <StateNumber>879</StateNumber>
       <ColNames>role_id</ColNames>
@@ -1255,56 +1291,57 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="70" parent="36" name="User_role_pkey">
+    <key id="74" parent="42" name="User_role_pkey">
       <ObjectId>16660</ObjectId>
       <StateNumber>879</StateNumber>
       <ColNames>role_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>User_role_pkey</UnderlyingIndexName>
     </key>
-    <column id="71" parent="37" name="user_id">
+    <column id="75" parent="43" name="user_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>878</StateNumber>
+      <StateNumber>954</StateNumber>
       <TypeId>23</TypeId>
+      <IdentityKind>by-default</IdentityKind>
     </column>
-    <column id="72" parent="37" name="login">
+    <column id="76" parent="43" name="login">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>878</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="73" parent="37" name="password">
+    <column id="77" parent="43" name="password">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>878</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="74" parent="37" name="role_id">
+    <column id="78" parent="43" name="role_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>878</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="75" parent="37" name="is_active">
+    <column id="79" parent="43" name="is_active">
       <Position>5</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>878</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="76" parent="37" name="is_online">
+    <column id="80" parent="43" name="is_online">
       <Position>6</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>878</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <index id="77" parent="37" name="Users_pkey">
+    <index id="81" parent="43" name="Users_pkey">
       <ObjectId>16654</ObjectId>
       <StateNumber>878</StateNumber>
       <ColNames>user_id</ColNames>
@@ -1314,20 +1351,20 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="78" parent="37" name="Users_pkey">
+    <key id="82" parent="43" name="Users_pkey">
       <ObjectId>16655</ObjectId>
       <StateNumber>878</StateNumber>
       <ColNames>user_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>Users_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="79" parent="37" name="role_id_connection_key">
+    <foreign-key id="83" parent="43" name="role_id_connection_key">
       <ObjectId>16661</ObjectId>
       <StateNumber>880</StateNumber>
       <ColNames>role_id</ColNames>
       <RefTableId>16656</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>User_roles</RefTableName>
+      <RefTableName>user_roles</RefTableName>
       <RefKeyName>User_role_pkey</RefKeyName>
       <RefColNames>role_id</RefColNames>
     </foreign-key>

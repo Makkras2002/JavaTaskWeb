@@ -1,0 +1,1 @@
+2021-12-05 19:13:17 [main] [main] [21] ERROR com.makkras.shop.test_main.Main - com.makkras.shop.exception.InteractionException: Индекс колонки вне диапазона: 7. Допустимые значения: 1..6
