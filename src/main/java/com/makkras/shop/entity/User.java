@@ -79,7 +79,22 @@ public class User extends CustomEntity{
         this.isActive = isActive;
         this.isOnline = isOnline;
     }
-
+    public User(String login, String email, boolean isActive) {
+        this.login = login;
+        this.email = email;
+        this.isActive = isActive;
+    }
+    public User(Long userId, String login, String email, boolean isActive) {
+        this.login = login;
+        this.email = email;
+        this.isActive = isActive;
+        this.userId = userId;
+    }
+    public User(Long userId, String login, String email) {
+        this.login = login;
+        this.email = email;
+        this.userId = userId;
+    }
     public String getLogin() {
         return login;
     }

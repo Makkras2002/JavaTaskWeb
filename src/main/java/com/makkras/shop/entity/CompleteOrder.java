@@ -1,18 +1,24 @@
 package com.makkras.shop.entity;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CompleteOrder extends CustomEntity{
     private Long completeOrderId;
-    private String completeOrderDate;
+    private Date completeOrderDate;
     private User user;
     private boolean isCompleted;
     private List<ComponentOrder> componentOrders = new ArrayList<>();
-    public CompleteOrder(){
+
+    public CompleteOrder(Date completeOrderDate, User user, boolean isCompleted, List<ComponentOrder> componentOrders) {
+        this.completeOrderDate = completeOrderDate;
+        this.user = user;
+        this.isCompleted = isCompleted;
+        this.componentOrders = componentOrders;
     }
-    public CompleteOrder(Long completeOrderId, String completeOrderDate, User user,
-                         boolean isCompleted, List<ComponentOrder> componentOrders) {
+
+    public CompleteOrder(Long completeOrderId, Date completeOrderDate, User user, boolean isCompleted, List<ComponentOrder> componentOrders) {
         this.completeOrderId = completeOrderId;
         this.completeOrderDate = completeOrderDate;
         this.user = user;
@@ -28,11 +34,11 @@ public class CompleteOrder extends CustomEntity{
         this.completeOrderId = completeOrderId;
     }
 
-    public String getCompleteOrderDate() {
+    public Date getCompleteOrderDate() {
         return completeOrderDate;
     }
 
-    public void setCompleteOrderDate(String completeOrderDate) {
+    public void setCompleteOrderDate(Date completeOrderDate) {
         this.completeOrderDate = completeOrderDate;
     }
 
@@ -90,7 +96,7 @@ public class CompleteOrder extends CustomEntity{
     public String toString() {
         final StringBuilder sb = new StringBuilder("CompleteOrder{");
         sb.append("completeOrderId=").append(completeOrderId);
-        sb.append(", completeOrderDate='").append(completeOrderDate).append('\'');
+        sb.append(", completeOrderDate=").append(completeOrderDate);
         sb.append(", user=").append(user);
         sb.append(", isCompleted=").append(isCompleted);
         sb.append(", componentOrders=").append(componentOrders);

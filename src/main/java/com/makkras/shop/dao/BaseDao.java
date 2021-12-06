@@ -2,6 +2,7 @@ package com.makkras.shop.dao;
 
 import com.makkras.shop.entity.CustomEntity;
 import com.makkras.shop.exception.InteractionException;
+import com.makkras.shop.pool.CustomConnectionPool;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -10,7 +11,7 @@ import java.util.List;
 
 public interface BaseDao <T extends CustomEntity>{
     List<T> findAll() throws InteractionException;
-    boolean create(T t);
+    Long create(T t);
     default void closeStatement(Statement statement) throws InteractionException{
         try {
             if(statement != null){
@@ -21,12 +22,12 @@ public interface BaseDao <T extends CustomEntity>{
         }
     }
     default void closeConnection(Connection connection) throws InteractionException{
-        try {
-            if(connection != null){
+        if(connection != null){
+            try {
                 connection.close();
+            } catch (SQLException exception) {
+                throw new InteractionException(exception.getMessage());
             }
-        } catch (SQLException exception) {
-            throw new InteractionException(exception.getMessage());
         }
     }
 }

@@ -12,6 +12,9 @@ public class Product extends CustomEntity{
     private ProductCategory productCategory;
     public Product(){
     }
+    public Product(Long productId){
+        this.productId = productId;
+    }
     public Product(Long productId, String productName, BigDecimal productPrice,
                    boolean isInStock, String picturePath, String productComment,
                    ProductCategory productCategory) {
@@ -23,7 +26,23 @@ public class Product extends CustomEntity{
         this.productComment = productComment;
         this.productCategory = productCategory;
     }
-
+    public Product(String productName, BigDecimal productPrice,
+                   boolean isInStock, String picturePath, String productComment,
+                   ProductCategory productCategory) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.isInStock = isInStock;
+        this.picturePath = picturePath;
+        this.productComment = productComment;
+        this.productCategory = productCategory;
+    }
+    public Product(String productName,
+                   boolean isInStock,
+                   ProductCategory productCategory) {
+        this.productName = productName;
+        this.isInStock = isInStock;
+        this.productCategory = productCategory;
+    }
     public Long getProductId() {
         return productId;
     }
