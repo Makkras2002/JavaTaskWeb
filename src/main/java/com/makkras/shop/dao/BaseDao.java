@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface BaseDao <T extends CustomEntity>{
     List<T> findAll() throws InteractionException;
-    Long create(T t);
+    Long create(T t) throws InteractionException;
     default void closeStatement(Statement statement) throws InteractionException{
         try {
             if(statement != null){

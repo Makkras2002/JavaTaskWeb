@@ -61,7 +61,7 @@ public class OrderDaoImpl implements OrderDao {
         return orders;
     }
     @Override
-    public Long create(CompleteOrder completeOrder) {
+    public Long create(CompleteOrder completeOrder) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         Long createdItemKey = null;
@@ -78,15 +78,11 @@ public class OrderDaoImpl implements OrderDao {
             }
             createComponentOrdersForCompleteOrder(completeOrder.getComponentOrders(),createdItemKey);
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
+            throw  new InteractionException(exception.getMessage());
 
         }finally {
-            try {
-                closeStatement(statement);
-                closeConnection(connection);
-            } catch (InteractionException e) {
-                logger.error(e.getMessage());
-            }
+            closeStatement(statement);
+            closeConnection(connection);
         }
         return createdItemKey;
     }

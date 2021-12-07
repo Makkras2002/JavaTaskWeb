@@ -52,7 +52,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public Long create(User user) {
+    public Long create(User user) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         Long createdItemKey = null;
@@ -72,16 +72,10 @@ public class UserDaoImpl implements UserDao {
                 createdItemKey = resultSet.getLong(1);
             }
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
-        } catch (InteractionException e) {
-            logger.error(e.getMessage());
+            throw new InteractionException(exception.getMessage());
         } finally {
-            try {
-                closeStatement(statement);
-                closeConnection(connection);
-            } catch (InteractionException e) {
-                logger.error(e.getMessage());
-            }
+            closeStatement(statement);
+            closeConnection(connection);
         }
         return createdItemKey;
     }

@@ -1,6 +1,7 @@
 package com.makkras.shop.pool;
 
 import com.makkras.shop.exception.InteractionException;
+import com.makkras.shop.exception.PoolCustomException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -67,7 +68,7 @@ public class ProxyConnection implements Connection {
     public void close(){
         try {
             CustomConnectionPool.getInstance().releaseConnection(this);
-        } catch (InteractionException e) {
+        } catch (PoolCustomException e) {
             logger.error(e.getMessage());
         }
     }

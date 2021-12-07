@@ -1,6 +1,6 @@
 package com.makkras.shop.pool;
 
-import com.makkras.shop.exception.InteractionException;
+import com.makkras.shop.exception.PoolCustomException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -52,9 +52,9 @@ public class CustomConnectionPool {
         }
         return connection;
     }
-    public void releaseConnection(Connection connection) throws InteractionException {
+    public void releaseConnection(Connection connection) throws PoolCustomException {
         if(!connection.getClass().equals(ProxyConnection.class)){
-            throw new InteractionException("Unauthorized connection appeared in pool.");
+            throw new PoolCustomException("Unauthorized connection appeared in pool.");
         }
         givenAwayConnections.remove(connection);
         freeConnections.offer((ProxyConnection) connection);

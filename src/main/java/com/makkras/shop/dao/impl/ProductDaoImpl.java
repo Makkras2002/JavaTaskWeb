@@ -69,7 +69,7 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public Long create(Product product) {
+    public Long create(Product product) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         Long createdItemKey = null;
@@ -95,16 +95,12 @@ public class ProductDaoImpl implements ProductDao {
             if(resultSet.next()){
                 createdItemKey = resultSet.getLong(1);
             }
-        } catch (SQLException | InteractionException exception) {
-            logger.error(exception.getMessage());
+        } catch (SQLException exception) {
+            throw new InteractionException(exception.getMessage());
 
         }finally {
-            try {
-                closeStatement(statement);
-                closeConnection(connection);
-            } catch (InteractionException e) {
-                logger.error(e.getMessage());
-            }
+            closeStatement(statement);
+            closeConnection(connection);
         }
         return createdItemKey;
     }
