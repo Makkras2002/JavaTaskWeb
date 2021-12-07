@@ -13,6 +13,6 @@ public interface OrderDao extends BaseDao<CompleteOrder>{
     List<CompleteOrder> findAllCompletedOrdersAndSortByDate() throws InteractionException;
     List<CompleteOrder> findAllOrdersInDatePeriod(Date startDate,Date endDate) throws InteractionException;
     List<CompleteOrder> findAllOrdersByUser(User user) throws InteractionException;
-    boolean updateCompleteOrderDate(Date newDate,Long completeOrderId);
-    boolean updateCompleteOrderStatus(Boolean newStatus,Long completeOrderId);
+    boolean updateCompleteOrderDate(Date newDate,Long completeOrderId) throws InteractionException;
+    boolean updateCompleteOrderStatus(Boolean newStatus,Long completeOrderId) throws InteractionException;
 }

@@ -103,7 +103,7 @@ public class ProductCategoryDaoImpl implements ProductCategoryDao {
     }
 
     @Override
-    public boolean updateCategoryName(String newCategoryName, String oldCategoryName) {
+    public boolean updateCategoryName(String newCategoryName, String oldCategoryName) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -116,8 +116,7 @@ public class ProductCategoryDaoImpl implements ProductCategoryDao {
                 return false;
             }
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
-            return false;
+            throw new InteractionException(exception.getMessage());
         } finally {
             try {
                 closeStatement(statement);

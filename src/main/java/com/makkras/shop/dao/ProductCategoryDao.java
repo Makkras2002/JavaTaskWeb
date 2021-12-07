@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ProductCategoryDao extends BaseDao<ProductCategory>{
     List<ProductCategory> findProductCategoryByName(String name) throws InteractionException;
-    boolean updateCategoryName(String newCategoryName, String oldCategoryName);
+    boolean updateCategoryName(String newCategoryName, String oldCategoryName) throws InteractionException;
 }

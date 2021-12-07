@@ -4,9 +4,12 @@ import com.makkras.shop.exception.PoolCustomException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 
@@ -16,25 +19,29 @@ public class CustomConnectionPool {
     private BlockingDeque<ProxyConnection> freeConnections;
     private BlockingDeque<ProxyConnection> givenAwayConnections;
     private final static int DEFAULT_POOL_SIZE = 40;
-    private final static String DB_URL = "jdbc:postgresql://localhost:5432/Java_Pam_Web_Project";
-    private final static String DB_USER = "postgres";
-    private final static String DB_PASSWORD = "19091970Ig";
 
     private static class LoadCustomConnectionPool{
         static final CustomConnectionPool INSTANCE = new CustomConnectionPool();
     }
     private CustomConnectionPool(){
         try {
+            Properties properties = new Properties();
+            FileInputStream propsFileReaderStream = new FileInputStream("datasrc/databaseprop.properties");
+            properties.load(propsFileReaderStream);
+            String dbUrl = properties.getProperty("jdbc.url");
+            String dbUser = properties.getProperty("jdbc.user");
+            String dbPassword = properties.getProperty("jdbc.password");
             DriverManager.registerDriver(new org.postgresql.Driver());
             freeConnections = new LinkedBlockingDeque<>();
             givenAwayConnections = new LinkedBlockingDeque<>();
             int counter =0;
             while (counter < DEFAULT_POOL_SIZE){
-                freeConnections.add(new ProxyConnection(DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWORD)));
+                freeConnections.add(new ProxyConnection(DriverManager.getConnection(dbUrl,dbUser,dbPassword)));
                 counter++;
             }
-        } catch (SQLException exception) {
-            logger.error(exception.getMessage());
+        } catch (SQLException | IOException exception) {
+            logger.fatal(exception.getMessage());
+            throw new RuntimeException();
         }
     }
     public static CustomConnectionPool getInstance(){

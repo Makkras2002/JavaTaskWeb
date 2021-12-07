@@ -211,7 +211,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean updateLogin(String currentLogin, String newLogin) {
+    public boolean updateLogin(String currentLogin, String newLogin) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -224,8 +224,7 @@ public class UserDaoImpl implements UserDao {
                 return false;
             }
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
-            return false;
+            throw new InteractionException(exception.getMessage());
         } finally {
             try {
                 closeStatement(statement);
@@ -238,7 +237,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean updateActivationStatus(String login, boolean newActivationStatus) {
+    public boolean updateActivationStatus(String login, boolean newActivationStatus) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -251,8 +250,7 @@ public class UserDaoImpl implements UserDao {
                 return false;
             }
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
-            return false;
+            throw new InteractionException(exception.getMessage());
         } finally {
             try {
                 closeStatement(statement);
@@ -265,7 +263,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean updateOnlineStatus(String login, boolean newIsOnlineStatus) {
+    public boolean updateOnlineStatus(String login, boolean newIsOnlineStatus) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -278,8 +276,7 @@ public class UserDaoImpl implements UserDao {
                 return false;
             }
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
-            return false;
+            throw new InteractionException(exception.getMessage());
         } finally {
             try {
                 closeStatement(statement);
@@ -292,7 +289,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean updatePassword(String login, String oldPassword, String newPassword) {
+    public boolean updatePassword(String login, String oldPassword, String newPassword) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -307,8 +304,7 @@ public class UserDaoImpl implements UserDao {
                 return false;
             }
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
-            return false;
+            throw new InteractionException(exception.getMessage());
         } catch (InteractionException e) {
             logger.error(e.getMessage());
             return false;

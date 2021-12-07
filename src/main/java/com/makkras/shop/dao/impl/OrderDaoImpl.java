@@ -176,7 +176,7 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public boolean updateCompleteOrderDate(Date newDate, Long completeOrderId) {
+    public boolean updateCompleteOrderDate(Date newDate, Long completeOrderId) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -189,8 +189,7 @@ public class OrderDaoImpl implements OrderDao {
                 return false;
             }
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
-            return false;
+            throw new InteractionException(exception.getMessage());
         } finally {
             try {
                 closeStatement(statement);
@@ -203,7 +202,7 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public boolean updateCompleteOrderStatus(Boolean newStatus, Long completeOrderId) {
+    public boolean updateCompleteOrderStatus(Boolean newStatus, Long completeOrderId) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -216,8 +215,7 @@ public class OrderDaoImpl implements OrderDao {
                 return false;
             }
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
-            return false;
+            throw new InteractionException(exception.getMessage());
         } finally {
             try {
                 closeStatement(statement);
@@ -288,7 +286,7 @@ public class OrderDaoImpl implements OrderDao {
         }
         return orders;
     }
-    private void createComponentOrdersForCompleteOrder(List<ComponentOrder> componentOrders, Long completeOrderId) {
+    private void createComponentOrdersForCompleteOrder(List<ComponentOrder> componentOrders, Long completeOrderId) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         Long createdItemKey = null;
@@ -303,8 +301,7 @@ public class OrderDaoImpl implements OrderDao {
                 statement.executeUpdate();
             }
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
-
+            throw new InteractionException(exception.getMessage());
         }finally {
             try {
                 closeStatement(statement);

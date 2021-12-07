@@ -15,10 +15,10 @@ public interface ProductDao extends BaseDao<Product>{
     List<Product> findAllProductInStockAndSortByCategory() throws InteractionException;
     List<Product> findAllProductInStockAndSortByPrice() throws InteractionException;
     List<Product> findProductsByPriceInRangeAndSort(BigDecimal minPrice,BigDecimal maxPrice) throws InteractionException;
-    boolean updateProductName(String newProductName, Long productId);
-    boolean updateProductCategory(String newProductCategory, Long productId);
-    boolean updateIsInStockStatus(boolean newIsInStockStatus, Long productId);
-    boolean updatePrice(BigDecimal newPrice, Long productId);
-    boolean updatePicturePath(String newPicturePath, Long productId);
-    boolean updateComment(String newComment, Long productId);
+    boolean updateProductName(String newProductName, Long productId) throws InteractionException;
+    boolean updateProductCategory(String newProductCategory, Long productId) throws InteractionException;
+    boolean updateIsInStockStatus(boolean newIsInStockStatus, Long productId) throws InteractionException;
+    boolean updatePrice(BigDecimal newPrice, Long productId) throws InteractionException;
+    boolean updatePicturePath(String newPicturePath, Long productId) throws InteractionException;
+    boolean updateComment(String newComment, Long productId) throws InteractionException;
 }

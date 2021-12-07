@@ -229,7 +229,7 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public boolean updateProductName(String newProductName, Long productId) {
+    public boolean updateProductName(String newProductName, Long productId) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -242,8 +242,7 @@ public class ProductDaoImpl implements ProductDao {
                 return false;
             }
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
-            return false;
+            throw new InteractionException(exception.getMessage());
         } finally {
             try {
                 closeStatement(statement);
@@ -256,7 +255,7 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public boolean updateProductCategory(String newProductCategory, Long productId) {
+    public boolean updateProductCategory(String newProductCategory, Long productId) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         Long newCategoryId = null;
@@ -276,9 +275,8 @@ public class ProductDaoImpl implements ProductDao {
             if(updRes ==0){
                 return false;
             }
-        } catch (SQLException | InteractionException exception) {
-            logger.error(exception.getMessage());
-            return false;
+        } catch (SQLException exception) {
+            throw new InteractionException(exception.getMessage());
         } finally {
             try {
                 closeStatement(statement);
@@ -291,7 +289,7 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public boolean updateIsInStockStatus(boolean newIsInStockStatus, Long productId) {
+    public boolean updateIsInStockStatus(boolean newIsInStockStatus, Long productId) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -304,8 +302,7 @@ public class ProductDaoImpl implements ProductDao {
                 return false;
             }
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
-            return false;
+            throw new InteractionException(exception.getMessage());
         } finally {
             try {
                 closeStatement(statement);
@@ -318,7 +315,7 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public boolean updatePrice(BigDecimal newPrice, Long productId) {
+    public boolean updatePrice(BigDecimal newPrice, Long productId) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -331,8 +328,7 @@ public class ProductDaoImpl implements ProductDao {
                 return false;
             }
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
-            return false;
+            throw new InteractionException(exception.getMessage());
         } finally {
             try {
                 closeStatement(statement);
@@ -345,7 +341,7 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public boolean updatePicturePath(String newPicturePath, Long productId) {
+    public boolean updatePicturePath(String newPicturePath, Long productId) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -358,8 +354,7 @@ public class ProductDaoImpl implements ProductDao {
                 return false;
             }
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
-            return false;
+            throw new InteractionException(exception.getMessage());
         } finally {
             try {
                 closeStatement(statement);
@@ -372,7 +367,7 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public boolean updateComment(String newComment, Long productId) {
+    public boolean updateComment(String newComment, Long productId) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -385,8 +380,7 @@ public class ProductDaoImpl implements ProductDao {
                 return false;
             }
         } catch (SQLException exception) {
-            logger.error(exception.getMessage());
-            return false;
+            throw new InteractionException(exception.getMessage());
         } finally {
             try {
                 closeStatement(statement);
