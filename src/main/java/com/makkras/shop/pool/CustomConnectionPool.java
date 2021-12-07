@@ -7,8 +7,6 @@ import org.apache.logging.log4j.Logger;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.ArrayDeque;
-import java.util.Queue;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 
@@ -16,7 +14,7 @@ public class CustomConnectionPool {
 
     private static Logger logger = LogManager.getLogger();
     private BlockingDeque<ProxyConnection> freeConnections;
-    private Queue<ProxyConnection> givenAwayConnections;
+    private BlockingDeque<ProxyConnection> givenAwayConnections;
     private final static int DEFAULT_POOL_SIZE = 40;
     private final static String DB_URL = "jdbc:postgresql://localhost:5432/Java_Pam_Web_Project";
     private final static String DB_USER = "postgres";
@@ -29,7 +27,7 @@ public class CustomConnectionPool {
         try {
             DriverManager.registerDriver(new org.postgresql.Driver());
             freeConnections = new LinkedBlockingDeque<>();
-            givenAwayConnections = new ArrayDeque<>();
+            givenAwayConnections = new LinkedBlockingDeque<>();
             int counter =0;
             while (counter < DEFAULT_POOL_SIZE){
                 freeConnections.add(new ProxyConnection(DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWORD)));
