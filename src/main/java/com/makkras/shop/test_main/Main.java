@@ -27,7 +27,7 @@ public class Main {
         OrderDao orderDao = new OrderDaoImpl();
         ProductDao productDao = new ProductDaoImpl();
         try {
-            List<User> userList = userDao.findAll();
+            List<User> userList = userDao.findAllUsersWithRole(UserRole.CLIENT);
             for (User p1: userList){
                 logger.info(p1);
             }
@@ -35,7 +35,7 @@ public class Main {
 //            logger.info(productDao.create(new Product("Колесный тормозной цилиндр", BigDecimal.valueOf(40.75),true,
 //                    "C:\\foulder1.1\\Pam\\JavaTaskWeb\\picture\\brake_cilin.png","Колесный тормозной цилиндр трансформирует давление жидкости в механическую силу, которая действует на тормозные колодки. В результате происходит торможение или полная остановка транспортного средства.",
 //                    new ProductCategory("Колесные"))));
-            List<Product> products = productDao.findAllProductInStockAndSortByCategory();
+            List<Product> products = productDao.findAllProductInStockAndSortByName();
             for (Product p: products){
                 logger.info(p);
             }
@@ -43,7 +43,7 @@ public class Main {
 //            orders1.add(new ComponentOrder(new Product((long)0),(long)4,BigDecimal.valueOf(1200)));
 //            orders1.add(new ComponentOrder(new Product((long)6),(long)1,BigDecimal.valueOf(5.9)));
 //            logger.info(orderDao.create(new CompleteOrder(Date.valueOf("2021-12-07"),new User((long)1,"Papa","Shpak70Ig@mail.ru",true),true,orders1)));
-            List<CompleteOrder> orders = orderDao.findAll();
+            List<CompleteOrder> orders = orderDao.findAllCompletedOrdersAndSortByUserLogin();
             for (CompleteOrder p1: orders){
                 logger.info(p1);
                 logger.info("!!");

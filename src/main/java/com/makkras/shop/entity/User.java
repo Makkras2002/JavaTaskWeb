@@ -33,7 +33,7 @@ public class User extends CustomEntity{
     }
 
     public int getUserRoleId() {
-        return userRole.getRoleId();
+        return userRole.ordinal();
     }
     public String getUserRoleName() {
         return userRole.toString();
