@@ -34,11 +34,17 @@ public class CustomConnectionPool {
             DriverManager.registerDriver(new org.postgresql.Driver());
             freeConnections = new LinkedBlockingDeque<>();
             givenAwayConnections = new LinkedBlockingDeque<>();
-            int counter =0;
-            while (counter < DEFAULT_POOL_SIZE){
-                freeConnections.add(new ProxyConnection(DriverManager.getConnection(dbUrl,dbUser,dbPassword)));
-                counter++;
+            while (true){
+                int counter =freeConnections.size();
+                while (counter < DEFAULT_POOL_SIZE){
+                    freeConnections.add(new ProxyConnection(DriverManager.getConnection(dbUrl,dbUser,dbPassword)));
+                    counter++;
+                }
+                if(freeConnections.size() == DEFAULT_POOL_SIZE){
+                    break;
+                }
             }
+
         } catch (SQLException | IOException exception) {
             logger.fatal(exception.getMessage());
             throw new RuntimeException();

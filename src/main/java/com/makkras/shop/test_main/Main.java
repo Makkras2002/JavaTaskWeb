@@ -27,7 +27,7 @@ public class Main {
         OrderDao orderDao = new OrderDaoImpl();
         ProductDao productDao = new ProductDaoImpl();
         try {
-            List<User> userList = userDao.findAllUsersWithRole(UserRole.CLIENT);
+            List<User> userList = userDao.findUserWithSuchEmail("Shpak70Ig@mail.ru");
             for (User p1: userList){
                 logger.info(p1);
             }
