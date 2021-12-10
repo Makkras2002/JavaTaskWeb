@@ -17,30 +17,41 @@ import java.util.List;
 public class UserDaoImpl implements UserDao {
     private static Logger logger = LogManager.getLogger();
 
-    private static final String SQL_SELECT_ALL_USERS = "SELECT users.user_id,users.login,users.password," +
-            "users.email,user_roles.role_name,users.is_active,users.is_online FROM users " +
-            "JOIN user_roles ON users.role_id =user_roles.role_id";
-    private static final String SQL_SELECT_ALL_ONLINE_USERS = "SELECT users.user_id,users.login,users.password," +
-            "users.email,user_roles.role_name,users.is_active,users.is_online FROM users " +
-            "JOIN user_roles ON users.role_id =user_roles.role_id WHERE is_online = true";
-    private static final String SQL_SELECT_ALL_ACTIVE_USERS = "SELECT users.user_id,users.login,users.password," +
-            "users.email,user_roles.role_name,users.is_active,users.is_online FROM users " +
-            "JOIN user_roles ON users.role_id =user_roles.role_id WHERE is_active = true";
-    private static final String SQL_SELECT_ALL_USERS_WITH_ROLE = "SELECT users.user_id,users.login,users.password," +
-            "users.email,user_roles.role_name,users.is_active,users.is_online FROM users " +
-            "JOIN user_roles ON users.role_id =user_roles.role_id WHERE user_roles.role_name = ?";
-    private static final String SQL_SELECT_USER_WITH_EMAIL = "SELECT users.user_id,users.login,users.password," +
-            "users.email,user_roles.role_name,users.is_active,users.is_online FROM users " +
-            "JOIN user_roles ON users.role_id =user_roles.role_id WHERE users.email = ?";
-    private static final String SQL_SELECT_USER_WITH_LOGIN = "SELECT users.user_id,users.login,users.password," +
-            "users.email,user_roles.role_name,users.is_active,users.is_online FROM users " +
-            "JOIN user_roles ON users.role_id =user_roles.role_id WHERE users.login = ?";
-    private static final String SQL_CREATE_USER= "INSERT INTO users (login,password," +
-            "email,is_active,is_online,role_id) VALUES (?,?,?,?,?,?)";
-    private static final String SQL_UPDATE_USER_LOGIN= "UPDATE users SET login  = ? WHERE login = ?";
-    private static final String SQL_UPDATE_USER_ACTIVATION_STATUS= "UPDATE users SET is_active  = ? WHERE login = ?";
-    private static final String SQL_UPDATE_USER_ONLINE_STATUS= "UPDATE users SET is_online  = ? WHERE login = ?";
-    private static final String SQL_UPDATE_USER_PASSWORD= "UPDATE users SET password  = ? WHERE login = ? AND password = ?";
+    private static final String SQL_SELECT_ALL_USERS = """
+            SELECT users.user_id,users.login,users.password,
+            users.email,user_roles.role_name,users.is_active,users.is_online FROM users
+            JOIN user_roles ON users.role_id =user_roles.role_id""";
+    private static final String SQL_SELECT_ALL_ONLINE_USERS = """
+            SELECT users.user_id,users.login,users.password,
+            users.email,user_roles.role_name,users.is_active,users.is_online FROM users 
+            JOIN user_roles ON users.role_id =user_roles.role_id WHERE is_online = true""";
+    private static final String SQL_SELECT_ALL_ACTIVE_USERS = """
+            SELECT users.user_id,users.login,users.password,
+            users.email,user_roles.role_name,users.is_active,users.is_online FROM users
+            JOIN user_roles ON users.role_id =user_roles.role_id WHERE is_active = true""";
+    private static final String SQL_SELECT_ALL_USERS_WITH_ROLE = """
+            SELECT users.user_id,users.login,users.password,
+            users.email,user_roles.role_name,users.is_active,users.is_online FROM users
+            JOIN user_roles ON users.role_id =user_roles.role_id WHERE user_roles.role_name = ?""";
+    private static final String SQL_SELECT_USER_WITH_EMAIL = """
+            SELECT users.user_id,users.login,users.password,
+            users.email,user_roles.role_name,users.is_active,users.is_online FROM users
+            JOIN user_roles ON users.role_id =user_roles.role_id WHERE users.email = ?""";
+    private static final String SQL_SELECT_USER_WITH_LOGIN = """
+            SELECT users.user_id,users.login,users.password,
+            users.email,user_roles.role_name,users.is_active,users.is_online FROM users
+            JOIN user_roles ON users.role_id =user_roles.role_id WHERE users.login = ?""";
+    private static final String SQL_CREATE_USER= """
+            INSERT INTO users (login,password,
+            email,is_active,is_online,role_id) VALUES (?,?,?,?,?,?)""";
+    private static final String SQL_UPDATE_USER_LOGIN= """
+    UPDATE users SET login  = ? WHERE login = ?""";
+    private static final String SQL_UPDATE_USER_ACTIVATION_STATUS= """
+    UPDATE users SET is_active  = ? WHERE login = ?""";
+    private static final String SQL_UPDATE_USER_ONLINE_STATUS= """
+    UPDATE users SET is_online  = ? WHERE login = ?""";
+    private static final String SQL_UPDATE_USER_PASSWORD= """
+    UPDATE users SET password  = ? WHERE login = ? AND password = ?""";
 
 
     public UserDaoImpl(){
@@ -305,9 +316,6 @@ public class UserDaoImpl implements UserDao {
             }
         } catch (SQLException exception) {
             throw new InteractionException(exception.getMessage());
-        } catch (InteractionException e) {
-            logger.error(e.getMessage());
-            return false;
         } finally {
             try {
                 closeStatement(statement);

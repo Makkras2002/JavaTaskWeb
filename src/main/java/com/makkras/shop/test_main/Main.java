@@ -27,7 +27,7 @@ public class Main {
         OrderDao orderDao = new OrderDaoImpl();
         ProductDao productDao = new ProductDaoImpl();
         try {
-            List<User> userList = userDao.findUserWithSuchEmail("Shpak70Ig@mail.ru");
+            List<User> userList = userDao.findAllUsersWithRole(UserRole.ADMIN);
             for (User p1: userList){
                 logger.info(p1);
             }
@@ -40,10 +40,11 @@ public class Main {
                 logger.info(p);
             }
 //            List<ComponentOrder> orders1 = new ArrayList<>();
-//            orders1.add(new ComponentOrder(new Product((long)0),(long)4,BigDecimal.valueOf(1200)));
-//            orders1.add(new ComponentOrder(new Product((long)6),(long)1,BigDecimal.valueOf(5.9)));
-//            logger.info(orderDao.create(new CompleteOrder(Date.valueOf("2021-12-07"),new User((long)1,"Papa","Shpak70Ig@mail.ru",true),true,orders1)));
-            List<CompleteOrder> orders = orderDao.findAllCompletedOrdersAndSortByUserLogin();
+//            orders1.add(new ComponentOrder(new Product((long)7),(long)10,BigDecimal.valueOf(305)));
+//            orders1.add(new ComponentOrder(new Product((long)8),(long)14,BigDecimal.valueOf(570.5)));
+//            logger.info(orderDao.create(new CompleteOrder(Date.valueOf("2021-12-10"),new User((long)4,"Dmitri","dimas2000alpha@gmail.com",true),false,orders1)));
+            orderDao.updateCompleteOrderDate(Date.valueOf("2021-10-10"),(long) 6);
+            List<CompleteOrder> orders = orderDao.findAllFinishedOrders();
             for (CompleteOrder p1: orders){
                 logger.info(p1);
                 logger.info("!!");

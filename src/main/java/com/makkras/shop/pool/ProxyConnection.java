@@ -1,6 +1,5 @@
 package com.makkras.shop.pool;
 
-import com.makkras.shop.exception.InteractionException;
 import com.makkras.shop.exception.PoolCustomException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

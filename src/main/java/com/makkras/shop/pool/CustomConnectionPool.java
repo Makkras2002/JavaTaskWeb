@@ -18,7 +18,7 @@ public class CustomConnectionPool {
     private static Logger logger = LogManager.getLogger();
     private BlockingDeque<ProxyConnection> freeConnections;
     private BlockingDeque<ProxyConnection> givenAwayConnections;
-    private final static int DEFAULT_POOL_SIZE = 40;
+    private static final int DEFAULT_POOL_SIZE = 40;
 
     private static class LoadCustomConnectionPool{
         static final CustomConnectionPool INSTANCE = new CustomConnectionPool();
@@ -64,7 +64,7 @@ public class CustomConnectionPool {
         return connection;
     }
     public void releaseConnection(Connection connection) throws PoolCustomException {
-        if(!connection.getClass().equals(ProxyConnection.class)){
+        if(connection.getClass() != ProxyConnection.class){
             throw new PoolCustomException("Unauthorized connection appeared in pool.");
         }
         givenAwayConnections.remove(connection);

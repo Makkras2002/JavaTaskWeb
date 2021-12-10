@@ -13,14 +13,18 @@ import java.util.List;
 
 public class ProductCategoryDaoImpl implements ProductCategoryDao {
     private static Logger logger = LogManager.getLogger();
-    private static final String SQL_SELECT_ALL_CATEGORIES = "SELECT category_id, category" +
-            " FROM product_categories";
-    private static final String SQL_CREATE_CATEGORY= "INSERT INTO product_categories (category)" +
-            " VALUES (?)";
-    private static final String SQL_SELECT_CATEGORIES_WITH_CATEGORY_NAME = "SELECT category_id, category" +
-            " FROM product_categories WHERE category = ?";
-    private static final String SQL_UPDATE_CATEGORY_NAME = "UPDATE product_categories" +
-            " SET category = ? WHERE category = ?";
+    private static final String SQL_SELECT_ALL_CATEGORIES = """
+            SELECT category_id, category
+            FROM product_categories""";
+    private static final String SQL_CREATE_CATEGORY= """
+            INSERT INTO product_categories (category)
+            VALUES (?)""";
+    private static final String SQL_SELECT_CATEGORIES_WITH_CATEGORY_NAME = """
+            SELECT category_id, category
+            FROM product_categories WHERE category = ?""";
+    private static final String SQL_UPDATE_CATEGORY_NAME = """
+            UPDATE product_categories
+            SET category = ? WHERE category = ?""";
 
     public ProductCategoryDaoImpl(){
     }

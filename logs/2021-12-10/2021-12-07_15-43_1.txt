@@ -1,0 +1,1 @@
+2021-12-07 15:43:26 [main] [<init>] [43] FATAL com.makkras.shop.pool.CustomConnectionPool - The url cannot be null

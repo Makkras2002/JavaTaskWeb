@@ -1,6 +1,6 @@
 package com.makkras.shop.entity;
 
-public class User extends CustomEntity{
+public class User extends CustomEntity {
     private Long userId;
     private String login;
     private String email;
@@ -8,6 +8,41 @@ public class User extends CustomEntity{
     private UserRole userRole;
     private boolean isActive;
     private boolean isOnline;
+    public User(Long userId, String login, String email, String password, UserRole userRole, boolean isActive, boolean isOnline) {
+        this.userId = userId;
+        this.login = login;
+        this.email = email;
+        this.password = password;
+        this.userRole = userRole;
+        this.isActive = isActive;
+        this.isOnline = isOnline;
+    }
+
+    public User(String login, String email, String password, UserRole userRole, boolean isActive, boolean isOnline) {
+        this.login = login;
+        this.email = email;
+        this.password = password;
+        this.userRole = userRole;
+        this.isActive = isActive;
+        this.isOnline = isOnline;
+    }
+    public User(String login, String email, boolean isActive) {
+        this.login = login;
+        this.email = email;
+        this.isActive = isActive;
+    }
+    public User(Long userId, String login, String email, boolean isActive) {
+        this.login = login;
+        this.email = email;
+        this.isActive = isActive;
+        this.userId = userId;
+    }
+    public User(Long userId, String login, String email) {
+        this.login = login;
+        this.email = email;
+        this.userId = userId;
+    }
+
     public Long getUserId() {
         return userId;
     }
@@ -61,40 +96,7 @@ public class User extends CustomEntity{
     public User(){
     }
 
-    public User(Long userId, String login, String email, String password, UserRole userRole, boolean isActive, boolean isOnline) {
-        this.userId = userId;
-        this.login = login;
-        this.email = email;
-        this.password = password;
-        this.userRole = userRole;
-        this.isActive = isActive;
-        this.isOnline = isOnline;
-    }
 
-    public User(String login, String email, String password, UserRole userRole, boolean isActive, boolean isOnline) {
-        this.login = login;
-        this.email = email;
-        this.password = password;
-        this.userRole = userRole;
-        this.isActive = isActive;
-        this.isOnline = isOnline;
-    }
-    public User(String login, String email, boolean isActive) {
-        this.login = login;
-        this.email = email;
-        this.isActive = isActive;
-    }
-    public User(Long userId, String login, String email, boolean isActive) {
-        this.login = login;
-        this.email = email;
-        this.isActive = isActive;
-        this.userId = userId;
-    }
-    public User(Long userId, String login, String email) {
-        this.login = login;
-        this.email = email;
-        this.userId = userId;
-    }
     public String getLogin() {
         return login;
     }

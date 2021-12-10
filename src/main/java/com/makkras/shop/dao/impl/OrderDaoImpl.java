@@ -14,44 +14,49 @@ import java.util.List;
 
 public class OrderDaoImpl implements OrderDao {
     private static Logger logger = LogManager.getLogger();
-    private static final String SQL_SELECT_ALL_ORDERS = "SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active," +
-            " products.product_name, products.is_in_stock, product_categories.category," +
-            " products.product_price, component_orders.ordered_product_amount, component_orders.ordered_product_full_price, complete_orders.complete_order_date, complete_orders.is_completed" +
-            " FROM complete_orders JOIN users " +
-            "ON complete_orders.user_id = users.user_id JOIN component_orders ON complete_orders.complete_order_id = component_orders.component_order_id JOIN " +
-            "products ON component_orders.product_id = products.product_id JOIN product_categories ON products.product_category_id = product_categories.category_id";
-    private static final String SQL_SELECT_ALL_COMPONENT_ORDERS_FOR_COMPLETE_ORDER_ID ="SELECT products.product_name, products.is_in_stock, product_categories.category, component_orders.ordered_product_amount, component_orders.ordered_product_full_price " +
-            "FROM component_orders JOIN products ON component_orders.product_id = products.product_id JOIN product_categories ON products.product_category_id = product_categories.category_id WHERE component_orders.component_order_id = ?";
-    private static final String SQL_SELECT_ALL_COMPLETE_ORDERS ="SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active," +
-            "complete_orders.complete_order_date, complete_orders.is_completed" +
-            " FROM complete_orders JOIN users " +
-            "ON complete_orders.user_id = users.user_id";
-    private static final String SQL_SELECT_ALL_FINISHED_ORDERS ="SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active," +
-            "complete_orders.complete_order_date, complete_orders.is_completed" +
-            " FROM complete_orders JOIN users " +
-            "ON complete_orders.user_id = users.user_id WHERE complete_orders.is_completed = true";
-    private static final String SQL_SELECT_ALL_COMPLETE_ORDERS_AND_SORT_BY_USER_LOGIN ="SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active," +
-            "complete_orders.complete_order_date, complete_orders.is_completed" +
-            " FROM complete_orders JOIN users " +
-            "ON complete_orders.user_id = users.user_id ORDER BY users.login ASC";
-    private static final String SQL_SELECT_ALL_COMPLETE_ORDERS_AND_SORT_BY_DATE ="SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active," +
-            "complete_orders.complete_order_date, complete_orders.is_completed" +
-            " FROM complete_orders JOIN users " +
-            "ON complete_orders.user_id = users.user_id ORDER BY complete_orders.complete_order_date ASC";
-    private static final String SQL_SELECT_ALL_COMPLETE_ORDERS_IN_DATE_PERIOD ="SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active," +
-            "complete_orders.complete_order_date, complete_orders.is_completed" +
-            " FROM complete_orders JOIN users " +
-            "ON complete_orders.user_id = users.user_id WHERE complete_orders.complete_order_date > ? AND complete_orders.complete_order_date < ? ORDER BY complete_orders.complete_order_date ASC";
-    private static final String SQL_SELECT_ALL_COMPLETE_ORDERS_BY_USER ="SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active," +
-            "complete_orders.complete_order_date, complete_orders.is_completed" +
-            " FROM complete_orders JOIN users " +
-            "ON complete_orders.user_id = users.user_id WHERE users.login = ? OR users.email = ?";
-    private static final String SQL_CREATE_COMPLETE_ORDER ="INSERT INTO complete_orders (user_id, is_completed, complete_order_date) " +
-            "VALUES (?,?,?)";
-    private static final String SQL_CREATE_COMPONENT_ORDERS_FOR_COMPLETE_ORDER ="INSERT INTO component_orders (component_order_id, product_id, ordered_product_amount, ordered_product_full_price) " +
-            "VALUES (?,?,?,?)";
-    private static final String SQL_UPDATE_COMPLETE_ORDER_DATE= "UPDATE complete_orders SET complete_order_date  = ? WHERE complete_order_id = ?";
-    private static final String SQL_UPDATE_COMPLETE_ORDER_STATUS= "UPDATE complete_orders SET is_completed  = ? WHERE complete_order_id = ?";
+    private static final String SQL_SELECT_ALL_COMPONENT_ORDERS_FOR_COMPLETE_ORDER_ID = """
+            SELECT products.product_name, products.is_in_stock, product_categories.category, component_orders.ordered_product_amount, component_orders.ordered_product_full_price
+            FROM component_orders JOIN products ON component_orders.product_id = products.product_id JOIN product_categories ON products.product_category_id = product_categories.category_id WHERE component_orders.component_order_id = ?""";
+    private static final String SQL_SELECT_ALL_COMPLETE_ORDERS ="""
+            SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active,
+            complete_orders.complete_order_date, complete_orders.is_completed
+            FROM complete_orders JOIN users
+            ON complete_orders.user_id = users.user_id""";
+    private static final String SQL_SELECT_ALL_FINISHED_ORDERS ="""
+            SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active,
+            complete_orders.complete_order_date, complete_orders.is_completed
+            FROM complete_orders JOIN users
+            ON complete_orders.user_id = users.user_id WHERE complete_orders.is_completed = true""";
+    private static final String SQL_SELECT_ALL_COMPLETE_ORDERS_AND_SORT_BY_USER_LOGIN ="""
+            SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active,
+            complete_orders.complete_order_date, complete_orders.is_completed
+            FROM complete_orders JOIN users
+            ON complete_orders.user_id = users.user_id ORDER BY users.login ASC""";
+    private static final String SQL_SELECT_ALL_COMPLETE_ORDERS_AND_SORT_BY_DATE ="""
+            SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active,
+            complete_orders.complete_order_date, complete_orders.is_completed
+            FROM complete_orders JOIN users
+            ON complete_orders.user_id = users.user_id ORDER BY complete_orders.complete_order_date ASC""";
+    private static final String SQL_SELECT_ALL_COMPLETE_ORDERS_IN_DATE_PERIOD ="""
+            SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active,
+            complete_orders.complete_order_date, complete_orders.is_completed
+            FROM complete_orders JOIN users
+            ON complete_orders.user_id = users.user_id WHERE complete_orders.complete_order_date > ? AND complete_orders.complete_order_date < ? ORDER BY complete_orders.complete_order_date ASC""";
+    private static final String SQL_SELECT_ALL_COMPLETE_ORDERS_BY_USER ="""
+            SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active,
+            complete_orders.complete_order_date, complete_orders.is_completed
+            FROM complete_orders JOIN users
+            ON complete_orders.user_id = users.user_id WHERE users.login = ? OR users.email = ?""";
+    private static final String SQL_CREATE_COMPLETE_ORDER ="""
+            INSERT INTO complete_orders (user_id, is_completed, complete_order_date)
+            VALUES (?,?,?)""";
+    private static final String SQL_CREATE_COMPONENT_ORDERS_FOR_COMPLETE_ORDER ="""
+            INSERT INTO component_orders (component_order_id, product_id, ordered_product_amount, ordered_product_full_price)
+            VALUES (?,?,?,?)""";
+    private static final String SQL_UPDATE_COMPLETE_ORDER_DATE= """
+    UPDATE complete_orders SET complete_order_date  = ? WHERE complete_order_id = ?""";
+    private static final String SQL_UPDATE_COMPLETE_ORDER_STATUS= """
+    UPDATE complete_orders SET is_completed  = ? WHERE complete_order_id = ?""";
 
     public OrderDaoImpl(){
     }

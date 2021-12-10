@@ -1,18 +1,20 @@
 package com.makkras.shop.encryptor.impl;
 
 import com.makkras.shop.encryptor.CustomPasswordEncryptor;
-import com.makkras.shop.exception.InteractionException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class PasswordEncryptor implements CustomPasswordEncryptor {
+    private static Logger logger = LogManager.getLogger();
+    private static final String ENCRYPTOR_SRC = "MD5";
     @Override
-    public String encryptPassword(String password) throws InteractionException {
+    public String encryptPassword(String password){
         String encryptedPassword = null;
-        try
-        {
-            MessageDigest message = MessageDigest.getInstance("MD5");
+        try {
+            MessageDigest message = MessageDigest.getInstance(ENCRYPTOR_SRC);
             message.update(password.getBytes());
             byte[] bytes = message.digest();
             StringBuilder s = new StringBuilder();
@@ -23,7 +25,7 @@ public class PasswordEncryptor implements CustomPasswordEncryptor {
 
             encryptedPassword = s.toString();
         } catch (NoSuchAlgorithmException e) {
-            throw new InteractionException(e.getMessage());
+            logger.error(e.getMessage());
         }
 
         return encryptedPassword;

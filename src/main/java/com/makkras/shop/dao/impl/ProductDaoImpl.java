@@ -18,47 +18,62 @@ public class ProductDaoImpl implements ProductDao {
     private static Logger logger = LogManager.getLogger();
 
 
-    private static final String SQL_SELECT_ALL_PRODUCTS = "SELECT products.product_id, products.product_name, " +
-            "products.product_price, products.is_in_stock," +
-            " products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories " +
-            "ON products.product_category_id = product_categories.category_id";
-    private static final String SQL_SELECT_PRODUCTS_WITH_NAME = "SELECT products.product_id, products.product_name, " +
-            "products.product_price, products.is_in_stock," +
-            " products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories " +
-            "ON products.product_category_id = product_categories.category_id WHERE products.product_name = ?";
-    private static final String SQL_CREATE_PRODUCT= "INSERT INTO products (product_name,product_price,is_in_stock,picture_path," +
-            "product_comment,product_category_id)" +
-            " VALUES (?,?,?,?,?,?)";
-    private static final String SQL_SELECT_PRODUCTS_WITH_CATEGORY = "SELECT products.product_id, products.product_name, " +
-            "products.product_price, products.is_in_stock," +
-            " products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories " +
-            "ON products.product_category_id = product_categories.category_id WHERE product_categories.category = ?";
-    private static final String SQL_SELECT_PRODUCTS_IN_STOCK = "SELECT products.product_id, products.product_name, " +
-            "products.product_price, products.is_in_stock," +
-            " products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories " +
-            "ON products.product_category_id = product_categories.category_id WHERE products.is_in_stock = true";
-    private static final String SQL_SELECT_PRODUCTS_IN_STOCK_AND_SORT_BY_NAME = "SELECT products.product_id, products.product_name, " +
-            "products.product_price, products.is_in_stock," +
-            " products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories " +
-            "ON products.product_category_id = product_categories.category_id WHERE products.is_in_stock = true ORDER BY products.product_name ASC";
-    private static final String SQL_SELECT_PRODUCTS_IN_STOCK_AND_SORT_BY_CATEGORY = "SELECT products.product_id, products.product_name, " +
-            "products.product_price, products.is_in_stock," +
-            " products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories " +
-            "ON products.product_category_id = product_categories.category_id WHERE products.is_in_stock = true ORDER BY product_categories.category ASC";
-    private static final String SQL_SELECT_PRODUCTS_IN_STOCK_AND_SORT_BY_PRICE = "SELECT products.product_id, products.product_name, " +
-            "products.product_price, products.is_in_stock," +
-            " products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories " +
-            "ON products.product_category_id = product_categories.category_id WHERE products.is_in_stock = true ORDER BY products.product_price ASC";
-    private static final String SQL_SELECT_PRODUCTS_IN_STOCK_IN_PRICE_RANGE_AND_SORT_BY_PRICE = "SELECT products.product_id, products.product_name, " +
-            "products.product_price, products.is_in_stock," +
-            " products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories " +
-            "ON products.product_category_id = product_categories.category_id WHERE products.is_in_stock = true AND products.product_price > ? AND products.product_price < ? ORDER BY products.product_price ASC";
-    private static final String SQL_UPDATE_PRODUCT_NAME= "UPDATE products SET product_name  = ? WHERE product_id = ?";
-    private static final String SQL_UPDATE_PRODUCT_CATEGORY= "UPDATE products SET product_category_id  = ? WHERE product_id = ?";
-    private static final String SQL_UPDATE_PRODUCT_IS_IN_STOCK_STATUS= "UPDATE products SET is_in_stock  = ? WHERE product_id = ?";
-    private static final String SQL_UPDATE_PRODUCT_COMMENT= "UPDATE products SET product_comment  = ? WHERE product_id = ?";
-    private static final String SQL_UPDATE_PICTURE_PATH= "UPDATE products SET picture_path  = ? WHERE product_id = ?";
-    private static final String SQL_UPDATE_PRODUCT_PRICE= "UPDATE products SET product_price  = ? WHERE product_id = ?";
+    private static final String SQL_SELECT_ALL_PRODUCTS = """
+            SELECT products.product_id, products.product_name,
+            products.product_price, products.is_in_stock,
+            products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
+            ON products.product_category_id = product_categories.category_id""";
+    private static final String SQL_SELECT_PRODUCTS_WITH_NAME = """
+            SELECT products.product_id, products.product_name,
+            products.product_price, products.is_in_stock,
+            products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
+            ON products.product_category_id = product_categories.category_id WHERE products.product_name = ?""";
+    private static final String SQL_CREATE_PRODUCT= """
+            INSERT INTO products (product_name,product_price,is_in_stock,picture_path,
+            product_comment,product_category_id)
+            VALUES (?,?,?,?,?,?)""";
+    private static final String SQL_SELECT_PRODUCTS_WITH_CATEGORY = """
+            SELECT products.product_id, products.product_name,
+            products.product_price, products.is_in_stock,
+            products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
+            ON products.product_category_id = product_categories.category_id WHERE product_categories.category = ?""";
+    private static final String SQL_SELECT_PRODUCTS_IN_STOCK = """
+            SELECT products.product_id, products.product_name,
+            products.product_price, products.is_in_stock,
+            products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
+            ON products.product_category_id = product_categories.category_id WHERE products.is_in_stock = true""";
+    private static final String SQL_SELECT_PRODUCTS_IN_STOCK_AND_SORT_BY_NAME = """
+            SELECT products.product_id, products.product_name,
+            products.product_price, products.is_in_stock,
+            products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
+            ON products.product_category_id = product_categories.category_id WHERE products.is_in_stock = true ORDER BY products.product_name ASC""";
+    private static final String SQL_SELECT_PRODUCTS_IN_STOCK_AND_SORT_BY_CATEGORY = """
+            SELECT products.product_id, products.product_name,
+            products.product_price, products.is_in_stock,
+            products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
+            ON products.product_category_id = product_categories.category_id WHERE products.is_in_stock = true ORDER BY product_categories.category ASC""";
+    private static final String SQL_SELECT_PRODUCTS_IN_STOCK_AND_SORT_BY_PRICE = """
+            SELECT products.product_id, products.product_name,
+            products.product_price, products.is_in_stock,
+            products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
+            ON products.product_category_id = product_categories.category_id WHERE products.is_in_stock = true ORDER BY products.product_price ASC""";
+    private static final String SQL_SELECT_PRODUCTS_IN_STOCK_IN_PRICE_RANGE_AND_SORT_BY_PRICE = """
+            SELECT products.product_id, products.product_name,
+            products.product_price, products.is_in_stock,
+            products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
+            ON products.product_category_id = product_categories.category_id WHERE products.is_in_stock = true AND products.product_price > ? AND products.product_price < ? ORDER BY products.product_price ASC""";
+    private static final String SQL_UPDATE_PRODUCT_NAME= """
+    UPDATE products SET product_name  = ? WHERE product_id = ?""";
+    private static final String SQL_UPDATE_PRODUCT_CATEGORY= """
+    UPDATE products SET product_category_id  = ? WHERE product_id = ?""";
+    private static final String SQL_UPDATE_PRODUCT_IS_IN_STOCK_STATUS= """
+    UPDATE products SET is_in_stock  = ? WHERE product_id = ?""";
+    private static final String SQL_UPDATE_PRODUCT_COMMENT= """
+    UPDATE products SET product_comment  = ? WHERE product_id = ?""";
+    private static final String SQL_UPDATE_PICTURE_PATH= """
+    UPDATE products SET picture_path  = ? WHERE product_id = ?""";
+    private static final String SQL_UPDATE_PRODUCT_PRICE= """
+    UPDATE products SET product_price  = ? WHERE product_id = ?""";
 
     public ProductDaoImpl(){
     }
