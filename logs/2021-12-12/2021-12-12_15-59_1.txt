@@ -1,0 +1,8 @@
+2021-12-12 15:59:15 [main] [changeLocale] [32] ERROR makkras.shop.util.locale.LocaleManager - org.apache.commons.configuration.plist.ParseException: Encountered " <STRING> "country "" at line 1, column 1.
+Was expecting:
+    "{" ...
+    
+2021-12-12 15:59:46 [main] [changeLocale] [33] ERROR makkras.shop.util.locale.LocaleManager - org.apache.commons.configuration.plist.ParseException: Encountered " <STRING> "country "" at line 1, column 1.
+Was expecting:
+    "{" ...
+    

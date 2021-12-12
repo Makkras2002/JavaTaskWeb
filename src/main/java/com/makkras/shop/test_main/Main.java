@@ -11,13 +11,15 @@ import com.makkras.shop.dao.impl.UserDaoImpl;
 import com.makkras.shop.entity.*;
 import com.makkras.shop.exception.InteractionException;
 import com.makkras.shop.pool.CustomConnectionPool;
+import com.makkras.shop.util.locale.LocaleManager;
+import com.makkras.shop.util.locale.LocalizedTextExtractor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.math.BigDecimal;
-import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
 
 public class Main {
     private static Logger logger = LogManager.getLogger();
@@ -43,12 +45,15 @@ public class Main {
 //            orders1.add(new ComponentOrder(new Product((long)7),(long)10,BigDecimal.valueOf(305)));
 //            orders1.add(new ComponentOrder(new Product((long)8),(long)14,BigDecimal.valueOf(570.5)));
 //            logger.info(orderDao.create(new CompleteOrder(Date.valueOf("2021-12-10"),new User((long)4,"Dmitri","dimas2000alpha@gmail.com",true),false,orders1)));
-            orderDao.updateCompleteOrderDate(Date.valueOf("2021-10-10"),(long) 6);
-            List<CompleteOrder> orders = orderDao.findAllFinishedOrders();
-            for (CompleteOrder p1: orders){
-                logger.info(p1);
-                logger.info("!!");
-            }
+//            orderDao.updateCompleteOrderDate(Date.valueOf("2021-10-10"),(long) 6);
+//            List<CompleteOrder> orders = orderDao.findAllCompletedOrdersAndSortByDate();
+//            for (CompleteOrder p1: orders){
+//                logger.info(p1);
+//                logger.info("!!");
+//            }
+//            MailSender.getInstance().send("max2002shpak.com","Sample Mail!!!","Hello!!!");
+            logger.info(LocalizedTextExtractor.getInstance().getText("EN","str1"));
+            logger.info(LocalizedTextExtractor.getInstance().getText("RU","str1"));
             CustomConnectionPool.getInstance().destroyPool();
         } catch (InteractionException e) {
             logger.error(e.getMessage());

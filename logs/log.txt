@@ -1,2 +1,4 @@
-2021-12-10 11:20:09 [main] [main] [53] ERROR com.makkras.shop.test_main.Main - ОШИБКА: INSERT или UPDATE в таблице "complete_orders" нарушает ограничение внешнего ключа "user_id_connection_key"
-  Подробности: Ключ (user_id)=(64) отсутствует в таблице "users".
+2021-12-12 16:02:41 [main] [changeLocale] [33] ERROR makkras.shop.util.locale.LocaleManager - org.apache.commons.configuration.plist.ParseException: Encountered " <STRING> "country "" at line 1, column 1.
+Was expecting:
+    "{" ...
+    

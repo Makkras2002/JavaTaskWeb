@@ -1,0 +1,2 @@
+2021-12-10 11:20:09 [main] [main] [53] ERROR com.makkras.shop.test_main.Main - ОШИБКА: INSERT или UPDATE в таблице "complete_orders" нарушает ограничение внешнего ключа "user_id_connection_key"
+  Подробности: Ключ (user_id)=(64) отсутствует в таблице "users".
