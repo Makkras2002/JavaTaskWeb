@@ -26,7 +26,7 @@ public class CustomConnectionPool {
     private CustomConnectionPool(){
         try {
             Properties properties = new Properties();
-            FileInputStream propsFileReaderStream = new FileInputStream("datasrc/databaseprop.properties");
+            FileInputStream propsFileReaderStream = new FileInputStream("C:\\foulder1.1\\Pam\\JavaTaskWeb\\datasrc\\databaseprop.properties");
             properties.load(propsFileReaderStream);
             String dbUrl = properties.getProperty("jdbc.url");
             String dbUser = properties.getProperty("jdbc.user");
@@ -47,7 +47,7 @@ public class CustomConnectionPool {
 
         } catch (SQLException | IOException exception) {
             logger.fatal(exception.getMessage());
-            throw new RuntimeException();
+            throw new RuntimeException(exception.getMessage());
         }
     }
     public static CustomConnectionPool getInstance(){

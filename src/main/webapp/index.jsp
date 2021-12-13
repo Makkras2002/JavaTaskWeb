@@ -1,5 +1,9 @@
 <html>
+<head>
+    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+    <title>AutoShopPlus</title>
+</head>
 <body>
-<h2>Hello World!</h2>
+<jsp:forward page="pages/authPage.jsp"></jsp:forward>
 </body>
 </html>

@@ -27,6 +27,11 @@ public class ProductDaoImpl implements ProductDao {
             SELECT products.product_id, products.product_name,
             products.product_price, products.is_in_stock,
             products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
+            ON products.product_category_id = product_categories.category_id WHERE products.product_id = ?""";
+    private static final String SQL_SELECT_PRODUCT_WITH_ID = """
+            SELECT products.product_id, products.product_name,
+            products.product_price, products.is_in_stock,
+            products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
             ON products.product_category_id = product_categories.category_id WHERE products.product_name = ?""";
     private static final String SQL_CREATE_PRODUCT= """
             INSERT INTO products (product_name,product_price,is_in_stock,picture_path,
@@ -152,7 +157,38 @@ public class ProductDaoImpl implements ProductDao {
         }
         return products;
     }
-
+    @Override
+    public List<Product> findProductById(Long id) throws InteractionException {
+        List<Product> products = new ArrayList<>();
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try {
+            connection = CustomConnectionPool.getInstance().getConnection();
+            statement = connection.prepareStatement(SQL_SELECT_PRODUCTS_WITH_NAME);
+            statement.setLong(1,id);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                Long productId = resultSet.getLong(1);
+                String productName = resultSet.getString(2);
+                BigDecimal productPrice = resultSet.getBigDecimal(3);
+                Boolean isInStock = resultSet.getBoolean(4);
+                String picturePath = resultSet.getString(5);
+                String productComment = resultSet.getString(6);
+                ProductCategory category = new ProductCategory(resultSet.getLong(7),resultSet.getString(8));
+                products.add(new Product(productId,productName,productPrice,isInStock,picturePath,productComment,category));
+            }
+        } catch (SQLException exception) {
+            throw new InteractionException(exception.getMessage());
+        }finally {
+            try {
+                closeStatement(statement);
+                closeConnection(connection);
+            } catch (InteractionException e) {
+                logger.error(e.getMessage());
+            }
+        }
+        return products;
+    }
     @Override
     public List<Product> findProductsByProductCategory(ProductCategory productCategory) throws InteractionException {
         List<Product> products = new ArrayList<>();

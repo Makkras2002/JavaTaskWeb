@@ -9,6 +9,7 @@ import java.util.List;
 
 public interface ProductDao extends BaseDao<Product>{
     List<Product> findProductsByName(String name) throws InteractionException;
+    List<Product> findProductById(Long id) throws InteractionException;
     List<Product> findProductsByProductCategory(ProductCategory productCategory) throws InteractionException;
     List<Product> findAllProductInStock() throws InteractionException;
     List<Product> findAllProductInStockAndSortByName() throws InteractionException;

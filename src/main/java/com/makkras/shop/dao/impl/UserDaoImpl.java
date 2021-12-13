@@ -37,6 +37,11 @@ public class UserDaoImpl implements UserDao {
             SELECT users.user_id,users.login,users.password,
             users.email,user_roles.role_name,users.is_active,users.is_online FROM users
             JOIN user_roles ON users.role_id =user_roles.role_id WHERE users.email = ?""";
+    private static final String SQL_SELECT_ACTIVE_OFFLINE_USER_WITH_LOGIN = """
+            SELECT users.user_id,users.login,users.password,
+            users.email,user_roles.role_name,users.is_active,users.is_online FROM users
+            JOIN user_roles ON users.role_id =user_roles.role_id WHERE users.login = ? 
+            AND users.is_online = false AND users.is_active = true""";
     private static final String SQL_SELECT_USER_WITH_LOGIN = """
             SELECT users.user_id,users.login,users.password,
             users.email,user_roles.role_name,users.is_active,users.is_online FROM users
@@ -102,7 +107,6 @@ public class UserDaoImpl implements UserDao {
         List<User> users = selectDataFromDbByQuery(SQL_SELECT_ALL_ONLINE_USERS);
         return users;
     }
-
     @Override
     public List<User> findAllUsersWithRole(UserRole role) throws InteractionException{
         List<User> users = new ArrayList<>();
@@ -185,6 +189,43 @@ public class UserDaoImpl implements UserDao {
     }
     @Override
     public List<User> findUserWithSuchLogin(String login) throws InteractionException{
+        List<User> users = new ArrayList<>();
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try {
+            connection = CustomConnectionPool.getInstance().getConnection();
+            statement = connection.prepareStatement(SQL_SELECT_ACTIVE_OFFLINE_USER_WITH_LOGIN);
+            statement.setString(1,login);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                Long userId = resultSet.getLong(1);
+                String login1 = resultSet.getString(2);
+                String password = resultSet.getString(3);
+                String email = resultSet.getString(4);
+                UserRole role;
+                if(resultSet.getString(5).equals("admin")){
+                    role = UserRole.ADMIN;
+                }else {
+                    role = UserRole.CLIENT;
+                }
+                boolean isActive = resultSet.getBoolean(6);
+                boolean isOnline = resultSet.getBoolean(7);
+                users.add(new User(userId,login1,email,password,role,isActive,isOnline));
+            }
+        } catch (SQLException exception) {
+            throw new InteractionException(exception.getMessage());
+        }finally {
+            try {
+                closeStatement(statement);
+                closeConnection(connection);
+            } catch (InteractionException e) {
+                logger.error(e.getMessage());
+            }
+        }
+        return users;
+    }
+    @Override
+    public List<User> findUserFromAllUsersWithSuchLogin(String login) throws InteractionException{
         List<User> users = new ArrayList<>();
         Connection connection = null;
         PreparedStatement statement = null;
@@ -298,7 +339,6 @@ public class UserDaoImpl implements UserDao {
         }
         return true;
     }
-
     @Override
     public boolean updatePassword(String login, String oldPassword, String newPassword) throws InteractionException {
         Connection connection = null;

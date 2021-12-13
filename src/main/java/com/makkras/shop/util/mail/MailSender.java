@@ -10,7 +10,6 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -22,7 +21,7 @@ public class MailSender {
     private MailSender(){
         try {
             properties =new Properties();
-            properties.load(new FileReader("datasrc/mailsend.properties"));
+            properties.load(new FileReader("C:\\foulder1.1\\Pam\\JavaTaskWeb\\datasrc\\mailsend.properties"));
 
         } catch (IOException e) {
             logger.error(e.getMessage());
