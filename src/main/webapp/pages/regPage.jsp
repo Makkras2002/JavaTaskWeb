@@ -39,10 +39,6 @@
                 Пароль должен быть 8-20 символов вдлину.
             </span>
         </div>
-        <div class="mb-3 w-25 form-check form-switch" style="margin-top: 40px" align="left">
-            <input class="form-check-input" type="checkbox" role="switch" id="enterAsAdmin">
-            <label class="form-check-label" for="enterAsAdmin">Войти как администратор</label>
-        </div>
         <button type="submit " class="btn btn-outline-success btn-lg" style="margin-top: 40px">Зарегистрироваться</button>
     </form>
 </div>

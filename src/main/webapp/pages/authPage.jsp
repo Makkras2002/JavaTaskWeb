@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false"%>
 <html>
 <head>
     <title>Auth/Reg</title>
@@ -36,9 +37,9 @@
     </form>
 </div>
 <div align="center" style="margin-top: 180px">
+    <div style="color: red; font-weight: bolder; font-style: italic">${errorAuthMessage}</div>
     <a href="/pages/regPage.jsp" class="text-black">Регистрация</a>
     <br/>
-    <div class="display-1" style="color: red; font-weight: bolder; font-style: italic">${errorAuthMessage}</div>
 </div>
 
 
