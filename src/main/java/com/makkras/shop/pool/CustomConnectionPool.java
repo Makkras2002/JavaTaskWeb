@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.ResourceBundle;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 
@@ -26,11 +27,10 @@ public class CustomConnectionPool {
     private CustomConnectionPool(){
         try {
             Properties properties = new Properties();
-            FileInputStream propsFileReaderStream = new FileInputStream("C:\\foulder1.1\\Pam\\JavaTaskWeb\\datasrc\\databaseprop.properties");
-            properties.load(propsFileReaderStream);
-            String dbUrl = properties.getProperty("jdbc.url");
-            String dbUser = properties.getProperty("jdbc.user");
-            String dbPassword = properties.getProperty("jdbc.password");
+            ResourceBundle bundle = ResourceBundle.getBundle("datasrc.databaseprop");
+            String dbUrl = bundle.getString("jdbc.url");
+            String dbUser = bundle.getString("jdbc.user");
+            String dbPassword = bundle.getString("jdbc.password");
             DriverManager.registerDriver(new org.postgresql.Driver());
             freeConnections = new LinkedBlockingDeque<>();
             givenAwayConnections = new LinkedBlockingDeque<>();
@@ -45,7 +45,7 @@ public class CustomConnectionPool {
                 }
             }
 
-        } catch (SQLException | IOException exception) {
+        } catch (SQLException exception) {
             logger.fatal(exception.getMessage());
             throw new RuntimeException(exception.getMessage());
         }
