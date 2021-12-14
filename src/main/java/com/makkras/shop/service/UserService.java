@@ -27,7 +27,7 @@ public class UserService {
     }
     public Optional<User> findUserWithLoginAndPassword(String login,String password,Boolean enterAsAdmin) throws ServiceException {
         String encryptedPassword = encryptor.encryptPassword(password);
-        Optional<User> result= null;
+        Optional<User> result = Optional.empty();
         try {
             List<User> foundUsers = userDao.findUserWithSuchLogin(login);
             if(foundUsers.size() == 0){
