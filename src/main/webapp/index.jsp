@@ -4,6 +4,6 @@
     <title>AutoShopPlus</title>
 </head>
 <body>
-<jsp:forward page="pages/authPage.jsp"></jsp:forward>
+<jsp:forward page="pages/auth.jsp"></jsp:forward>
 </body>
 </html>

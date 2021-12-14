@@ -11,6 +11,7 @@ import java.io.IOException;
 
 @WebServlet("/controller")
 public class Controller extends HttpServlet {
+    private static final String COMMAND = "command";
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     }
@@ -20,9 +21,8 @@ public class Controller extends HttpServlet {
         processRequest(req,resp);
     }
     private void processRequest(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException {
-        String page = null;
-        ActionFactory user = new ActionFactory();
-        ActionCommand command = user.defineCommand(req);
+        String page;
+        ActionCommand command = CommandEnum.defineCommand(req.getParameter(COMMAND));
         page = command.execute(req);
         if(page!= null){
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
