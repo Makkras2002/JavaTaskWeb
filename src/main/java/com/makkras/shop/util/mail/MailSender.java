@@ -21,7 +21,7 @@ public class MailSender {
     private MailSender(){
         try {
             properties =new Properties();
-            properties.load(new FileReader("C:\\foulder1.1\\Pam\\JavaTaskWeb\\datasrc\\mailsend.properties"));
+            properties.load(new FileReader("C:\\foulder1.1\\Pam\\JavaTaskWeb\\src\\main\\resources\\datasrc\\mailsend.properties"));
 
         } catch (IOException e) {
             logger.error(e.getMessage());

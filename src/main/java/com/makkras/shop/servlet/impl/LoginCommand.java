@@ -3,7 +3,7 @@ package com.makkras.shop.servlet.impl;
 import com.makkras.shop.entity.User;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.UserService;
-import com.makkras.shop.servlet.ActionCommand;
+import com.makkras.shop.servlet.CustomCommand;
 import com.makkras.shop.servlet.util.MessageManager;
 import com.makkras.shop.servlet.util.PathManager;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 
-public class LoginCommand implements ActionCommand {
+public class LoginCommand implements CustomCommand {
     private static Logger logger = LogManager.getLogger();
     private static final String LOGIN_NAME = "login";
     private static final String LOGIN_PASSWORD = "password";

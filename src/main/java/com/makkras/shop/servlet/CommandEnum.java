@@ -1,8 +1,9 @@
 package com.makkras.shop.servlet;
 
+import com.makkras.shop.servlet.impl.ConfRegCommand;
 import com.makkras.shop.servlet.impl.LoginCommand;
 import com.makkras.shop.servlet.impl.LogoutCommand;
-import jakarta.servlet.http.HttpServletRequest;
+import com.makkras.shop.servlet.impl.RegisterCommand;
 
 public enum CommandEnum {
     LOGIN {
@@ -14,13 +15,23 @@ public enum CommandEnum {
         {
             this.command = new LogoutCommand();
         }
+    },
+    REGISTER {
+        {
+            this.command = new RegisterCommand();
+        }
+    },
+    CONFREG {
+        {
+            this.command = new ConfRegCommand();
+        }
     };
-    ActionCommand command;
-    public ActionCommand getCurrentCommand(){
+    CustomCommand command;
+    public CustomCommand getCurrentCommand(){
         return command;
     }
-    public static ActionCommand defineCommand(String requestCommand){
-        ActionCommand command;
+    public static CustomCommand defineCommand(String requestCommand){
+        CustomCommand command;
         CommandEnum currentEnum = CommandEnum.valueOf(requestCommand.toUpperCase());
         command =currentEnum.getCurrentCommand();
         return command;

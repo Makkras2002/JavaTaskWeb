@@ -22,7 +22,7 @@ public class Controller extends HttpServlet {
     }
     private void processRequest(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException {
         String page;
-        ActionCommand command = CommandEnum.defineCommand(req.getParameter(COMMAND));
+        CustomCommand command = CommandEnum.defineCommand(req.getParameter(COMMAND));
         page = command.execute(req);
         if(page!= null){
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);

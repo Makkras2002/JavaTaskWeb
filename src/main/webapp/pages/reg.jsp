@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
     <title>Auth/Reg</title>
@@ -19,14 +20,14 @@
 </div>
 <div align="center" class="align-middle">
     <form action="/controller" method="post">
-        <input type="text" id="command" name="command" hidden="hidden" required="required" value="registration"/>
+        <input type="text" id="command" name="command" hidden="hidden" required="required" value="register"/>
         <div class="mb-3 w-25" style="margin-top: 40px">
             <label for="login" class="form-label" >Введите ваш логин</label>
             <input type="text" class="form-control" id="login" name="login" required="required"/>
         </div>
         <div class="mb-3 w-25" style="margin-top: 40px">
             <label for="email" class="form-label" >Введите вашу почту</label>
-            <input type="text" class="form-control" id="email" name="email" required="required"/>
+            <input type="email" class="form-control" id="email" name="email" required="required"/>
         </div>
         <div class="mb-3 w-25" style="margin-top: 40px">
             <label for="password" class="col-form-label">Введите ваш пароль</label>
@@ -42,7 +43,8 @@
         <button type="submit " class="btn btn-outline-success btn-lg" style="margin-top: 40px">Зарегистрироваться</button>
     </form>
 </div>
-<div align="center" style="margin-top: 120px">
+<div align="center" style="margin-top: 100px">
+    <div style="color: red; font-weight: bolder; font-style: italic">${errorRegistrationMessage}</div>
     <a href="/pages/auth.jsp" class="text-black">Вход</a>
     <br/>
 </div>
