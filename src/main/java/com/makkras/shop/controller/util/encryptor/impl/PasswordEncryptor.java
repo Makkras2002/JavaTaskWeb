@@ -1,6 +1,6 @@
-package com.makkras.shop.encryptor.impl;
+package com.makkras.shop.controller.util.encryptor.impl;
 
-import com.makkras.shop.encryptor.CustomPasswordEncryptor;
+import com.makkras.shop.controller.util.encryptor.CustomPasswordEncryptor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

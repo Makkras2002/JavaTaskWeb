@@ -13,7 +13,7 @@
 </head>
 <body>
 <form method="post" action="/controller" name="confregform">
-    <input type="hidden" name="command" id="command" value="confreg">
+    <input type="hidden" name="command" id="command" value="confirm_registration">
 </form>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/autoformsubmitter.js"></script>
 </body>

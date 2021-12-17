@@ -1,8 +1,8 @@
-package com.makkras.shop.servlet.impl;
+package com.makkras.shop.controller.impl;
 
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.UserService;
-import com.makkras.shop.servlet.CustomCommand;
+import com.makkras.shop.controller.CustomCommand;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

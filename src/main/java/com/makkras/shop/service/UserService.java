@@ -1,8 +1,9 @@
 package com.makkras.shop.service;
 
+import com.makkras.shop.controller.util.Literal;
 import com.makkras.shop.dao.UserDao;
 import com.makkras.shop.dao.impl.UserDaoImpl;
-import com.makkras.shop.encryptor.impl.PasswordEncryptor;
+import com.makkras.shop.controller.util.encryptor.impl.PasswordEncryptor;
 import com.makkras.shop.entity.User;
 import com.makkras.shop.entity.UserRole;
 import com.makkras.shop.exception.InteractionException;
@@ -14,10 +15,6 @@ import java.util.Optional;
 
 public class UserService {
     private static UserService instance;
-    private static final String SUCCESSFUL_REG_EMAIL_HEADER = "Web-Shop \"AutoShop\"";
-    private static final String SUCCESSFUL_REG_EMAIL_BODY = """
-            <html><body><p>Congratulations on successful registration on Web-Shop \"AutoShop\". Please, follow the link to confirm registration. </p></br> 
-            <a href=\" http://localhost:8888/pages/confreg.jsp\">Confirm registration</a></body></html>""";
     private UserDao userDao;
     private PasswordEncryptor encryptor;
     private UserService(){
@@ -92,8 +89,8 @@ public class UserService {
 
     }
     public void sendMessageAboutSuccessFullRegistrationOnUserEmail(String login, String email){
-        String finalRegistrationMessage = login+", "+SUCCESSFUL_REG_EMAIL_BODY;
-        MailSender.getInstance().send(email,SUCCESSFUL_REG_EMAIL_HEADER,finalRegistrationMessage);
+        String finalRegistrationMessage = login+", "+ Literal.SUCCESSFUL_REG_EMAIL_BODY;
+        MailSender.getInstance().send(email,Literal.SUCCESSFUL_REG_EMAIL_HEADER,finalRegistrationMessage);
     }
     public void setUserStatusNotOnlineInDb(String login) throws ServiceException {
         try {

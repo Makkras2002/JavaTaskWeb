@@ -1,4 +1,4 @@
-package com.makkras.shop.servlet.util;
+package com.makkras.shop.controller.util;
 
 import com.makkras.shop.exception.ServiceException;
 

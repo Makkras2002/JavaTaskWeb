@@ -1,11 +1,8 @@
-package com.makkras.shop.servlet;
+package com.makkras.shop.controller;
 
-import com.makkras.shop.servlet.impl.ConfRegCommand;
-import com.makkras.shop.servlet.impl.LoginCommand;
-import com.makkras.shop.servlet.impl.LogoutCommand;
-import com.makkras.shop.servlet.impl.RegisterCommand;
+import com.makkras.shop.controller.impl.*;
 
-public enum CommandEnum {
+public enum CommandType {
     LOGIN {
         {
             this.command = new LoginCommand();
@@ -21,9 +18,14 @@ public enum CommandEnum {
             this.command = new RegisterCommand();
         }
     },
-    CONFREG {
+    CONFIRM_REGISTRATION {
         {
             this.command = new ConfRegCommand();
+        }
+    },
+    EMPTY {
+        {
+            this.command = new EmptyCommand();
         }
     };
     CustomCommand command;
@@ -32,7 +34,12 @@ public enum CommandEnum {
     }
     public static CustomCommand defineCommand(String requestCommand){
         CustomCommand command;
-        CommandEnum currentEnum = CommandEnum.valueOf(requestCommand.toUpperCase());
+        CommandType currentEnum;
+        try {
+            currentEnum = CommandType.valueOf(requestCommand.toUpperCase());
+        } catch (IllegalArgumentException e){
+            currentEnum = CommandType.EMPTY;
+        }
         command =currentEnum.getCurrentCommand();
         return command;
     }

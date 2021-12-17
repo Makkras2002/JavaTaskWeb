@@ -45,7 +45,7 @@
 </div>
 <div align="center" style="margin-top: 100px">
     <div style="color: red; font-weight: bolder; font-style: italic">${errorRegistrationMessage}</div>
-    <a href="/pages/auth.jsp" class="text-black">Вход</a>
+    <a href="/pages/authorization.jsp" class="text-black">Вход</a>
     <br/>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

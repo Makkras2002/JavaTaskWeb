@@ -38,7 +38,7 @@
 </div>
 <div align="center" style="margin-top: 180px">
     <div style="color: red; font-weight: bolder; font-style: italic">${errorAuthMessage}</div>
-    <a href="/pages/reg.jsp" class="text-black">Регистрация</a>
+    <a href="/pages/registration.jsp" class="text-black">Регистрация</a>
     <br/>
 </div>
 
