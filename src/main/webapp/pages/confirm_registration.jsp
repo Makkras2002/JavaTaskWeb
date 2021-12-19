@@ -11,7 +11,7 @@
 <head>
     <title>ConfReg</title>
 </head>
-<body>
+<body class="p-2 bg-primary text-black bg-opacity-50">
 <form method="post" action="/controller" name="confregform">
     <input type="hidden" name="command" id="command" value="confirm_registration">
 </form>

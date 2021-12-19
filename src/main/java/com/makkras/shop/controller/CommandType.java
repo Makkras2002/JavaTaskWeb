@@ -1,6 +1,7 @@
 package com.makkras.shop.controller;
 
-import com.makkras.shop.controller.impl.*;
+import com.makkras.shop.controller.command.CustomCommand;
+import com.makkras.shop.controller.command.impl.*;
 
 public enum CommandType {
     LOGIN {

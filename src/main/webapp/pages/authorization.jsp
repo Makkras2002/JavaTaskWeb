@@ -36,9 +36,11 @@
         <button type="submit " class="btn btn-outline-success btn-lg" style="margin-top: 40px">Войти</button>
     </form>
 </div>
-<div align="center" style="margin-top: 180px">
+<div align="center" style="margin-top: 160px">
     <div style="color: red; font-weight: bolder; font-style: italic">${errorAuthMessage}</div>
     <a href="/pages/registration.jsp" class="text-black">Регистрация</a>
+    <br/>
+    <a href="/pages/mainclient.jsp" class="text-black">Каталог</a>
     <br/>
 </div>
 

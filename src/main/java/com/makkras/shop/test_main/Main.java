@@ -52,8 +52,8 @@ public class Main {
 //                logger.info("!!");
 //            }
 //            MailSender.getInstance().send("max2002shpak.com","Sample Mail!!!","Hello!!!");
-            logger.info(LocalizedTextExtractor.getInstance().getText("EN","str1"));
             logger.info(LocalizedTextExtractor.getInstance().getText("RU","str1"));
+            logger.info(LocalizedTextExtractor.getInstance().getText("EN","str1"));
             CustomConnectionPool.getInstance().destroyPool();
         } catch (InteractionException e) {
             logger.error(e.getMessage());

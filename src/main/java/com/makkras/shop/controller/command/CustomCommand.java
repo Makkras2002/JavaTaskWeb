@@ -1,4 +1,4 @@
-package com.makkras.shop.controller;
+package com.makkras.shop.controller.command;
 
 import jakarta.servlet.http.HttpServletRequest;
 

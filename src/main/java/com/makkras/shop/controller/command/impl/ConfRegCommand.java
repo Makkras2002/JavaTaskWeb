@@ -1,11 +1,9 @@
-package com.makkras.shop.controller.impl;
+package com.makkras.shop.controller.command.impl;
 
 import com.makkras.shop.controller.util.Literal;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.UserService;
-import com.makkras.shop.controller.CustomCommand;
-import com.makkras.shop.controller.util.MessageManager;
-import com.makkras.shop.controller.util.PathManager;
+import com.makkras.shop.controller.command.CustomCommand;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,21 +20,17 @@ public class ConfRegCommand implements CustomCommand {
             try {
                 if(UserService.getInstance().checkIfUserIsValidForRegistration(login,email)){
                     UserService.getInstance().registerUser(login,password,email);
-                    page = PathManager.getInstance().getProperty("path.page.mainCl");
+                    page = Literal.MAIN_CLIENT_PAGE;
                 } else {
-                    page = PathManager.getInstance().getProperty("path.page.auth");
-                    request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE, MessageManager.getInstance().getProperty("message.confRegErrorV2"));
+                    page = Literal.AUTHORIZATION_PAGE;
+                    request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE, Literal.CONFIRMATION_REGISTRATION_ERROR_V2);
                 }
             } catch (ServiceException e) {
                 logger.error(e.getMessage());
             }
         } else {
-            try {
-                page = PathManager.getInstance().getProperty("path.page.auth");
-                request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE, MessageManager.getInstance().getProperty("message.confRegError"));
-            } catch (ServiceException e) {
-                logger.error(e.getMessage());
-            }
+            page = Literal.AUTHORIZATION_PAGE;
+            request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE, Literal.CONFIRMATION_REGISTRATION_ERROR);
         }
         return page;
     }

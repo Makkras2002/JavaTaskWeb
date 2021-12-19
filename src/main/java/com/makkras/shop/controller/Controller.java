@@ -1,8 +1,7 @@
 package com.makkras.shop.controller;
 
+import com.makkras.shop.controller.command.CustomCommand;
 import com.makkras.shop.controller.util.Literal;
-import com.makkras.shop.controller.util.PathManager;
-import com.makkras.shop.exception.ServiceException;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -27,19 +26,34 @@ public class Controller extends HttpServlet {
     }
     private void processRequest(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException {
         String page;
-        CustomCommand command = CommandType.defineCommand(req.getParameter(Literal.COMMAND));
-        page = command.execute(req);
-        if(page!= null){
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-            dispatcher.forward(req,resp);
-        } else {
-            try {
-                page = PathManager.getInstance().getProperty("path.page.auth");
+        if(checkIfCommandHasSessionIfItRequiresSession(req)){
+            CustomCommand command = CommandType.defineCommand(req.getParameter(Literal.COMMAND));
+            page = command.execute(req);
+            if(page!= null){
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
+                dispatcher.forward(req,resp);
+            } else {
+                page = Literal.AUTHORIZATION_PAGE;
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
                 req.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,"Unexpected error!!!");
                 dispatcher.forward(req,resp);
-            } catch (ServiceException e) {
-                logger.error(e.getMessage());
+            }
+        } else {
+            page = Literal.AUTHORIZATION_PAGE;
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
+            req.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,"Your session has expired!!!");
+            dispatcher.forward(req,resp);
+        }
+    }
+    private boolean checkIfCommandHasSessionIfItRequiresSession(HttpServletRequest req){
+        if(req.getParameter(Literal.COMMAND).equals(CommandType.LOGIN.toString().toLowerCase()) ||
+                req.getParameter(Literal.COMMAND).equals(CommandType.REGISTER.toString().toLowerCase())){
+            return true;
+        }else {
+            if(req.getSession().getAttribute(Literal.LOGIN_NAME) == null){
+                return false;
+            } else {
+                return true;
             }
         }
     }
