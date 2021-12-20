@@ -12,9 +12,10 @@ public class LogoutCommand implements CustomCommand {
     private static Logger logger = LogManager.getLogger();
     @Override
     public String execute(HttpServletRequest request) {
-        String page = Literal.AUTHORIZATION_PAGE;
+        String page = null;
         try {
             UserService.getInstance().setUserStatusNotOnlineInDb(String.valueOf(request.getSession().getAttribute("login")));
+            page = Literal.AUTHORIZATION_PAGE;
         } catch (ServiceException e) {
             logger.error(e.getMessage());
         }

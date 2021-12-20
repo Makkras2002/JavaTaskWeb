@@ -47,7 +47,8 @@ public class Controller extends HttpServlet {
     }
     private boolean checkIfCommandHasSessionIfItRequiresSession(HttpServletRequest req){
         if(req.getParameter(Literal.COMMAND).equals(CommandType.LOGIN.toString().toLowerCase()) ||
-                req.getParameter(Literal.COMMAND).equals(CommandType.REGISTER.toString().toLowerCase())){
+                req.getParameter(Literal.COMMAND).equals(CommandType.REGISTER.toString().toLowerCase()) ||
+                req.getParameter(Literal.COMMAND).equals(CommandType.PREPARE_MAIN_CLIENT_PAGE.toString().toLowerCase())){
             return true;
         }else {
             if(req.getSession().getAttribute(Literal.LOGIN_NAME) == null){

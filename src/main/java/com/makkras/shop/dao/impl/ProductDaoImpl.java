@@ -23,12 +23,12 @@ public class ProductDaoImpl implements ProductDao {
             products.product_price, products.is_in_stock,
             products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
             ON products.product_category_id = product_categories.category_id""";
-    private static final String SQL_SELECT_PRODUCTS_WITH_NAME = """
+    private static final String SQL_SELECT_PRODUCTS_WITH_ID = """
             SELECT products.product_id, products.product_name,
             products.product_price, products.is_in_stock,
             products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
             ON products.product_category_id = product_categories.category_id WHERE products.product_id = ?""";
-    private static final String SQL_SELECT_PRODUCT_WITH_ID = """
+    private static final String SQL_SELECT_PRODUCTS_WITH_NAME = """
             SELECT products.product_id, products.product_name,
             products.product_price, products.is_in_stock,
             products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
@@ -164,7 +164,7 @@ public class ProductDaoImpl implements ProductDao {
         PreparedStatement statement = null;
         try {
             connection = CustomConnectionPool.getInstance().getConnection();
-            statement = connection.prepareStatement(SQL_SELECT_PRODUCTS_WITH_NAME);
+            statement = connection.prepareStatement(SQL_SELECT_PRODUCTS_WITH_ID);
             statement.setLong(1,id);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){

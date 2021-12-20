@@ -28,6 +28,11 @@ public enum CommandType {
         {
             this.command = new EmptyCommand();
         }
+    },
+    PREPARE_MAIN_CLIENT_PAGE {
+        {
+            this.command = new FillMainClientMenuCommand();
+        }
     };
     CustomCommand command;
     public CustomCommand getCurrentCommand(){

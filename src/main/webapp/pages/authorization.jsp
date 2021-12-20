@@ -40,7 +40,7 @@
     <div style="color: red; font-weight: bolder; font-style: italic">${errorAuthMessage}</div>
     <a href="/pages/registration.jsp" class="text-black">Регистрация</a>
     <br/>
-    <a href="/pages/mainclient.jsp" class="text-black">Каталог</a>
+    <a href="/index.jsp" class="text-black">Каталог</a>
     <br/>
 </div>
 
