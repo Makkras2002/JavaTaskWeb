@@ -1,4 +1,4 @@
-package com.makkras.shop.service;
+package com.makkras.shop.service.impl;
 
 import com.makkras.shop.controller.util.Literal;
 import com.makkras.shop.dao.UserDao;
@@ -8,12 +8,13 @@ import com.makkras.shop.entity.User;
 import com.makkras.shop.entity.UserRole;
 import com.makkras.shop.exception.InteractionException;
 import com.makkras.shop.exception.ServiceException;
+import com.makkras.shop.service.CustomUserService;
 import com.makkras.shop.util.mail.MailSender;
 
 import java.util.List;
 import java.util.Optional;
 
-public class UserService {
+public class UserService implements CustomUserService {
     private static UserService instance;
     private UserDao userDao;
     private PasswordEncryptor encryptor;

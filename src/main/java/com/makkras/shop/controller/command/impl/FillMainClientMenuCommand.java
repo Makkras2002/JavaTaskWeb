@@ -5,7 +5,7 @@ import com.makkras.shop.controller.command.CustomCommand;
 import com.makkras.shop.controller.util.Literal;
 import com.makkras.shop.entity.Product;
 import com.makkras.shop.exception.ServiceException;
-import com.makkras.shop.service.ProductService;
+import com.makkras.shop.service.impl.ProductService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

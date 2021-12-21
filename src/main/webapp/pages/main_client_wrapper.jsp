@@ -10,6 +10,11 @@
 <html>
 <head>
     <title>Main Client Wrapper</title>
+    <script type="text/javascript">
+        function disableBack() { window.history.forward(); }
+        setTimeout("disableBack()", 0);
+        window.onunload = function () { null };
+    </script>
 </head>
 <body class="p-2 bg-primary text-black bg-opacity-50">
 <form method="post" action="/controller" name="get_prod_data_wrapper">

@@ -1,7 +1,7 @@
 package com.makkras.shop.controller;
 
 import com.makkras.shop.exception.ServiceException;
-import com.makkras.shop.service.UserService;
+import com.makkras.shop.service.impl.UserService;
 import jakarta.servlet.annotation.WebListener;
 import jakarta.servlet.http.HttpSessionEvent;
 import jakarta.servlet.http.HttpSessionListener;

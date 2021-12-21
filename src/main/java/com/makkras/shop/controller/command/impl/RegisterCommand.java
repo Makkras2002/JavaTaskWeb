@@ -1,8 +1,9 @@
 package com.makkras.shop.controller.command.impl;
 
 import com.makkras.shop.controller.util.Literal;
+import com.makkras.shop.entity.UserRole;
 import com.makkras.shop.exception.ServiceException;
-import com.makkras.shop.service.UserService;
+import com.makkras.shop.service.impl.UserService;
 import com.makkras.shop.controller.command.CustomCommand;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
@@ -25,6 +26,7 @@ public class RegisterCommand implements CustomCommand {
                     request.getSession().setAttribute(Literal.EMAIL, email);
                     request.getSession().setAttribute(Literal.LOCALE_NAME, Literal.DEFAULT_LOCALE);
                     request.getSession().setAttribute(Literal.ORDER, null);
+                    request.getSession().setAttribute(Literal.ROLE, UserRole.CLIENT);
                     userService.sendMessageAboutSuccessFullRegistrationOnUserEmail(login,email);
                     request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE, Literal.REGISTRATION_CONFIRMATION_AWAIT);
                     page = Literal.AUTHORIZATION_PAGE;

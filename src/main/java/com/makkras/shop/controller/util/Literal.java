@@ -29,4 +29,5 @@ public class Literal {
     public static final String COMMAND_ERROR = "Unknown command delivered to Servlet.";
     public static final String FIRST_LOGOUT_ERROR = "First logout from your current account to enter or register as new user!!!";
     public static final String PRODUCTS_IN_STOCK = "productsInStock";
+    public static final String ROLE ="role";
 }

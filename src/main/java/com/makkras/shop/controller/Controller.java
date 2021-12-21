@@ -2,6 +2,7 @@ package com.makkras.shop.controller;
 
 import com.makkras.shop.controller.command.CustomCommand;
 import com.makkras.shop.controller.util.Literal;
+import com.makkras.shop.entity.UserRole;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -51,10 +52,12 @@ public class Controller extends HttpServlet {
                 req.getParameter(Literal.COMMAND).equals(CommandType.PREPARE_MAIN_CLIENT_PAGE.toString().toLowerCase())){
             return true;
         }else {
-            if(req.getSession().getAttribute(Literal.LOGIN_NAME) == null){
-                return false;
-            } else {
+            if(req.getSession().getAttribute(Literal.LOGIN_NAME) != null &&
+                    (req.getSession().getAttribute(Literal.ROLE).equals(UserRole.ADMIN)||
+                    req.getSession().getAttribute(Literal.ROLE).equals(UserRole.CLIENT))){
                 return true;
+            } else {
+                return false;
             }
         }
     }

@@ -2,8 +2,9 @@ package com.makkras.shop.controller.command.impl;
 
 import com.makkras.shop.controller.util.Literal;
 import com.makkras.shop.entity.User;
+import com.makkras.shop.entity.UserRole;
 import com.makkras.shop.exception.ServiceException;
-import com.makkras.shop.service.UserService;
+import com.makkras.shop.service.impl.UserService;
 import com.makkras.shop.controller.command.CustomCommand;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
@@ -30,6 +31,11 @@ public class LoginCommand implements CustomCommand {
                     request.getSession().setAttribute(Literal.PASSWORD, foundUser.get().getPassword());
                     request.getSession().setAttribute(Literal.EMAIL, foundUser.get().getEmail());
                     request.getSession().setAttribute(Literal.LOCALE_NAME, Literal.DEFAULT_LOCALE);
+                    if(enterAsAdmin){
+                        request.getSession().setAttribute(Literal.ROLE, UserRole.ADMIN);
+                    } else {
+                        request.getSession().setAttribute(Literal.ROLE, UserRole.CLIENT);
+                    }
                     request.getSession().setAttribute(Literal.ORDER, null);
                     page = Literal.MAIN_CLIENT_PAGE;
                 }else {

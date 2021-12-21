@@ -4,6 +4,11 @@
     <%@ page isELIgnored="false" %>
     <title>AutoShopPlus</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script type="text/javascript">
+        function disableBack() { window.history.forward(); }
+        setTimeout("disableBack()", 0);
+        window.onunload = function () { null };
+    </script>
 </head>
 <body class="p-2 bg-primary text-black bg-opacity-50">
 <div class="container">
@@ -67,7 +72,6 @@
     </div>
 </div>
 </div>
-
 
 
 
