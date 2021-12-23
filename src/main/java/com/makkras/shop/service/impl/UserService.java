@@ -9,6 +9,7 @@ import com.makkras.shop.entity.UserRole;
 import com.makkras.shop.exception.InteractionException;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.CustomUserService;
+import com.makkras.shop.util.locale.LocalizedTextExtractor;
 import com.makkras.shop.util.mail.MailSender;
 
 import java.util.List;
@@ -89,8 +90,8 @@ public class UserService implements CustomUserService {
         }
 
     }
-    public void sendMessageAboutSuccessFullRegistrationOnUserEmail(String login, String email){
-        String finalRegistrationMessage = login+", "+ Literal.SUCCESSFUL_REG_EMAIL_BODY;
+    public void sendMessageAboutSuccessFullRegistrationOnUserEmail(String login, String email,String currentLocale){
+        String finalRegistrationMessage = login+", "+ LocalizedTextExtractor.getInstance().getText(currentLocale, "SUCCESSFUL_REG_EMAIL_BODY");
         MailSender.getInstance().send(email,Literal.SUCCESSFUL_REG_EMAIL_HEADER,finalRegistrationMessage);
     }
     public void setUserStatusNotOnlineInDb(String login) throws ServiceException {

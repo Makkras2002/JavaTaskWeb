@@ -33,6 +33,11 @@ public enum CommandType {
         {
             this.command = new FillMainClientMenuCommand();
         }
+    },
+    CHANGE_LOCALE {
+        {
+            this.command = new ChangeLocaleCommand();
+        }
     };
     CustomCommand command;
     public CustomCommand getCurrentCommand(){

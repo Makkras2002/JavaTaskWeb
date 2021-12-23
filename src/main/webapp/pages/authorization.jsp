@@ -7,6 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<fmt:setLocale value="${locale}" scope="session" />
+<fmt:setBundle basename="localized_text"/>
 <html>
 <head>
     <title>Auth/Reg</title>
@@ -20,32 +23,32 @@
 <body class="p-2 bg-primary text-black bg-opacity-50">
 <div align="center" class="align-top">
     <div class="col-md-6">
-        <div class="display-3">Вход</div>
+        <div class="display-3"><fmt:message key="user_form.login_label"/></div>
     </div>
 </div>
 <div align="center" class="align-middle">
     <form action="/controller" method="post">
         <input type="text" id="command" name="command" hidden="hidden" required="required" value="login"/>
         <div class="mb-3 w-25" style="margin-top: 40px">
-            <label for="loginOrEmail" class="form-label" >Введите ваш логин</label>
+            <label for="loginOrEmail" class="form-label" ><fmt:message key="user_form.enter_login"/></label>
             <input type="text" class="form-control" id="loginOrEmail" name="login" required="required"/>
         </div>
         <div class="mb-3 w-25" style="margin-top: 40px">
-            <label for="password" class="form-label">Введите ваш пароль</label>
+            <label for="password" class="form-label"><fmt:message key="user_form.enter_password"/></label>
             <input type="password" class="form-control" id="password" name="password" required="required"/>
         </div>
         <div class="mb-3 w-25 form-check form-switch" style="margin-top: 40px" align="left">
             <input class="form-check-input" type="checkbox" role="switch" id="enterAsAdmin" name="enterAsAdmin">
-            <label class="form-check-label" for="enterAsAdmin">Войти как администратор</label>
+            <label class="form-check-label" for="enterAsAdmin"><fmt:message key="user_form.login_as_admin"/></label>
         </div>
-        <button type="submit " class="btn btn-outline-success btn-lg" style="margin-top: 40px">Войти</button>
+        <button type="submit " class="btn btn-outline-success btn-lg" style="margin-top: 40px"><fmt:message key="user_form.login"/></button>
     </form>
 </div>
 <div align="center" style="margin-top: 160px">
     <div style="color: red; font-weight: bolder; font-style: italic">${errorAuthMessage}</div>
-    <a href="/pages/registration.jsp" class="text-black">Регистрация</a>
+    <a href="/pages/registration.jsp" class="text-black"><fmt:message key="user_form.register"/></a>
     <br/>
-    <a href="/index.jsp" class="text-black">Каталог</a>
+    <a href="/index.jsp" class="text-black"><fmt:message key="user_form.catalog"/></a>
     <br/>
 </div>
 

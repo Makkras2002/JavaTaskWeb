@@ -7,6 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<fmt:setLocale value="${locale}" scope="session" />
+<fmt:setBundle basename="localized_text"/>
 <html>
 <head>
     <title>Auth/Reg</title>
@@ -20,37 +23,37 @@
 <body class="p-2 bg-primary text-black bg-opacity-50">
 <div align="center" class="align-top">
     <div class="col-md-6">
-        <div class="display-3">Регистрация</div>
+        <div class="display-3"><fmt:message key="registration.registration_label"/></div>
     </div>
 </div>
 <div align="center" class="align-middle">
     <form action="/controller" method="post">
         <input type="text" id="command" name="command" hidden="hidden" required="required" value="register"/>
         <div class="mb-3 w-25" style="margin-top: 40px">
-            <label for="login" class="form-label" >Введите ваш логин</label>
+            <label for="login" class="form-label" ><fmt:message key="user_form.enter_login"/></label>
             <input type="text" class="form-control" id="login" name="login" required="required"/>
         </div>
         <div class="mb-3 w-25" style="margin-top: 40px">
-            <label for="email" class="form-label" >Введите вашу почту</label>
+            <label for="email" class="form-label" ><fmt:message key="user_form.enter_gmail"/></label>
             <input type="email" class="form-control" id="email" name="email" required="required"/>
         </div>
         <div class="mb-3 w-25" style="margin-top: 40px">
-            <label for="password" class="col-form-label">Введите ваш пароль</label>
+            <label for="password" class="col-form-label"><fmt:message key="user_form.enter_password"/></label>
         </div>
         <div class="mb-3 w-25">
             <input type="password" id="password" name="password" class="form-control" maxlength="20" minlength="8" aria-describedby="passwordHelpInline" required="required">
         </div>
         <div class="col-auto">
             <span id="passwordHelpInline" class="form-text">
-                Пароль должен быть 8-20 символов вдлину.
+                <fmt:message key="user_form.password_requirements"/>
             </span>
         </div>
-        <button type="submit " class="btn btn-outline-success btn-lg" style="margin-top: 40px">Зарегистрироваться</button>
+        <button type="submit " class="btn btn-outline-success btn-lg" style="margin-top: 40px"><fmt:message key="user_form.register"/></button>
     </form>
 </div>
 <div align="center" style="margin-top: 100px">
     <div style="color: red; font-weight: bolder; font-style: italic">${errorRegistrationMessage}</div>
-    <a href="/pages/authorization.jsp" class="text-black">Вход</a>
+    <a href="/pages/authorization.jsp" class="text-black"><fmt:message key="user_form.login"/></a>
     <br/>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

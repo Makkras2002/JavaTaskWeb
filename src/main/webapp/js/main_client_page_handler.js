@@ -13,19 +13,22 @@ window.onload = function buildTableForm() {
                     " ID" +
                     "</td>" +
                     "<td>" +
-                    " Название " +
+                    document.getElementById("prod_name").innerText +
                     "</td>" +
                     "<td>" +
-                    " Категория " +
+                    document.getElementById("prod_category").innerText +
                     "</td>" +
                     "<td>" +
-                    " Цена " +
+                    document.getElementById("prod_price").innerText +
                     "</td>" +
                     "<td>" +
-                    " Изображение " +
+                    document.getElementById("prod_img").innerText +
                     "</td>" +
                     "<td>" +
-                    " Комментарий " +
+                    document.getElementById("prod_comment").innerText +
+                    "</td>" +
+                    "<td>" +
+                    document.getElementById("prod_amount").innerText +
                     "</td>" +
                     "</tr>";
             }
@@ -53,7 +56,7 @@ window.onload = function buildTableForm() {
                 "<td><input form='"+i+"' type='number' name='amount'  id='amount' min='1' max='100000' step='1' required='required'"+
                 "/></td>" +
                 "<td>" +
-                "<button form='"+i+"' type='submit' class='btn btn-primary'>Добавить в корзину"+
+                "<button form='"+i+"' type='submit' class='btn btn-primary'>"+document.getElementById("prod_add_to_basket").innerText+
                 "</button></td>"
                 +"</tr>";
             tbody.innerHTML += tr;

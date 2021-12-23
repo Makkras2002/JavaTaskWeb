@@ -3,6 +3,7 @@ package com.makkras.shop.controller;
 import com.makkras.shop.controller.command.CustomCommand;
 import com.makkras.shop.controller.util.Literal;
 import com.makkras.shop.entity.UserRole;
+import com.makkras.shop.util.locale.LocalizedTextExtractor;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -27,6 +28,11 @@ public class Controller extends HttpServlet {
     }
     private void processRequest(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException {
         String page;
+        LocalizedTextExtractor localizedTextExtractor = LocalizedTextExtractor.getInstance();
+        if(req.getSession().getAttribute(Literal.LOCALE_NAME) == null){
+            req.getSession().setAttribute(Literal.LOCALE_NAME, Literal.DEFAULT_LOCALE);
+        }
+        String currentLocale = req.getSession().getAttribute(Literal.LOCALE_NAME).toString();
         if(checkIfCommandHasSessionIfItRequiresSession(req)){
             CustomCommand command = CommandType.defineCommand(req.getParameter(Literal.COMMAND));
             page = command.execute(req);
@@ -36,29 +42,31 @@ public class Controller extends HttpServlet {
             } else {
                 page = Literal.AUTHORIZATION_PAGE;
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-                req.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,"Unexpected error!!!");
+                req.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
+                        localizedTextExtractor.getText(currentLocale,"UNEXPECTED_ERROR"));
                 dispatcher.forward(req,resp);
             }
         } else {
             page = Literal.AUTHORIZATION_PAGE;
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-            req.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,"Your session has expired!!!");
+            req.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
+                    localizedTextExtractor.getText(currentLocale,"EXPIRED_SESSION_ERROR"));
             dispatcher.forward(req,resp);
         }
     }
     private boolean checkIfCommandHasSessionIfItRequiresSession(HttpServletRequest req){
         if(req.getParameter(Literal.COMMAND).equals(CommandType.LOGIN.toString().toLowerCase()) ||
                 req.getParameter(Literal.COMMAND).equals(CommandType.REGISTER.toString().toLowerCase()) ||
-                req.getParameter(Literal.COMMAND).equals(CommandType.PREPARE_MAIN_CLIENT_PAGE.toString().toLowerCase())){
+                req.getParameter(Literal.COMMAND).equals(CommandType.PREPARE_MAIN_CLIENT_PAGE.toString().toLowerCase()) ||
+                req.getParameter(Literal.COMMAND).equals(CommandType.CHANGE_LOCALE.toString().toLowerCase())){
             return true;
         }else {
             if(req.getSession().getAttribute(Literal.LOGIN_NAME) != null &&
                     (req.getSession().getAttribute(Literal.ROLE).equals(UserRole.ADMIN)||
                     req.getSession().getAttribute(Literal.ROLE).equals(UserRole.CLIENT))){
                 return true;
-            } else {
-                return false;
             }
         }
+        return false;
     }
 }

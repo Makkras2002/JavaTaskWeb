@@ -1,6 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
 <%@ page isErrorPage="true" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<fmt:setLocale value="${locale}" scope="session" />
+<fmt:setBundle basename="localized_text"/>
 <html>
 <head>
     <title>Error500</title>
@@ -14,16 +17,16 @@
 <body class="p-2 bg-primary text-black bg-opacity-50">
 <div align="center" style="margin-top: 180px">
     <div style="color: red; font-weight: bolder; font-style: italic">
-        Request From -> ${pageContext.errorData.requestURI}
+        <fmt:message key="error_page.request_from"/> -> ${pageContext.errorData.requestURI}
         <br/>
-        Exception -> ${pageContext.exception}
+        <fmt:message key="error_page.exception"/> -> ${pageContext.exception}
         <br/>
-        Exception Status -> ${pageContext.errorData.statusCode}
+        <fmt:message key="error_page.exception_status"/> -> ${pageContext.errorData.statusCode}
         <br/>
-        Servlet Name -> ${pageContext.errorData.servletName}
+        <fmt:message key="error_page.servlet_name"/> -> ${pageContext.errorData.servletName}
         <br/>
     </div>
-    <a href="/pages/authorization.jsp" class="text-black">Авторизация</a>
+    <a href="/pages/authorization.jsp" class="text-black"><fmt:message key="user_form.login_label"/></a>
     <br/>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
