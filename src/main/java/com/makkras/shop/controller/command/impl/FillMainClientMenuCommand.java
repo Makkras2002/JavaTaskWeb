@@ -23,6 +23,9 @@ public class FillMainClientMenuCommand implements CustomCommand {
             List<Product> productsInStock  = service.getAllProductsInStockFromDb();
             String productsInGson = gson.toJson(productsInStock);
             request.setAttribute(Literal.PRODUCTS_IN_STOCK,productsInGson);
+            if(request.getSession().getAttribute(Literal.LOCALE_NAME) == null){
+                request.getSession().setAttribute(Literal.LOCALE_NAME, Literal.DEFAULT_LOCALE);
+            }
             page = Literal.RAW_MAIN_CLIENT_PAGE;
         } catch (ServiceException e) {
             logger.error(e.getMessage());

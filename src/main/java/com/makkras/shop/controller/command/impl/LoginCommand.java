@@ -30,7 +30,6 @@ public class LoginCommand implements CustomCommand {
                     request.getSession().setAttribute(Literal.LOGIN_NAME, foundUser.get().getLogin());
                     request.getSession().setAttribute(Literal.PASSWORD, foundUser.get().getPassword());
                     request.getSession().setAttribute(Literal.EMAIL, foundUser.get().getEmail());
-                    request.getSession().setAttribute(Literal.LOCALE_NAME, Literal.DEFAULT_LOCALE);
                     if(enterAsAdmin){
                         request.getSession().setAttribute(Literal.ROLE, UserRole.ADMIN);
                     } else {

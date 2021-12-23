@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 
 public enum LocaleManager {
     EN(ResourceBundle.getBundle("text1",new Locale("en","GB"))),
-    RU(ResourceBundle.getBundle("text1",new Locale("ru","RU")));
+    RU(ResourceBundle.getBundle("text1"));
     private ResourceBundle bundle;
     LocaleManager(ResourceBundle bundle){
         this.bundle = bundle;

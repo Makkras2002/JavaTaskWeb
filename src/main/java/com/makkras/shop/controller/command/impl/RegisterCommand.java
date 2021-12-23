@@ -24,7 +24,6 @@ public class RegisterCommand implements CustomCommand {
                     request.getSession().setAttribute(Literal.LOGIN_NAME, login);
                     request.getSession().setAttribute(Literal.PASSWORD, password);
                     request.getSession().setAttribute(Literal.EMAIL, email);
-                    request.getSession().setAttribute(Literal.LOCALE_NAME, Literal.DEFAULT_LOCALE);
                     request.getSession().setAttribute(Literal.ORDER, null);
                     request.getSession().setAttribute(Literal.ROLE, UserRole.CLIENT);
                     userService.sendMessageAboutSuccessFullRegistrationOnUserEmail(login,email);
