@@ -14,7 +14,7 @@
         window.onunload = function () { null };
     </script>
 </head>
-<body class="p-2 bg-primary text-black bg-opacity-50">
+<body class="p-2 bg-primary text-black bg-opacity-50" onkeydown="return (event.keyCode != 116)">
 <div align="center" style="margin-top: 180px">
     <div style="color: red; font-weight: bolder; font-style: italic">
         <fmt:message key="error_page.request_from"/> -> ${pageContext.errorData.requestURI}

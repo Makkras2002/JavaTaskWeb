@@ -13,7 +13,7 @@
         window.onunload = function () { null };
     </script>
 </head>
-<body class="p-2 bg-primary text-black bg-opacity-50">
+<body class="p-2 bg-primary text-black bg-opacity-50" onkeydown="return (event.keyCode != 116)">
 <div class="container">
     <div class="row">
         <div class="row justify-content-between">

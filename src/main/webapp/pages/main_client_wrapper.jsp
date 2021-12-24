@@ -16,7 +16,7 @@
         window.onunload = function () { null };
     </script>
 </head>
-<body class="p-2 bg-primary text-black bg-opacity-50">
+<body class="p-2 bg-primary text-black bg-opacity-50" onkeydown="return (event.keyCode != 116)">
 <form method="post" action="/controller" name="get_prod_data_wrapper">
     <input type="hidden" name="command" id="command" value="prepare_main_client_page">
 </form>

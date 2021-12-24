@@ -20,7 +20,7 @@
         window.onunload = function () { null };
     </script>
 </head>
-<body class="p-2 bg-primary text-black bg-opacity-50">
+<body class="p-2 bg-primary text-black bg-opacity-50" onkeydown="return (event.keyCode != 116)">
 <div align="center" class="align-top">
     <div class="col-md-6">
         <div class="display-3"><fmt:message key="registration.registration_label"/></div>

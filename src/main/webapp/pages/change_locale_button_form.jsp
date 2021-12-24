@@ -13,7 +13,7 @@
 <head>
     <title>Change Locale</title>
 </head>
-<body>
+<body onkeydown="return (event.keyCode != 116)">
 <div class="row">
     <div class="col-4">
         ${locale}
