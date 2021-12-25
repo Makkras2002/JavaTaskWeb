@@ -56,7 +56,7 @@ public class UserDaoImpl implements UserDao {
     private static final String SQL_UPDATE_USER_ONLINE_STATUS= """
     UPDATE users SET is_online  = ? WHERE login = ?""";
     private static final String SQL_UPDATE_USER_PASSWORD= """
-    UPDATE users SET password  = ? WHERE login = ? AND password = ?""";
+    UPDATE users SET password  = ? WHERE login = ?""";
 
 
     public UserDaoImpl(){
@@ -340,7 +340,7 @@ public class UserDaoImpl implements UserDao {
         return true;
     }
     @Override
-    public boolean updatePassword(String login, String oldPassword, String newPassword) throws InteractionException {
+    public boolean updatePassword(String login, String newPassword) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
@@ -349,7 +349,6 @@ public class UserDaoImpl implements UserDao {
             statement = connection.prepareStatement(SQL_UPDATE_USER_PASSWORD);
             statement.setString(1, passwordEncryptor.encryptPassword(newPassword));
             statement.setString(2,login);
-            statement.setString(3, passwordEncryptor.encryptPassword(oldPassword));
             int updRes = statement.executeUpdate();
             if(updRes ==0){
                 return false;

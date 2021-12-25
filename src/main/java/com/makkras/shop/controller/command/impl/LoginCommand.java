@@ -1,6 +1,7 @@
 package com.makkras.shop.controller.command.impl;
 
 import com.makkras.shop.controller.util.Literal;
+import com.makkras.shop.controller.validator.impl.CustomUserDataValidator;
 import com.makkras.shop.entity.User;
 import com.makkras.shop.entity.UserRole;
 import com.makkras.shop.exception.ServiceException;
@@ -24,33 +25,38 @@ public class LoginCommand implements CustomCommand {
         String password = request.getParameter(Literal.PASSWORD);
         Boolean enterAsAdmin = true;
         if(request.getParameter(Literal.ENTER_AS_ADMIN) ==null){
-            enterAsAdmin =false;
+            enterAsAdmin = false;
         }
         try {
-            if(request.getSession().getAttribute(Literal.LOGIN_NAME) == null){
-                Optional<User> foundUser = UserService.getInstance().findUserWithLoginAndPassword(login,password,enterAsAdmin);
-                if(foundUser.isPresent()){
-                    request.getSession().setAttribute(Literal.LOGIN_NAME, foundUser.get().getLogin());
-                    request.getSession().setAttribute(Literal.PASSWORD, foundUser.get().getPassword());
-                    request.getSession().setAttribute(Literal.EMAIL, foundUser.get().getEmail());
-                    if(enterAsAdmin){
-                        request.getSession().setAttribute(Literal.ROLE, UserRole.ADMIN);
-                    } else {
-                        request.getSession().setAttribute(Literal.ROLE, UserRole.CLIENT);
+            if(CustomUserDataValidator.getInstance().validateUserLoginData(request)){
+                if(request.getSession().getAttribute(Literal.LOGIN_NAME) == null){
+                    Optional<User> foundUser = UserService.getInstance().findUserWithLoginAndPassword(login,password,enterAsAdmin);
+                    if(foundUser.isPresent()){
+                        request.getSession().setAttribute(Literal.LOGIN_NAME, foundUser.get().getLogin());
+                        request.getSession().setAttribute(Literal.PASSWORD, foundUser.get().getPassword());
+                        request.getSession().setAttribute(Literal.EMAIL, foundUser.get().getEmail());
+                        if(enterAsAdmin){
+                            request.getSession().setAttribute(Literal.ROLE, UserRole.ADMIN);
+                        } else {
+                            request.getSession().setAttribute(Literal.ROLE, UserRole.CLIENT);
+                        }
+                        request.getSession().setAttribute(Literal.ORDER, null);
+                        page = Literal.MAIN_CLIENT_PAGE;
+                    }else {
+                        request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
+                                localizedTextExtractor.getText(currentLocale,"LOGIN_ERROR"));
+                        page = Literal.AUTHORIZATION_PAGE;
                     }
-                    request.getSession().setAttribute(Literal.ORDER, null);
-                    page = Literal.MAIN_CLIENT_PAGE;
-                }else {
+                } else {
                     request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
-                            localizedTextExtractor.getText(currentLocale,"LOGIN_ERROR"));
+                            localizedTextExtractor.getText(currentLocale,"FIRST_LOGOUT_ERROR"));
                     page = Literal.AUTHORIZATION_PAGE;
                 }
             } else {
                 request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
-                        localizedTextExtractor.getText(currentLocale,"FIRST_LOGOUT_ERROR"));
+                        localizedTextExtractor.getText(currentLocale,"INVALID_FORM_DATA_ERROR"));
                 page = Literal.AUTHORIZATION_PAGE;
             }
-
         } catch (ServiceException e) {
             logger.error(e.getMessage());
         }

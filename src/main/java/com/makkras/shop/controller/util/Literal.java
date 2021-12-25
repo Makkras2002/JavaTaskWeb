@@ -21,4 +21,7 @@ public class Literal {
     public static final String PRODUCTS_IN_STOCK = "productsInStock";
     public static final String ROLE ="role";
     public static final String PAGE_PATH ="path";
+    public static final String LOGIN_TO_ADD_IN_FORM = "form_login";
+    public static final String PASSWORD_TO_ADD_IN_FORM = "form_password";
+    public static final String EMAIL_TO_ADD_IN_FORM = "form_email";
 }

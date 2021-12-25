@@ -11,4 +11,6 @@ public interface CustomUserService {
     boolean registerUser(String login,String password, String email) throws ServiceException;
     void sendMessageAboutSuccessFullRegistrationOnUserEmail(String login, String email, String currentLocale);
     void setUserStatusNotOnlineInDb(String login) throws ServiceException;
+    void setUserNewLogin(String login,String newLogin) throws ServiceException;
+    void setUserNewPassword(String login,String newPassword) throws ServiceException;
 }

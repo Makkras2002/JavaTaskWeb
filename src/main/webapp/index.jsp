@@ -1,5 +1,6 @@
 <html>
 <head>
+    <%@ page isELIgnored="false"%>
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <title>AutoShopPlus</title>
     <script type="text/javascript">

@@ -31,17 +31,17 @@
         <input type="text" id="command" name="command" hidden="hidden" required="required" value="register"/>
         <div class="mb-3 w-25" style="margin-top: 40px">
             <label for="login" class="form-label" ><fmt:message key="user_form.enter_login"/></label>
-            <input type="text" class="form-control" id="login" name="login" required="required"/>
+            <input type="text" class="form-control" id="login" name="login" value="${form_login}" required="required"/>
         </div>
         <div class="mb-3 w-25" style="margin-top: 40px">
             <label for="email" class="form-label" ><fmt:message key="user_form.enter_gmail"/></label>
-            <input type="email" class="form-control" id="email" name="email" required="required"/>
+            <input type="email" class="form-control" id="email" name="email" value="${form_email}" required="required"/>
         </div>
         <div class="mb-3 w-25" style="margin-top: 40px">
             <label for="password" class="col-form-label"><fmt:message key="user_form.enter_password"/></label>
         </div>
         <div class="mb-3 w-25">
-            <input type="password" id="password" name="password" class="form-control" maxlength="20" minlength="8" aria-describedby="passwordHelpInline" required="required">
+            <input type="password" id="password" name="password" class="form-control" value="${form_password}" maxlength="20" minlength="8" aria-describedby="passwordHelpInline" required="required">
         </div>
         <div class="col-auto">
             <span id="passwordHelpInline" class="form-text">

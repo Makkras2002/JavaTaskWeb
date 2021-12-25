@@ -33,21 +33,85 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="staticBackdropLabel">Профиль ${pageContext.session.getAttribute("login")}</h5>
+                                        <h5 class="modal-title" id="staticBackdropLabel"><fmt:message key="main_client.profile"/> ${pageContext.session.getAttribute("login")}</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <div>
-                                            <a href="/pages/authorization.jsp" class="btn btn-primary btn-sm"><fmt:message key="main_client.login_profile"/></a>
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div>
+                                                    <a href="/pages/authorization.jsp" style="width: 160px" class="btn btn-primary btn-sm"><fmt:message key="main_client.login_profile"/></a>
+                                                </div>
+                                                <br/>
+                                                <div style="margin-top: 20px">
+                                                    <a href="/pages/registration.jsp" style="width: 160px" class="btn btn-primary btn-sm" ><fmt:message key="main_client.reg_profile"/></a>
+                                                </div>
+                                                <br/>
+                                                <form method="post" action="/controller">
+                                                    <input type="hidden" name="command" id="command" value="logout" required="required"/>
+                                                    <button type="submit" style="width: 160px" class="btn btn-primary btn-sm" style="margin-top: 20px"><fmt:message key="main_client.logout_profile"/></button>
+                                                </form>
+                                            </div>
+                                            <div class="col-4">
+                                                <div style="margin-left: 140px">
+                                                    <button class="btn btn-primary btn-sm" style="width: 160px" data-bs-target="#staticBackdrop2" data-bs-toggle="modal"><fmt:message key="main_client.change_login"/></button>
+                                                </div>
+                                                <br/>
+                                                <div style="margin-top: 20px; margin-left: 140px">
+                                                    <button class="btn btn-primary btn-sm" style="width: 160px" data-bs-target="#staticBackdrop3" data-bs-toggle="modal"><fmt:message key="main_client.change_password"/></button>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <br/>
-                                        <div style="margin-top: 20px">
-                                            <a href="/pages/registration.jsp" class="btn btn-primary btn-sm" ><fmt:message key="main_client.reg_profile"/></a>
-                                        </div>
-                                        <br/>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="main_client.close_window"/></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel2"><fmt:message key="main_client.change_login"/></h5>
+                                    </div>
+                                    <div class="modal-body">
                                         <form method="post" action="/controller">
-                                            <input type="hidden" name="command" id="command" value="logout"/>
-                                            <button type="submit" class="btn btn-primary btn-sm" style="margin-top: 20px"><fmt:message key="main_client.logout_profile"/></button>
+                                            <input type="hidden" name="command" id="command2" value="change_login" required="required"/>
+                                            <div class="mb-3 w-25" style="margin-top: 40px">
+                                                <label for="loginOrEmail" class="form-label" ><fmt:message key="user_form.enter_login"/></label>
+                                                <input type="text" class="form-control" id="loginOrEmail" name="login" required="required"/>
+                                            </div>
+                                            <button type="submit " class="btn btn-outline-success btn-lg" style="margin-top: 40px"><fmt:message key="main_client.change_login"/></button>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="main_client.close_window"/></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel3"><fmt:message key="main_client.change_password"/></h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="post" action="/controller">
+                                            <input type="hidden" name="command" id="command3" value="change_password" required="required"/>
+                                            <div class="mb-3 w-25" style="margin-top: 40px">
+                                                <label for="password" class="col-form-label"><fmt:message key="user_form.enter_password"/></label>
+                                            </div>
+                                            <div class="mb-3 w-25">
+                                                <input type="password" id="password" name="password" class="form-control" maxlength="20" minlength="8" aria-describedby="passwordHelpInline" required="required">
+                                            </div>
+                                            <div class="col-auto">
+                                                   <span id="passwordHelpInline" class="form-text">
+                                                        <fmt:message key="user_form.password_requirements"/>
+                                                   </span>
+                                            </div>
+                                            <button type="submit " class="btn btn-outline-success btn-lg" style="margin-top: 40px"><fmt:message key="main_client.change_password"/></button>
                                         </form>
                                     </div>
                                     <div class="modal-footer">

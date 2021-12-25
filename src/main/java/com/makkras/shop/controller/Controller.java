@@ -33,7 +33,7 @@ public class Controller extends HttpServlet {
             req.getSession().setAttribute(Literal.LOCALE_NAME, Literal.DEFAULT_LOCALE);
         }
         String currentLocale = req.getSession().getAttribute(Literal.LOCALE_NAME).toString();
-        if(checkIfCommandHasSessionIfItRequiresSession(req)){
+        if(true){
             CustomCommand command = CommandType.defineCommand(req.getParameter(Literal.COMMAND));
             page = command.execute(req);
             if(page!= null){
@@ -54,19 +54,19 @@ public class Controller extends HttpServlet {
             dispatcher.forward(req,resp);
         }
     }
-    private boolean checkIfCommandHasSessionIfItRequiresSession(HttpServletRequest req){
-        if(req.getParameter(Literal.COMMAND).equals(CommandType.LOGIN.toString().toLowerCase()) ||
-                req.getParameter(Literal.COMMAND).equals(CommandType.REGISTER.toString().toLowerCase()) ||
-                req.getParameter(Literal.COMMAND).equals(CommandType.PREPARE_MAIN_CLIENT_PAGE.toString().toLowerCase()) ||
-                req.getParameter(Literal.COMMAND).equals(CommandType.CHANGE_LOCALE.toString().toLowerCase())){
-            return true;
-        }else {
-            if(req.getSession().getAttribute(Literal.LOGIN_NAME) != null &&
-                    (req.getSession().getAttribute(Literal.ROLE).equals(UserRole.ADMIN)||
-                    req.getSession().getAttribute(Literal.ROLE).equals(UserRole.CLIENT))){
-                return true;
-            }
-        }
-        return false;
-    }
+//    private boolean checkIfCommandHasSessionIfItRequiresSession(HttpServletRequest req){
+//        if(req.getParameter(Literal.COMMAND).equals(CommandType.LOGIN.toString().toLowerCase()) ||
+//                req.getParameter(Literal.COMMAND).equals(CommandType.REGISTER.toString().toLowerCase()) ||
+//                req.getParameter(Literal.COMMAND).equals(CommandType.PREPARE_MAIN_CLIENT_PAGE.toString().toLowerCase()) ||
+//                req.getParameter(Literal.COMMAND).equals(CommandType.CHANGE_LOCALE.toString().toLowerCase())){
+//            return true;
+//        }else {
+//            if(req.getSession().getAttribute(Literal.LOGIN_NAME) != null &&
+//                    (req.getSession().getAttribute(Literal.ROLE).equals(UserRole.ADMIN)||
+//                    req.getSession().getAttribute(Literal.ROLE).equals(UserRole.CLIENT))){
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 }

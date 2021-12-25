@@ -16,5 +16,5 @@ public interface UserDao extends BaseDao<User>{
     boolean updateLogin(String currentLogin, String newLogin) throws InteractionException;
     boolean updateActivationStatus(String email,boolean newActivationStatus) throws InteractionException;
     boolean updateOnlineStatus(String login,boolean newIsOnlineStatus) throws InteractionException;
-    boolean updatePassword(String login,String oldPassword,String newPassword) throws InteractionException;
+    boolean updatePassword(String login, String newPassword) throws InteractionException;
 }

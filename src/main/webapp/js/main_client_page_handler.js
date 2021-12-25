@@ -10,7 +10,7 @@ window.onload = function buildTableForm() {
             if (i == 0) {
                 tr +=
                     "<tr><td>" +
-                    " ID" +
+                    "N" +
                     "</td>" +
                     "<td>" +
                     document.getElementById("prod_name").innerText +
@@ -33,11 +33,11 @@ window.onload = function buildTableForm() {
                     "</tr>";
             }
             tr +=
-                "<form id='"+i+"' method='post' action='\controller'><input form='"+i+"' type='hidden' name='command' id='command' value='add_product_to_bucket'/>" +
-                "</form>" +
-                "<tr><td><input form='"+i+"' type='text' name='product_id' id='product_id' required='required' readonly='readonly' value='"+
+                "<form id='"+i+"' method='post' action='\controller'><input form='"+i+"' type='hidden' name='command' id='command' value='add_product_to_bucket'/><input form='"+i+"' type='hidden' name='product_id' id='product_id' required='required' readonly='readonly' value='"+
                 products[i].productId +
-                "'/></td>" +
+                "'/>" +
+                "</form>" +
+                "<tr><td>"+i+"</td>" +
                 "<td>" +
                 products[i].productName+
                 "</td>" +

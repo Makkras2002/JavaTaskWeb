@@ -59,6 +59,19 @@ public class UserService implements CustomUserService {
             throw new ServiceException(e.getMessage());
         }
     }
+    public Optional<User> findUserWithLogin(String login) throws ServiceException {
+        Optional<User> result = Optional.empty();
+        try {
+            List<User> foundUsers = userDao.findUserWithSuchLogin(login);
+            if(foundUsers.size() == 0){
+            }else {
+                result = Optional.of(foundUsers.get(0));
+            }
+            return result;
+        } catch (InteractionException e) {
+            throw new ServiceException(e.getMessage());
+        }
+    }
     public boolean checkIfUserIsValidForRegistration(String login, String email) throws ServiceException {
         try {
             List<User> foundUsers = userDao.findUserFromAllUsersWithSuchLogin(login);
@@ -97,6 +110,20 @@ public class UserService implements CustomUserService {
     public void setUserStatusNotOnlineInDb(String login) throws ServiceException {
         try {
             userDao.updateOnlineStatus(login,false);
+        } catch (InteractionException e) {
+            throw new ServiceException(e.getMessage());
+        }
+    }
+    public void setUserNewLogin(String login,String newLogin) throws ServiceException {
+        try {
+            userDao.updateLogin(login,newLogin);
+        } catch (InteractionException e) {
+            throw new ServiceException(e.getMessage());
+        }
+    }
+    public void setUserNewPassword(String login,String newPassword) throws ServiceException {
+        try {
+            userDao.updatePassword(login, newPassword);
         } catch (InteractionException e) {
             throw new ServiceException(e.getMessage());
         }

@@ -38,6 +38,16 @@ public enum CommandType {
         {
             this.command = new ChangeLocaleCommand();
         }
+    },
+    CHANGE_LOGIN {
+        {
+            this.command = new ChangeLoginCommand();
+        }
+    },
+    CHANGE_PASSWORD {
+        {
+            this.command = new ChangePasswordCommand();
+        }
     };
     CustomCommand command;
     public CustomCommand getCurrentCommand(){
