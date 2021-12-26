@@ -19,9 +19,15 @@ public class Literal {
     public static final String RAW_MAIN_CLIENT_PAGE = "/pages/mainclient.jsp";
     public static final String CONFIRM_REGISTRATION_PAGE = "/pages/confirm_registration.jsp";
     public static final String PRODUCTS_IN_STOCK = "productsInStock";
+    public static final String PRODUCT_CATEGORIES_FOR_SEARCH = "productCategories";
     public static final String ROLE ="role";
     public static final String PAGE_PATH ="path";
     public static final String LOGIN_TO_ADD_IN_FORM = "form_login";
     public static final String PASSWORD_TO_ADD_IN_FORM = "form_password";
     public static final String EMAIL_TO_ADD_IN_FORM = "form_email";
+    public static final String PRODUCT_NAME = "name";
+    public static final String PRODUCT_CATEGORY = "category";
+    public static final String PRODUCT_MIN_PRICE = "min_price";
+    public static final String PRODUCT_MAX_PRICE = "max_price";
+    public static final String PRODUCT_PRICE = "price";
 }

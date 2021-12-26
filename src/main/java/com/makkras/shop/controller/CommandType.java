@@ -48,6 +48,26 @@ public enum CommandType {
         {
             this.command = new ChangePasswordCommand();
         }
+    },
+    SORT_PRODUCTS_BY_NAME {
+        {
+            this.command = new SortProductsByNameCommand();
+        }
+    },
+    SORT_PRODUCTS_BY_CATEGORY {
+        {
+            this.command = new SortProductsByCategoryCommand();
+        }
+    },
+    SORT_PRODUCTS_BY_PRICE {
+        {
+            this.command = new SortProductsByPriceCommand();
+        }
+    },
+    FIND_PRODUCT {
+        {
+            this.command = new FindProductCommand();
+        }
     };
     CustomCommand command;
     public CustomCommand getCurrentCommand(){

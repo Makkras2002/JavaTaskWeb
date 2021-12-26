@@ -3,6 +3,21 @@ window.onload = function buildTableForm() {
     let products = JSON.parse(productData.innerHTML);
     const tbody = document.querySelector("#productTable");
     tbody.innerHTML = "";
+    let categoriesData = document.getElementById("categoriesForSearch");
+    let categories = JSON.parse(categoriesData.innerHTML);
+    let categoriesSelectList = document.getElementById("categories");
+    let option = document.createElement("option");
+    option.text = "-";
+    option.value = "-";
+    categoriesSelectList.add(option);
+    if(categories.length > 0) {
+        for(let j = 0; j < categories.length; j++) {
+            option = document.createElement("option");
+            option.text = categories[j].category;
+            option.value = categories[j].category;
+            categoriesSelectList.add(option);
+        }
+    }
     if (products.length > 0) {
         let str = "";
         for (let i = 0; i < products.length; i++) {

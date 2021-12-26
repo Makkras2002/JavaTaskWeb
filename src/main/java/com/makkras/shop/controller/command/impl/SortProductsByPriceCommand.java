@@ -13,7 +13,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
-public class FillMainClientMenuCommand implements CustomCommand {
+public class SortProductsByPriceCommand implements CustomCommand {
+
     private static Logger logger = LogManager.getLogger();
     @Override
     public String execute(HttpServletRequest request) {
@@ -21,7 +22,7 @@ public class FillMainClientMenuCommand implements CustomCommand {
         Gson gson = new Gson();
         ProductService service = ProductService.getInstance();
         try {
-            List<Product> productsInStock  = service.getAllProductsInStockFromDb();
+            List<Product> productsInStock  = service.getAllProductsInStockFromDbAndSortByPrice();
             String productsInGson = gson.toJson(productsInStock);
             request.setAttribute(Literal.PRODUCTS_IN_STOCK,productsInGson);
 

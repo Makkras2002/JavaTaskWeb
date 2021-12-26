@@ -31,7 +31,11 @@ public class RoleAccessFilter implements Filter {
             if(command.equals(CommandType.REGISTER.toString().toLowerCase()) ||
                     command.equals(CommandType.LOGIN.toString().toLowerCase()) ||
                     command.equals(CommandType.PREPARE_MAIN_CLIENT_PAGE.toString().toLowerCase()) ||
-                    command.equals(CommandType.CHANGE_LOCALE.toString().toLowerCase())){
+                    command.equals(CommandType.CHANGE_LOCALE.toString().toLowerCase()) ||
+                    command.equals(CommandType.SORT_PRODUCTS_BY_NAME.toString().toLowerCase()) ||
+                    command.equals(CommandType.SORT_PRODUCTS_BY_CATEGORY.toString().toLowerCase()) ||
+                    command.equals(CommandType.SORT_PRODUCTS_BY_PRICE.toString().toLowerCase()) ||
+                    command.equals(CommandType.FIND_PRODUCT.toString().toLowerCase())){
                 filterChain.doFilter(request,response);
             } else {
                 page = Literal.AUTHORIZATION_PAGE;
