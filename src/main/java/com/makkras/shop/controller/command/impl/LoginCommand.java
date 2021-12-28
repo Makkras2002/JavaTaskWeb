@@ -1,6 +1,7 @@
 package com.makkras.shop.controller.command.impl;
 
 import com.makkras.shop.controller.util.Literal;
+import com.makkras.shop.controller.util.PagePath;
 import com.makkras.shop.controller.validator.impl.CustomUserDataValidator;
 import com.makkras.shop.entity.User;
 import com.makkras.shop.entity.UserRole;
@@ -12,6 +13,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 public class LoginCommand implements CustomCommand {
@@ -23,12 +26,15 @@ public class LoginCommand implements CustomCommand {
         String page = null;
         String login = request.getParameter(Literal.LOGIN_NAME);
         String password = request.getParameter(Literal.PASSWORD);
+        Map<String,String> formValues = new HashMap<>();
+        formValues.put(Literal.LOGIN_TO_ADD_IN_FORM,login);
+        formValues.put(Literal.PASSWORD_TO_ADD_IN_FORM,password);
         Boolean enterAsAdmin = true;
         if(request.getParameter(Literal.ENTER_AS_ADMIN) ==null){
             enterAsAdmin = false;
         }
         try {
-            if(CustomUserDataValidator.getInstance().validateUserLoginData(request)){
+            if(CustomUserDataValidator.getInstance().validateUserLoginData(formValues, currentLocale)){
                 if(request.getSession().getAttribute(Literal.LOGIN_NAME) == null){
                     Optional<User> foundUser = UserService.getInstance().findUserWithLoginAndPassword(login,password,enterAsAdmin);
                     if(foundUser.isPresent()){
@@ -41,21 +47,22 @@ public class LoginCommand implements CustomCommand {
                             request.getSession().setAttribute(Literal.ROLE, UserRole.CLIENT);
                         }
                         request.getSession().setAttribute(Literal.ORDER, null);
-                        page = Literal.MAIN_CLIENT_PAGE;
+                        page = PagePath.MAIN_CLIENT_PAGE;
                     }else {
                         request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
                                 localizedTextExtractor.getText(currentLocale,"LOGIN_ERROR"));
-                        page = Literal.AUTHORIZATION_PAGE;
+                        page = PagePath.AUTHORIZATION_PAGE;
                     }
                 } else {
                     request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
                             localizedTextExtractor.getText(currentLocale,"FIRST_LOGOUT_ERROR"));
-                    page = Literal.AUTHORIZATION_PAGE;
+                    page = PagePath.AUTHORIZATION_PAGE;
                 }
             } else {
                 request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
                         localizedTextExtractor.getText(currentLocale,"INVALID_FORM_DATA_ERROR"));
-                page = Literal.AUTHORIZATION_PAGE;
+                request.setAttribute(Literal.LOGIN_FORM_DATA_MAP,formValues);
+                page = PagePath.AUTHORIZATION_PAGE;
             }
         } catch (ServiceException e) {
             logger.error(e.getMessage());

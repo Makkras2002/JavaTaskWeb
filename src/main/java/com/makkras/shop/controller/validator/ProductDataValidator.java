@@ -1,7 +1,5 @@
 package com.makkras.shop.controller.validator;
 
-import jakarta.servlet.http.HttpServletRequest;
-
 public interface ProductDataValidator {
-    boolean validateProductSearchData(HttpServletRequest request);
+    boolean validateProductSearchData(String rawName,String rawCategory,String rawMinPrice,String rawMaxPrice);
 }

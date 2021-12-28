@@ -2,6 +2,7 @@ package com.makkras.shop.controller.command.impl;
 
 import com.makkras.shop.controller.command.CustomCommand;
 import com.makkras.shop.controller.util.Literal;
+import com.makkras.shop.controller.util.PagePath;
 import com.makkras.shop.controller.validator.impl.CustomUserDataValidator;
 import com.makkras.shop.entity.User;
 import com.makkras.shop.exception.ServiceException;
@@ -24,18 +25,18 @@ public class ChangeLoginCommand implements CustomCommand {
         HttpSession session = request.getSession();
         String currentLocale = String.valueOf(request.getSession().getAttribute(Literal.LOCALE_NAME));
         LocalizedTextExtractor localizedTextExtractor = LocalizedTextExtractor.getInstance();
-        if(CustomUserDataValidator.getInstance().validateUserChangeLoginData(request)){
+        if(CustomUserDataValidator.getInstance().validateUserChangeLoginData(login)){
             try {
                 Optional<User> foundUser = userService.findUserWithLogin(login);
                 if(!foundUser.isPresent()){
                     String oldLogin = session.getAttribute(Literal.LOGIN_NAME).toString();
                     session.setAttribute(Literal.LOGIN_NAME,login);
                     userService.setUserNewLogin(oldLogin,login);
-                    page = Literal.MAIN_CLIENT_PAGE;
+                    page = PagePath.MAIN_CLIENT_PAGE;
                 } else {
                     request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE, localizedTextExtractor.getText(currentLocale,
                             "USER_WITH_LOGIN_EXISTS_ERROR"));
-                    page = Literal.AUTHORIZATION_PAGE;
+                    page = PagePath.AUTHORIZATION_PAGE;
                 }
             } catch (ServiceException e) {
                 logger.error(e.getMessage());
@@ -43,7 +44,7 @@ public class ChangeLoginCommand implements CustomCommand {
         } else {
             request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE, localizedTextExtractor.getText(currentLocale,
                     "INVALID_FORM_DATA_ERROR"));
-            page = Literal.AUTHORIZATION_PAGE;
+            page = PagePath.AUTHORIZATION_PAGE;
         }
         return page;
     }

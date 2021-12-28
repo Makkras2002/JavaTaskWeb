@@ -1,6 +1,7 @@
 package com.makkras.shop.controller.command.impl;
 
 import com.makkras.shop.controller.util.Literal;
+import com.makkras.shop.controller.util.PagePath;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.impl.UserService;
 import com.makkras.shop.controller.command.CustomCommand;
@@ -18,7 +19,7 @@ public class LogoutCommand implements CustomCommand {
         Optional<String> currentLocale = Optional.empty();
         try {
             UserService.getInstance().setUserStatusNotOnlineInDb(String.valueOf(request.getSession().getAttribute(Literal.LOGIN_NAME)));
-            page = Literal.AUTHORIZATION_PAGE;
+            page = PagePath.AUTHORIZATION_PAGE;
             currentLocale = Optional.ofNullable(String.valueOf(request.getSession().getAttribute(Literal.LOCALE_NAME)));
         } catch (ServiceException e) {
             logger.error(e.getMessage());

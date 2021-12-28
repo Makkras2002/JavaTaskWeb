@@ -13,11 +13,6 @@ public class Literal {
     public static final String ERROR_REGISTRATION_MESSAGE = "errorRegistrationMessage";
     public static final String COMMAND = "command";
     public static final String SUCCESSFUL_REG_EMAIL_HEADER = "Web-Shop \"AutoShop\"";
-    public static final String REGISTRATION_PAGE = "/pages/registration.jsp";
-    public static final String AUTHORIZATION_PAGE = "/pages/authorization.jsp";
-    public static final String MAIN_CLIENT_PAGE = "/index.jsp";
-    public static final String RAW_MAIN_CLIENT_PAGE = "/pages/mainclient.jsp";
-    public static final String CONFIRM_REGISTRATION_PAGE = "/pages/confirm_registration.jsp";
     public static final String PRODUCTS_IN_STOCK = "productsInStock";
     public static final String PRODUCT_CATEGORIES_FOR_SEARCH = "productCategories";
     public static final String ROLE ="role";
@@ -30,4 +25,6 @@ public class Literal {
     public static final String PRODUCT_MIN_PRICE = "min_price";
     public static final String PRODUCT_MAX_PRICE = "max_price";
     public static final String PRODUCT_PRICE = "price";
+    public static final String LOGIN_FORM_DATA_MAP = "login_form_data_map";
+    public static final String REGISTRATION_FORM_DATA_MAP = "registration_form_data_map";
 }

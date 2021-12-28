@@ -18,6 +18,7 @@ public class ProductService implements CustomProductService {
     private static ProductService instance;
     private ProductDao productDao;
     private ProductCategoryDao productCategoryDao;
+    private static final String BLANK_CATEGORY_VALUE = "-";
     private ProductService(){
         productDao = new ProductDaoImpl();
         productCategoryDao = new ProductCategoryDaoImpl();
@@ -28,7 +29,7 @@ public class ProductService implements CustomProductService {
         }
         return instance;
     }
-    public List<Product> getAllProductsInStockFromDb() throws ServiceException {
+    public List<Product> findAllProductsInStockFromDb() throws ServiceException {
         List<Product> products = new ArrayList<>();
         try {
             products = productDao.findAllProductInStock();
@@ -37,7 +38,7 @@ public class ProductService implements CustomProductService {
         }
         return products;
     }
-    public List<ProductCategory> getAllProductCategoriesFromDb() throws ServiceException {
+    public List<ProductCategory> findAllProductCategoriesFromDb() throws ServiceException {
         List<ProductCategory> productCategories = new ArrayList<>();
         try {
             productCategories = productCategoryDao.findAll();
@@ -46,7 +47,7 @@ public class ProductService implements CustomProductService {
         }
         return productCategories;
     }
-    public List<Product> getAllProductsInStockFromDbAndSortByName() throws ServiceException {
+    public List<Product> findAllProductsInStockFromDbAndSortByName() throws ServiceException {
         List<Product> products = new ArrayList<>();
         try {
             products = productDao.findAllProductInStockAndSortByName();
@@ -55,7 +56,7 @@ public class ProductService implements CustomProductService {
         }
         return products;
     }
-    public List<Product> getAllProductsInStockFromDbAndSortByCategory() throws ServiceException {
+    public List<Product> findAllProductsInStockFromDbAndSortByCategory() throws ServiceException {
         List<Product> products = new ArrayList<>();
         try {
             products = productDao.findAllProductInStockAndSortByCategory();
@@ -64,7 +65,7 @@ public class ProductService implements CustomProductService {
         }
         return products;
     }
-    public List<Product> getAllProductsInStockFromDbAndSortByPrice() throws ServiceException {
+    public List<Product> findAllProductsInStockFromDbAndSortByPrice() throws ServiceException {
         List<Product> products = new ArrayList<>();
         try {
             products = productDao.findAllProductInStockAndSortByPrice();
@@ -73,14 +74,14 @@ public class ProductService implements CustomProductService {
         }
         return products;
     }
-    public List<Product> findProductsInStockFromDbByParams(String name, String category, BigDecimal min_price, BigDecimal max_price) throws ServiceException {
-        List<Product> allProducts = getAllProductsInStockFromDb();
+    public List<Product> findProductsInStockFromDbByParams(String name, String category, BigDecimal minPrice, BigDecimal maxPrice) throws ServiceException {
+        List<Product> allProducts = findAllProductsInStockFromDb();
         List<Product> requiredProducts = new ArrayList<>();
         int counter = 0;
         while (counter < allProducts.size()){
-            if(((allProducts.get(counter).getProductName().contains(name) && name.length()>3) || name.equals("")) &&
-                    (allProducts.get(counter).getProductCategory().getCategory().equals(category) || category.equals("-")) &&
-                    (allProducts.get(counter).getProductPrice().compareTo(min_price) > -1 || min_price.compareTo(BigDecimal.valueOf(0)) == 0) && (allProducts.get(counter).getProductPrice().compareTo(max_price) < 1 || max_price.compareTo(BigDecimal.valueOf(0)) == 0)) {
+            if(((allProducts.get(counter).getProductName().contains(name) && name.length()>3) || name.isBlank()) &&
+                    (allProducts.get(counter).getProductCategory().getCategory().equals(category) || category.equals(BLANK_CATEGORY_VALUE)) &&
+                    (allProducts.get(counter).getProductPrice().compareTo(minPrice) > -1 || minPrice.compareTo(BigDecimal.valueOf(0)) == 0) && (allProducts.get(counter).getProductPrice().compareTo(maxPrice) < 1 || maxPrice.compareTo(BigDecimal.valueOf(0)) == 0)) {
                 requiredProducts.add(allProducts.get(counter));
             }
             counter++;

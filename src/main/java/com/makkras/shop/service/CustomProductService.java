@@ -8,10 +8,10 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface CustomProductService {
-    List<Product> getAllProductsInStockFromDb() throws ServiceException;
-    List<Product> getAllProductsInStockFromDbAndSortByName() throws ServiceException;
-    List<Product> getAllProductsInStockFromDbAndSortByCategory() throws ServiceException;
-    List<Product> getAllProductsInStockFromDbAndSortByPrice() throws ServiceException;
-    List<Product> findProductsInStockFromDbByParams(String name, String category, BigDecimal min_price, BigDecimal max_price) throws ServiceException;
-    List<ProductCategory> getAllProductCategoriesFromDb() throws ServiceException;
+    List<Product> findAllProductsInStockFromDb() throws ServiceException;
+    List<Product> findAllProductsInStockFromDbAndSortByName() throws ServiceException;
+    List<Product> findAllProductsInStockFromDbAndSortByCategory() throws ServiceException;
+    List<Product> findAllProductsInStockFromDbAndSortByPrice() throws ServiceException;
+    List<Product> findProductsInStockFromDbByParams(String name, String category, BigDecimal minPrice, BigDecimal maxPrice) throws ServiceException;
+    List<ProductCategory> findAllProductCategoriesFromDb() throws ServiceException;
 }

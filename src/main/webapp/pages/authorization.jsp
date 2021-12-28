@@ -31,11 +31,11 @@
         <input type="text" id="command" name="command" hidden="hidden" required="required" value="login"/>
         <div class="mb-3 w-25" style="margin-top: 40px">
             <label for="loginOrEmail" class="form-label" ><fmt:message key="user_form.enter_login"/></label>
-            <input type="text" class="form-control" id="loginOrEmail" name="login" value="${form_login}" required="required"/>
+            <input type="text" class="form-control" id="loginOrEmail" name="login" value="${login_form_data_map.form_login}" required="required"/>
         </div>
         <div class="mb-3 w-25" style="margin-top: 40px">
             <label for="password" class="form-label"><fmt:message key="user_form.enter_password"/></label>
-            <input type="password" class="form-control" id="password" name="password" value="${form_password}" required="required"/>
+            <input type="password" class="form-control" id="password" name="password" value="${login_form_data_map.form_password}" required="required"/>
         </div>
         <div class="mb-3 w-25 form-check form-switch" style="margin-top: 40px" align="left">
             <input class="form-check-input" type="checkbox" role="switch" id="enterAsAdmin" name="enterAsAdmin">

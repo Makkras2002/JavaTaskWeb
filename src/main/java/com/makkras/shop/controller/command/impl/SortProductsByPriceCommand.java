@@ -3,6 +3,7 @@ package com.makkras.shop.controller.command.impl;
 import com.google.gson.Gson;
 import com.makkras.shop.controller.command.CustomCommand;
 import com.makkras.shop.controller.util.Literal;
+import com.makkras.shop.controller.util.PagePath;
 import com.makkras.shop.entity.Product;
 import com.makkras.shop.entity.ProductCategory;
 import com.makkras.shop.exception.ServiceException;
@@ -22,14 +23,14 @@ public class SortProductsByPriceCommand implements CustomCommand {
         Gson gson = new Gson();
         ProductService service = ProductService.getInstance();
         try {
-            List<Product> productsInStock  = service.getAllProductsInStockFromDbAndSortByPrice();
+            List<Product> productsInStock  = service.findAllProductsInStockFromDbAndSortByPrice();
             String productsInGson = gson.toJson(productsInStock);
             request.setAttribute(Literal.PRODUCTS_IN_STOCK,productsInGson);
 
-            List<ProductCategory> productCategories = service.getAllProductCategoriesFromDb();
+            List<ProductCategory> productCategories = service.findAllProductCategoriesFromDb();
             String productCategoriesInGson = gson.toJson(productCategories);
             request.setAttribute(Literal.PRODUCT_CATEGORIES_FOR_SEARCH,productCategoriesInGson);
-            page = Literal.RAW_MAIN_CLIENT_PAGE;
+            page = PagePath.RAW_MAIN_CLIENT_PAGE;
         } catch (ServiceException e) {
             logger.error(e.getMessage());
         }

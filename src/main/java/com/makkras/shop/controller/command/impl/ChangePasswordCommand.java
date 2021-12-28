@@ -2,6 +2,7 @@ package com.makkras.shop.controller.command.impl;
 
 import com.makkras.shop.controller.command.CustomCommand;
 import com.makkras.shop.controller.util.Literal;
+import com.makkras.shop.controller.util.PagePath;
 import com.makkras.shop.controller.validator.impl.CustomUserDataValidator;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.impl.UserService;
@@ -21,18 +22,18 @@ public class ChangePasswordCommand implements CustomCommand {
         String login = session.getAttribute(Literal.LOGIN_NAME).toString();
         String currentLocale = session.getAttribute(Literal.LOCALE_NAME).toString();
         String page = null;
-        if(CustomUserDataValidator.getInstance().validateUserChangePasswordData(request)){
+        if(CustomUserDataValidator.getInstance().validateUserChangePasswordData(password)){
             try {
                 UserService.getInstance().setUserNewPassword(login,password);
                 session.setAttribute(Literal.PASSWORD,password);
-                page = Literal.MAIN_CLIENT_PAGE;
+                page = PagePath.MAIN_CLIENT_PAGE;
             } catch (ServiceException e) {
                 logger.error(e.getMessage());
             }
         } else {
             request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
                     localizedTextExtractor.getText(currentLocale,"INVALID_FORM_DATA_ERROR"));
-            page = Literal.AUTHORIZATION_PAGE;
+            page = PagePath.AUTHORIZATION_PAGE;
         }
         return page;
     }

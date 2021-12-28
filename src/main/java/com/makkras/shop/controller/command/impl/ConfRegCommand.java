@@ -1,6 +1,7 @@
 package com.makkras.shop.controller.command.impl;
 
 import com.makkras.shop.controller.util.Literal;
+import com.makkras.shop.controller.util.PagePath;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.impl.UserService;
 import com.makkras.shop.controller.command.CustomCommand;
@@ -23,9 +24,9 @@ public class ConfRegCommand implements CustomCommand {
             try {
                 if(UserService.getInstance().checkIfUserIsValidForRegistration(login,email)){
                     UserService.getInstance().registerUser(login,password,email);
-                    page = Literal.MAIN_CLIENT_PAGE;
+                    page = PagePath.MAIN_CLIENT_PAGE;
                 } else {
-                    page = Literal.AUTHORIZATION_PAGE;
+                    page = PagePath.AUTHORIZATION_PAGE;
                     request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
                             localizedTextExtractor.getText(currentLocale,
                                     "CONFIRMATION_REGISTRATION_ERROR_V2"));
@@ -34,7 +35,7 @@ public class ConfRegCommand implements CustomCommand {
                 logger.error(e.getMessage());
             }
         } else {
-            page = Literal.AUTHORIZATION_PAGE;
+            page = PagePath.AUTHORIZATION_PAGE;
             request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
                     localizedTextExtractor.getText(currentLocale ,"CONFIRMATION_REGISTRATION_ERROR"));
         }

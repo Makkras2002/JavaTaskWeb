@@ -3,6 +3,7 @@ package com.makkras.shop.controller.command.impl;
 import com.google.gson.Gson;
 import com.makkras.shop.controller.command.CustomCommand;
 import com.makkras.shop.controller.util.Literal;
+import com.makkras.shop.controller.util.PagePath;
 import com.makkras.shop.controller.validator.impl.CustomProductDataValidator;
 import com.makkras.shop.entity.Product;
 import com.makkras.shop.entity.ProductCategory;
@@ -22,40 +23,44 @@ public class FindProductCommand implements CustomCommand {
     public String execute(HttpServletRequest request) {
         String page = null;
         Gson gson = new Gson();
+        String rawName = request.getParameter(Literal.PRODUCT_NAME);
+        String rawCategory = request.getParameter(Literal.PRODUCT_CATEGORY);
+        String rawMinPrice = request.getParameter(Literal.PRODUCT_MIN_PRICE);
+        String rawMaxPrice = request.getParameter(Literal.PRODUCT_MAX_PRICE);
         String currentLocale = request.getSession().getAttribute(Literal.LOCALE_NAME).toString();
         LocalizedTextExtractor localizedTextExtractor = LocalizedTextExtractor.getInstance();
-        if(CustomProductDataValidator.getInstance().validateProductSearchData(request)){
-            String name = request.getParameter(Literal.PRODUCT_NAME);
-            String category = request.getParameter(Literal.PRODUCT_CATEGORY);
-            BigDecimal min_price;
-            BigDecimal max_price;
-            if(!request.getParameter(Literal.PRODUCT_MIN_PRICE).equals("")){
-                min_price = BigDecimal.valueOf(Double.parseDouble(request.getParameter(Literal.PRODUCT_MIN_PRICE)));
+        if(CustomProductDataValidator.getInstance().validateProductSearchData(rawName,rawCategory,rawMinPrice,rawMaxPrice)){
+            String name = rawName;
+            String category = rawCategory;
+            BigDecimal minPrice;
+            BigDecimal maxPrice;
+            if(!rawMinPrice.isBlank()){
+                minPrice = BigDecimal.valueOf(Double.parseDouble(rawMinPrice));
             } else {
-                min_price = BigDecimal.valueOf(0);
+                minPrice = BigDecimal.valueOf(0);
             }
-            if(!request.getParameter(Literal.PRODUCT_MAX_PRICE).equals("")){
-                max_price = BigDecimal.valueOf(Double.parseDouble(request.getParameter(Literal.PRODUCT_MAX_PRICE)));
+            if(!rawMaxPrice.isBlank()){
+                maxPrice = BigDecimal.valueOf(Double.parseDouble(rawMaxPrice));
             } else {
-                max_price = BigDecimal.valueOf(0);
+                maxPrice = BigDecimal.valueOf(0);
             }
             ProductService service = ProductService.getInstance();
             try {
-                List<Product> productsInStock  = service.findProductsInStockFromDbByParams(name,category,min_price,max_price);
+                List<Product> productsInStock  = service.findProductsInStockFromDbByParams(name,category,minPrice,maxPrice);
                 String productsInGson = gson.toJson(productsInStock);
                 request.setAttribute(Literal.PRODUCTS_IN_STOCK,productsInGson);
 
-                List<ProductCategory> productCategories = service.getAllProductCategoriesFromDb();
+                List<ProductCategory> productCategories = service.findAllProductCategoriesFromDb();
                 String productCategoriesInGson = gson.toJson(productCategories);
                 request.setAttribute(Literal.PRODUCT_CATEGORIES_FOR_SEARCH,productCategoriesInGson);
-                page = Literal.RAW_MAIN_CLIENT_PAGE;
+                page = PagePath.RAW_MAIN_CLIENT_PAGE;
             } catch (ServiceException e) {
                 logger.error(e.getMessage());
             }
         } else {
             request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
                     localizedTextExtractor.getText(currentLocale,"INVALID_FORM_DATA_ERROR"));
-            page = Literal.AUTHORIZATION_PAGE;
+            page = PagePath.AUTHORIZATION_PAGE;
         }
         return page;
     }

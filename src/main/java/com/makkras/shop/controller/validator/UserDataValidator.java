@@ -1,10 +1,9 @@
 package com.makkras.shop.controller.validator;
-
-import jakarta.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 public interface UserDataValidator {
-    boolean validateUserLoginData(HttpServletRequest request);
-    boolean validateUserRegistrationData(HttpServletRequest request);
-    boolean validateUserChangeLoginData(HttpServletRequest request);
-    boolean validateUserChangePasswordData(HttpServletRequest request);
+    boolean validateUserLoginData(Map<String,String> formValues, String locale);
+    boolean validateUserRegistrationData(Map<String,String> formValues, String locale);
+    boolean validateUserChangeLoginData(String newLogin);
+    boolean validateUserChangePasswordData(String newPassword);
 }
