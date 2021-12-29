@@ -122,7 +122,10 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <fmt:message key="main_client.basket"/>
+                        <form method="post" action="/controller">
+                            <input type="hidden" name="command" id="command7" value="open_order_page_wrapper"/>
+                            <button type="submit" class="btn btn-primary"><fmt:message key="main_client.basket"/></button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -151,6 +154,9 @@
     </div>
     <div id="prod_amount" style="display: none">
         <fmt:message key="main_client.prod_amount"/>
+    </div>
+    <div id="prod_empty_res" style="display: none">
+        <fmt:message key="main_client.empty_products"/>
     </div>
     <div id="prod_add_to_basket" style="display: none">
         <fmt:message key="main_client.prod_add_to_basket"/>

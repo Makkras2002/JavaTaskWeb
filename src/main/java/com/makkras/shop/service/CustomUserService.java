@@ -13,4 +13,5 @@ public interface CustomUserService {
     void setUserStatusNotOnlineInDb(String login) throws ServiceException;
     void setUserNewLogin(String login,String newLogin) throws ServiceException;
     void setUserNewPassword(String login,String newPassword) throws ServiceException;
+    Optional<User> findUserWithLogin(String login) throws ServiceException;
 }

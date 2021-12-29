@@ -9,10 +9,13 @@ import com.makkras.shop.entity.ProductCategory;
 import com.makkras.shop.exception.InteractionException;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.CustomProductService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class ProductService implements CustomProductService {
     private static ProductService instance;
@@ -87,5 +90,17 @@ public class ProductService implements CustomProductService {
             counter++;
         }
         return requiredProducts;
+    }
+    public Optional<Product> findProductById(Long productId) throws ServiceException {
+        Optional<Product> foundProduct = Optional.empty();
+        try {
+            List<Product> dbSearchResult = productDao.findProductById(productId);
+            if(dbSearchResult.size() > 0 ) {
+                foundProduct = Optional.ofNullable(dbSearchResult.get(0));
+            }
+        } catch (InteractionException e) {
+            throw new ServiceException(e.getMessage());
+        }
+        return foundProduct;
     }
 }

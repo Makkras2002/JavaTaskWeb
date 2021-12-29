@@ -3,6 +3,7 @@ package com.makkras.shop.controller.command.impl;
 import com.makkras.shop.controller.util.Literal;
 import com.makkras.shop.controller.util.PagePath;
 import com.makkras.shop.controller.validator.impl.CustomUserDataValidator;
+import com.makkras.shop.entity.ComponentOrder;
 import com.makkras.shop.entity.UserRole;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.impl.UserService;
@@ -12,7 +13,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class RegisterCommand implements CustomCommand {
@@ -37,7 +40,8 @@ public class RegisterCommand implements CustomCommand {
                         request.getSession().setAttribute(Literal.LOGIN_NAME, login);
                         request.getSession().setAttribute(Literal.PASSWORD, password);
                         request.getSession().setAttribute(Literal.EMAIL, email);
-                        request.getSession().setAttribute(Literal.ORDER, null);
+                        List<ComponentOrder> componentOrders = new ArrayList<>();
+                        request.getSession().setAttribute(Literal.ORDER, componentOrders);
                         request.getSession().setAttribute(Literal.ROLE, UserRole.CLIENT);
                         userService.sendMessageAboutSuccessFullRegistrationOnUserEmail(login,email,currentLocale);
                         request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,

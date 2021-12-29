@@ -6,6 +6,7 @@ import com.makkras.shop.exception.ServiceException;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
 public interface CustomProductService {
     List<Product> findAllProductsInStockFromDb() throws ServiceException;
@@ -14,4 +15,5 @@ public interface CustomProductService {
     List<Product> findAllProductsInStockFromDbAndSortByPrice() throws ServiceException;
     List<Product> findProductsInStockFromDbByParams(String name, String category, BigDecimal minPrice, BigDecimal maxPrice) throws ServiceException;
     List<ProductCategory> findAllProductCategoriesFromDb() throws ServiceException;
+    Optional<Product> findProductById(Long productId) throws ServiceException;
 }

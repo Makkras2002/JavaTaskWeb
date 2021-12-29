@@ -72,6 +72,19 @@ public class UserService implements CustomUserService {
             throw new ServiceException(e.getMessage());
         }
     }
+    public Optional<User> findUserWithLoginFromAllUsers(String login) throws ServiceException {
+        Optional<User> result = Optional.empty();
+        try {
+            List<User> foundUsers = userDao.findUserFromAllUsersWithSuchLogin(login);
+            if(foundUsers.size() == 0){
+            }else {
+                result = Optional.of(foundUsers.get(0));
+            }
+            return result;
+        } catch (InteractionException e) {
+            throw new ServiceException(e.getMessage());
+        }
+    }
     public boolean checkIfUserIsValidForRegistration(String login, String email) throws ServiceException {
         try {
             List<User> foundUsers = userDao.findUserFromAllUsersWithSuchLogin(login);

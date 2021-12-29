@@ -68,6 +68,31 @@ public enum CommandType {
         {
             this.command = new FindProductCommand();
         }
+    },
+    ADD_PRODUCT_TO_BUCKET {
+        {
+            this.command = new AddProductToOrderCommand();
+        }
+    },
+    OPEN_USER_BASKET {
+        {
+            this.command = new OpenUserOrderCommand();
+        }
+    },
+    OPEN_ORDER_PAGE_WRAPPER {
+        {
+            this.command = new OpenOrderPageWrapperCommand();
+        }
+    },
+    REMOVE_PRODUCT_FROM_ORDER {
+        {
+            this.command = new RemoveProductFromOrderCommand();
+        }
+    },
+    MAKE_ORDER {
+        {
+            this.command = new MakeOrderCommand();
+        }
     };
     CustomCommand command;
     public CustomCommand getCurrentCommand(){

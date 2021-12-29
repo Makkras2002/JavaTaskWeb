@@ -2,6 +2,7 @@ package com.makkras.shop.controller.command.impl;
 
 import com.makkras.shop.controller.command.CustomCommand;
 import com.makkras.shop.controller.util.Literal;
+import com.makkras.shop.controller.util.PagePath;
 import jakarta.servlet.http.HttpServletRequest;
 
 public class ChangeLocaleCommand implements CustomCommand {
@@ -11,7 +12,10 @@ public class ChangeLocaleCommand implements CustomCommand {
         String page = request.getParameter(Literal.PAGE_PATH);
         page = page.replace("http://localhost:8888","");
         if(page.contains("mainclient.jsp")){
-            page = "/index.jsp";
+            page = PagePath.MAIN_CLIENT_PAGE;
+        }
+        if(page.contains("basket_show.jsp")){
+            page = PagePath.ORDER_PAGE;
         }
         if(request.getSession().getAttribute(Literal.LOCALE_NAME) != null){
             if(request.getSession().getAttribute(Literal.LOCALE_NAME).equals(Literal.BRITISH_LOCALE)){

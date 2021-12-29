@@ -77,6 +77,6 @@ window.onload = function buildTableForm() {
             tbody.innerHTML += tr;
         }
     } else {
-        tbody.innerHTML = `<caption>No products are available.</caption>`;
+        tbody.innerHTML = "<caption>" + document.getElementById("prod_empty_res").innerText +"</caption>";
     }
 }

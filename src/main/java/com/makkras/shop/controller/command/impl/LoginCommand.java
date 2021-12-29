@@ -3,6 +3,7 @@ package com.makkras.shop.controller.command.impl;
 import com.makkras.shop.controller.util.Literal;
 import com.makkras.shop.controller.util.PagePath;
 import com.makkras.shop.controller.validator.impl.CustomUserDataValidator;
+import com.makkras.shop.entity.ComponentOrder;
 import com.makkras.shop.entity.User;
 import com.makkras.shop.entity.UserRole;
 import com.makkras.shop.exception.ServiceException;
@@ -13,9 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class LoginCommand implements CustomCommand {
     private static Logger logger = LogManager.getLogger();
@@ -46,7 +45,8 @@ public class LoginCommand implements CustomCommand {
                         } else {
                             request.getSession().setAttribute(Literal.ROLE, UserRole.CLIENT);
                         }
-                        request.getSession().setAttribute(Literal.ORDER, null);
+                        List<ComponentOrder> componentOrders = new ArrayList<>();
+                        request.getSession().setAttribute(Literal.ORDER, componentOrders);
                         page = PagePath.MAIN_CLIENT_PAGE;
                     }else {
                         request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
