@@ -9,6 +9,7 @@
 <fmt:setLocale value="${locale}" scope="session" />
 <fmt:setBundle basename="localized_text"/>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="https://makkras.com/jsp/tlds/myTags" prefix="myTags"%>
 <html>
 <head>
     <title>Change Locale</title>
@@ -16,7 +17,7 @@
 <body onkeydown="return (event.keyCode != 116)">
 <div class="row">
     <div class="col-4">
-        ${locale}
+        <myTags:formatLocaleName initialLocaleName="${locale}"/>
     </div>
     <div class="col-4">
         <form method="post" action="/controller">
