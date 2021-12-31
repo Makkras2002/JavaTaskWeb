@@ -1,8 +1,8 @@
 package com.makkras.shop.controller.filter;
 
 import com.makkras.shop.controller.CommandType;
-import com.makkras.shop.controller.util.Literal;
-import com.makkras.shop.controller.util.PagePath;
+import com.makkras.shop.controller.Literal;
+import com.makkras.shop.controller.PagePath;
 import com.makkras.shop.entity.UserRole;
 import com.makkras.shop.util.locale.LocalizedTextExtractor;
 import jakarta.servlet.*;

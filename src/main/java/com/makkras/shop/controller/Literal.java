@@ -1,6 +1,6 @@
-package com.makkras.shop.controller.util;
+package com.makkras.shop.controller;
 
-public class Literal {
+public final class Literal {
     public static final String LOGIN_NAME = "login";
     public static final String PASSWORD = "password";
     public static final String ENTER_AS_ADMIN = "enterAsAdmin";

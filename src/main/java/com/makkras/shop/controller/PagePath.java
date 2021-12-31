@@ -1,6 +1,6 @@
-package com.makkras.shop.controller.util;
+package com.makkras.shop.controller;
 
-public class PagePath {
+public final class PagePath {
     public static final String REGISTRATION_PAGE = "/pages/registration.jsp";
     public static final String AUTHORIZATION_PAGE = "/pages/authorization.jsp";
     public static final String MAIN_CLIENT_PAGE = "/index.jsp";

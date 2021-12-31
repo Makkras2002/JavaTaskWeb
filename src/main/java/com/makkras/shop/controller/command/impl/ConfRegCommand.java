@@ -1,7 +1,7 @@
 package com.makkras.shop.controller.command.impl;
 
-import com.makkras.shop.controller.util.Literal;
-import com.makkras.shop.controller.util.PagePath;
+import com.makkras.shop.controller.Literal;
+import com.makkras.shop.controller.PagePath;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.impl.UserService;
 import com.makkras.shop.controller.command.CustomCommand;

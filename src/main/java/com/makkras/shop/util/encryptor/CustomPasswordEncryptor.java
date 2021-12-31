@@ -1,4 +1,4 @@
-package com.makkras.shop.controller.util.encryptor;
+package com.makkras.shop.util.encryptor;
 
 public interface CustomPasswordEncryptor {
     String encryptPassword(String password);

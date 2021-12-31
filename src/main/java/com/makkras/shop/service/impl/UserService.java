@@ -1,9 +1,9 @@
 package com.makkras.shop.service.impl;
 
-import com.makkras.shop.controller.util.Literal;
+import com.makkras.shop.controller.Literal;
 import com.makkras.shop.dao.UserDao;
 import com.makkras.shop.dao.impl.UserDaoImpl;
-import com.makkras.shop.controller.util.encryptor.impl.PasswordEncryptor;
+import com.makkras.shop.util.encryptor.impl.PasswordEncryptor;
 import com.makkras.shop.entity.User;
 import com.makkras.shop.entity.UserRole;
 import com.makkras.shop.exception.InteractionException;

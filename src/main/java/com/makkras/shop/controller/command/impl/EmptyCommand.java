@@ -1,8 +1,8 @@
 package com.makkras.shop.controller.command.impl;
 
 import com.makkras.shop.controller.command.CustomCommand;
-import com.makkras.shop.controller.util.Literal;
-import com.makkras.shop.controller.util.PagePath;
+import com.makkras.shop.controller.Literal;
+import com.makkras.shop.controller.PagePath;
 import com.makkras.shop.util.locale.LocalizedTextExtractor;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;

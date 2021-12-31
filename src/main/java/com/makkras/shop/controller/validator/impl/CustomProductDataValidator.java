@@ -5,6 +5,7 @@ import com.makkras.shop.controller.validator.ProductDataValidator;
 public class CustomProductDataValidator implements ProductDataValidator {
     private static CustomProductDataValidator instance;
     private static final String NUMERIC_STRING_CHECK_REGEX = "\\d+";
+    private static final int MAX_STRING_LENGTH = 200;
     private CustomProductDataValidator(){
     }
     public static CustomProductDataValidator getInstance(){
@@ -16,10 +17,10 @@ public class CustomProductDataValidator implements ProductDataValidator {
     public boolean validateProductSearchData(String rawName,String rawCategory,String rawMinPrice,String rawMaxPrice){
 
         boolean result = true;
-        if(rawName.length() > 200) {
+        if(rawName.length() > MAX_STRING_LENGTH) {
             result = false;
         }
-        if(rawCategory.length() > 200) {
+        if(rawCategory.length() > MAX_STRING_LENGTH) {
             result = false;
         }
         if(!rawMinPrice.matches(NUMERIC_STRING_CHECK_REGEX)){

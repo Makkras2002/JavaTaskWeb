@@ -1,7 +1,7 @@
 package com.makkras.shop.controller.command.impl;
 
 import com.makkras.shop.controller.command.CustomCommand;
-import com.makkras.shop.controller.util.PagePath;
+import com.makkras.shop.controller.PagePath;
 import jakarta.servlet.http.HttpServletRequest;
 
 public class OpenOrderPageWrapperCommand implements CustomCommand {

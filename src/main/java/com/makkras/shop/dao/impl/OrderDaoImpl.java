@@ -9,6 +9,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.math.BigDecimal;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,7 +77,7 @@ public class OrderDaoImpl implements OrderDao {
             statement = connection.prepareStatement(SQL_CREATE_COMPLETE_ORDER,Statement.RETURN_GENERATED_KEYS);
             statement.setLong(1, completeOrder.getUser().getUserId());
             statement.setBoolean(2,completeOrder.isCompleted());
-            statement.setDate(3,completeOrder.getCompleteOrderDate());
+            statement.setDate(3,Date.valueOf(completeOrder.getCompleteOrderDate()));
             statement.executeUpdate();
             ResultSet resultSet = statement.getGeneratedKeys();
             if(resultSet.next()){
@@ -127,7 +129,7 @@ public class OrderDaoImpl implements OrderDao {
                 String login = resultSet.getString(2);
                 String email = resultSet.getString(3);
                 Boolean isActive = resultSet.getBoolean(4);
-                Date orderDate = resultSet.getDate(5);
+                LocalDate orderDate = resultSet.getDate(5).toLocalDate();
                 Boolean isCompleted = resultSet.getBoolean(6);
                 componentOrders = selectComponentOrdersForCompleteOrderId(orderId);
                 orders.add(new CompleteOrder(orderId,orderDate,new User(login,email,isActive),isCompleted,componentOrders));
@@ -162,7 +164,7 @@ public class OrderDaoImpl implements OrderDao {
                 String login = resultSet.getString(2);
                 String email = resultSet.getString(3);
                 Boolean isActive = resultSet.getBoolean(4);
-                Date orderDate = resultSet.getDate(5);
+                LocalDate orderDate = resultSet.getDate(5).toLocalDate();
                 Boolean isCompleted = resultSet.getBoolean(6);
                 componentOrders = selectComponentOrdersForCompleteOrderId(orderId);
                 orders.add(new CompleteOrder(orderId,orderDate,new User(login,email,isActive),isCompleted,componentOrders));
@@ -245,7 +247,7 @@ public class OrderDaoImpl implements OrderDao {
                 String login = resultSet.getString(2);
                 String email = resultSet.getString(3);
                 Boolean isActive = resultSet.getBoolean(4);
-                Date orderDate = resultSet.getDate(5);
+                LocalDate orderDate = resultSet.getDate(5).toLocalDate();
                 Boolean isCompleted = resultSet.getBoolean(6);
                 componentOrders = selectComponentOrdersForCompleteOrderId(orderId);
                 orders.add(new CompleteOrder(orderId,orderDate,new User(login,email,isActive),isCompleted,componentOrders));

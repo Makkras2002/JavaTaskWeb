@@ -1,24 +1,25 @@
 package com.makkras.shop.entity;
 
-import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CompleteOrder extends CustomEntity{
     private Long completeOrderId;
-    private Date completeOrderDate;
+    private LocalDate completeOrderDate;
     private User user;
     private boolean isCompleted;
     private List<ComponentOrder> componentOrders = new ArrayList<>();
 
-    public CompleteOrder(Date completeOrderDate, User user, boolean isCompleted, List<ComponentOrder> componentOrders) {
+    public CompleteOrder(LocalDate completeOrderDate, User user, boolean isCompleted, List<ComponentOrder> componentOrders) {
         this.completeOrderDate = completeOrderDate;
         this.user = user;
         this.isCompleted = isCompleted;
         this.componentOrders = componentOrders;
     }
 
-    public CompleteOrder(Long completeOrderId, Date completeOrderDate, User user, boolean isCompleted, List<ComponentOrder> componentOrders) {
+    public CompleteOrder(Long completeOrderId, LocalDate completeOrderDate, User user, boolean isCompleted, List<ComponentOrder> componentOrders) {
         this.completeOrderId = completeOrderId;
         this.completeOrderDate = completeOrderDate;
         this.user = user;
@@ -34,11 +35,11 @@ public class CompleteOrder extends CustomEntity{
         this.completeOrderId = completeOrderId;
     }
 
-    public Date getCompleteOrderDate() {
+    public LocalDate getCompleteOrderDate() {
         return completeOrderDate;
     }
 
-    public void setCompleteOrderDate(Date completeOrderDate) {
+    public void setCompleteOrderDate(LocalDate completeOrderDate) {
         this.completeOrderDate = completeOrderDate;
     }
 

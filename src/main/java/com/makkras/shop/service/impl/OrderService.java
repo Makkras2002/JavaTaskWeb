@@ -1,6 +1,6 @@
 package com.makkras.shop.service.impl;
 
-import com.makkras.shop.controller.util.Literal;
+import com.makkras.shop.controller.Literal;
 import com.makkras.shop.dao.OrderDao;
 import com.makkras.shop.dao.impl.OrderDaoImpl;
 import com.makkras.shop.entity.CompleteOrder;
@@ -12,7 +12,7 @@ import com.makkras.shop.service.CustomOrderService;
 import com.makkras.shop.util.locale.LocalizedTextExtractor;
 import com.makkras.shop.util.mail.MailSender;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,8 +29,7 @@ public class OrderService implements CustomOrderService {
         return instance;
     }
     public void makeOrderAndSendNotificationMessageOnUserEmail(List<ComponentOrder> componentOrders, String userLogin, String currentLocale) throws ServiceException {
-        long millis = System.currentTimeMillis();
-        Date currentDate = new Date(millis);
+        LocalDate currentDate = LocalDate.now();
         User currentUser = null;
         UserService userService = UserService.getInstance();
         Optional<User> foundUser = userService.findUserWithLoginFromAllUsers(userLogin);

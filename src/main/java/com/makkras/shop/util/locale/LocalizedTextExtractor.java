@@ -1,6 +1,6 @@
 package com.makkras.shop.util.locale;
 
-import com.makkras.shop.controller.util.Literal;
+import com.makkras.shop.controller.Literal;
 
 public class LocalizedTextExtractor {
     private static LocalizedTextExtractor instance;

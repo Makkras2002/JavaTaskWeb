@@ -1,4 +1,4 @@
-package com.makkras.shop.controller.util;
+package com.makkras.shop.controller.tag;
 
 import jakarta.servlet.jsp.JspException;
 import jakarta.servlet.jsp.SkipPageException;

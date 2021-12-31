@@ -1,8 +1,8 @@
 package com.makkras.shop.controller.command.impl;
 
 import com.makkras.shop.controller.command.CustomCommand;
-import com.makkras.shop.controller.util.Literal;
-import com.makkras.shop.controller.util.PagePath;
+import com.makkras.shop.controller.Literal;
+import com.makkras.shop.controller.PagePath;
 import com.makkras.shop.entity.ComponentOrder;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.impl.OrderService;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MakeOrderCommand implements CustomCommand {
-    Logger logger = LogManager.getLogger();
+    private static Logger logger = LogManager.getLogger();
     @Override
     public String execute(HttpServletRequest request) {
         String page = null;

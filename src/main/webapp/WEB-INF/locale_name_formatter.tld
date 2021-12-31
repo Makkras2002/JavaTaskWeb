@@ -10,7 +10,7 @@
     <uri>https://makkras.com/jsp/tlds/myTags</uri>
     <tag>
         <name>formatLocaleName</name>
-        <tag-class>com.makkras.shop.controller.util.LocaleNameFormatterTag</tag-class>
+        <tag-class>com.makkras.shop.controller.tag.LocaleNameFormatterTag</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>initialLocaleName</name>
