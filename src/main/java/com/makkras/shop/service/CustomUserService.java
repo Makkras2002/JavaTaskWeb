@@ -3,6 +3,7 @@ package com.makkras.shop.service;
 import com.makkras.shop.entity.User;
 import com.makkras.shop.exception.ServiceException;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface CustomUserService {
@@ -14,4 +15,6 @@ public interface CustomUserService {
     void setUserNewLogin(String login,String newLogin) throws ServiceException;
     void setUserNewPassword(String login,String newPassword) throws ServiceException;
     Optional<User> findUserWithLogin(String login) throws ServiceException;
+    Optional<User> findUserWithLoginFromAllUsers(String login) throws ServiceException;
+    List<User> findAllUsers() throws ServiceException;
 }

@@ -37,7 +37,7 @@ public class ProductService implements CustomProductService {
         try {
             products = productDao.findAllProductInStock();
         } catch (InteractionException e) {
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage(),e);
         }
         return products;
     }
@@ -46,7 +46,7 @@ public class ProductService implements CustomProductService {
         try {
             productCategories = productCategoryDao.findAll();
         } catch (InteractionException e) {
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage(),e);
         }
         return productCategories;
     }
@@ -55,7 +55,7 @@ public class ProductService implements CustomProductService {
         try {
             products = productDao.findAllProductInStockAndSortByName();
         } catch (InteractionException e) {
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage(),e);
         }
         return products;
     }
@@ -64,7 +64,7 @@ public class ProductService implements CustomProductService {
         try {
             products = productDao.findAllProductInStockAndSortByCategory();
         } catch (InteractionException e) {
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage(),e);
         }
         return products;
     }
@@ -73,7 +73,7 @@ public class ProductService implements CustomProductService {
         try {
             products = productDao.findAllProductInStockAndSortByPrice();
         } catch (InteractionException e) {
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage(),e);
         }
         return products;
     }
@@ -99,8 +99,17 @@ public class ProductService implements CustomProductService {
                 foundProduct = Optional.ofNullable(dbSearchResult.get(0));
             }
         } catch (InteractionException e) {
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage(),e);
         }
         return foundProduct;
+    }
+    public List<Product> findAllProductsFromDb() throws ServiceException {
+        List<Product> products = new ArrayList<>();
+        try {
+            products = productDao.findAll();
+        } catch (InteractionException e) {
+            throw new ServiceException(e.getMessage(),e);
+        }
+        return products;
     }
 }

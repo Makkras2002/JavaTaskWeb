@@ -30,6 +30,11 @@ public final class Literal {
     public static final String REGISTRATION_FORM_DATA_MAP = "registration_form_data_map";
     public static final String PRODUCT_ID = "product_id";
     public static final String PRODUCT_AMOUNT = "amount";
+    public static final String PRODUCTS_FOR_ADMIN = "products";
+    public static final String USERS_FOR_ADMIN = "users";
+    public static final String ORDERS_FOR_ADMIN = "orders";
+
+
 
     private Literal(){
     }

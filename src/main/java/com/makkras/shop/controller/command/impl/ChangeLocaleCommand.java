@@ -17,6 +17,9 @@ public class ChangeLocaleCommand implements CustomCommand {
         if(page.contains("basket_show.jsp")){
             page = PagePath.ORDER_PAGE;
         }
+        if(page.contains("mainadmin.jsp")){
+            page = PagePath.MAIN_ADMIN_PAGE;
+        }
         if(request.getSession().getAttribute(Literal.LOCALE_NAME) != null){
             if(request.getSession().getAttribute(Literal.LOCALE_NAME).equals(Literal.BRITISH_LOCALE)){
                 request.getSession().setAttribute(Literal.LOCALE_NAME,Literal.DEFAULT_LOCALE);

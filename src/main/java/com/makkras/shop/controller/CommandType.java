@@ -93,6 +93,11 @@ public enum CommandType {
         {
             this.command = new MakeOrderCommand();
         }
+    },
+    PREPARE_MAIN_ADMIN_PAGE {
+        {
+            this.command = new FillMainAdminMenuCommand();
+        }
     };
     CustomCommand command;
     public CustomCommand getCurrentCommand(){

@@ -5,6 +5,7 @@ import com.makkras.shop.controller.Literal;
 import com.makkras.shop.controller.PagePath;
 import com.makkras.shop.controller.validator.impl.CustomUserDataValidator;
 import com.makkras.shop.entity.User;
+import com.makkras.shop.entity.UserRole;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.impl.UserService;
 import com.makkras.shop.util.locale.LocalizedTextExtractor;
@@ -32,7 +33,11 @@ public class ChangeLoginCommand implements CustomCommand {
                     String oldLogin = session.getAttribute(Literal.LOGIN_NAME).toString();
                     session.setAttribute(Literal.LOGIN_NAME,login);
                     userService.setUserNewLogin(oldLogin,login);
-                    page = PagePath.MAIN_CLIENT_PAGE;
+                    if(session.getAttribute(Literal.ROLE).equals(UserRole.ADMIN.toString())) {
+                        page = PagePath.MAIN_ADMIN_PAGE;
+                    } else {
+                        page = PagePath.MAIN_CLIENT_PAGE;
+                    }
                 } else {
                     request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE, localizedTextExtractor.getText(currentLocale,
                             "USER_WITH_LOGIN_EXISTS_ERROR"));

@@ -52,7 +52,7 @@ public class UserDaoImpl implements UserDao {
     private static final String SQL_UPDATE_USER_LOGIN= """
     UPDATE users SET login  = ? WHERE login = ?""";
     private static final String SQL_UPDATE_USER_ACTIVATION_STATUS= """
-    UPDATE users SET is_active  = ? WHERE email = ?""";
+    UPDATE users SET is_active  = ? WHERE login = ?""";
     private static final String SQL_UPDATE_USER_ONLINE_STATUS= """
     UPDATE users SET is_online  = ? WHERE login = ?""";
     private static final String SQL_UPDATE_USER_PASSWORD= """
@@ -289,14 +289,14 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean updateActivationStatus(String email, boolean newActivationStatus) throws InteractionException {
+    public boolean updateActivationStatus(String login, boolean newActivationStatus) throws InteractionException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
             connection = CustomConnectionPool.getInstance().getConnection();
             statement = connection.prepareStatement(SQL_UPDATE_USER_ACTIVATION_STATUS);
             statement.setBoolean(1,newActivationStatus);
-            statement.setString(2,email);
+            statement.setString(2,login);
             int updRes = statement.executeUpdate();
             if(updRes ==0){
                 return false;

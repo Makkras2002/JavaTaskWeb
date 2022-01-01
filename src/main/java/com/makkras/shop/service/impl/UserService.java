@@ -12,6 +12,7 @@ import com.makkras.shop.service.CustomUserService;
 import com.makkras.shop.util.locale.LocalizedTextExtractor;
 import com.makkras.shop.util.mail.MailSender;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -56,7 +57,7 @@ public class UserService implements CustomUserService {
                 }
             }
         } catch (InteractionException e) {
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage(),e);
         }
     }
     public Optional<User> findUserWithLogin(String login) throws ServiceException {
@@ -69,7 +70,7 @@ public class UserService implements CustomUserService {
             }
             return result;
         } catch (InteractionException e) {
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage(),e);
         }
     }
     public Optional<User> findUserWithLoginFromAllUsers(String login) throws ServiceException {
@@ -82,7 +83,7 @@ public class UserService implements CustomUserService {
             }
             return result;
         } catch (InteractionException e) {
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage(),e);
         }
     }
     public boolean checkIfUserIsValidForRegistration(String login, String email) throws ServiceException {
@@ -99,7 +100,7 @@ public class UserService implements CustomUserService {
                 }
             }
         } catch (InteractionException e) {
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage(),e);
         }
     }
     public boolean registerUser(String login,String password, String email) throws ServiceException {
@@ -112,7 +113,7 @@ public class UserService implements CustomUserService {
                 return false;
             }
         } catch (InteractionException e){
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage(),e);
         }
 
     }
@@ -124,21 +125,30 @@ public class UserService implements CustomUserService {
         try {
             userDao.updateOnlineStatus(login,false);
         } catch (InteractionException e) {
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage(),e);
         }
     }
     public void setUserNewLogin(String login,String newLogin) throws ServiceException {
         try {
             userDao.updateLogin(login,newLogin);
         } catch (InteractionException e) {
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage(),e);
         }
     }
     public void setUserNewPassword(String login,String newPassword) throws ServiceException {
         try {
             userDao.updatePassword(login, newPassword);
         } catch (InteractionException e) {
-            throw new ServiceException(e.getMessage());
+            throw new ServiceException(e.getMessage(),e);
+        }
+    }
+    public List<User> findAllUsers() throws ServiceException {
+        List<User> users = new ArrayList<>();
+        try {
+            users = userDao.findAllActiveUsers();
+            return users;
+        } catch (InteractionException e) {
+            throw new ServiceException(e.getMessage(),e);
         }
     }
 }

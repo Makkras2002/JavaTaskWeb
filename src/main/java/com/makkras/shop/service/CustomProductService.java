@@ -16,4 +16,5 @@ public interface CustomProductService {
     List<Product> findProductsInStockFromDbByParams(String name, String category, BigDecimal minPrice, BigDecimal maxPrice) throws ServiceException;
     List<ProductCategory> findAllProductCategoriesFromDb() throws ServiceException;
     Optional<Product> findProductById(Long productId) throws ServiceException;
+    List<Product> findAllProductsFromDb() throws ServiceException;
 }

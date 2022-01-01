@@ -4,6 +4,7 @@ import com.makkras.shop.controller.command.CustomCommand;
 import com.makkras.shop.controller.Literal;
 import com.makkras.shop.controller.PagePath;
 import com.makkras.shop.controller.validator.impl.CustomUserDataValidator;
+import com.makkras.shop.entity.UserRole;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.impl.UserService;
 import com.makkras.shop.util.locale.LocalizedTextExtractor;
@@ -26,7 +27,11 @@ public class ChangePasswordCommand implements CustomCommand {
             try {
                 UserService.getInstance().setUserNewPassword(login,password);
                 session.setAttribute(Literal.PASSWORD,password);
-                page = PagePath.MAIN_CLIENT_PAGE;
+                if(session.getAttribute(Literal.ROLE).equals(UserRole.ADMIN.toString())) {
+                    page = PagePath.MAIN_ADMIN_PAGE;
+                } else {
+                    page = PagePath.MAIN_CLIENT_PAGE;
+                }
             } catch (ServiceException e) {
                 logger.error(e.getMessage());
             }

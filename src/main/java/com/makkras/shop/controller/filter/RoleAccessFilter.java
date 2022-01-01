@@ -17,11 +17,13 @@ import java.util.EnumSet;
 @WebFilter(urlPatterns = { "/controller" })
 public class RoleAccessFilter implements Filter {
     private EnumSet<CommandType> allowedToUnRegisteredAccessCommands;
+    private EnumSet<CommandType> onlyAdminAccessCommands;
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         allowedToUnRegisteredAccessCommands = EnumSet.of(CommandType.REGISTER,CommandType.LOGIN,
                 CommandType.PREPARE_MAIN_CLIENT_PAGE,CommandType.CHANGE_LOCALE,CommandType.SORT_PRODUCTS_BY_NAME,CommandType.SORT_PRODUCTS_BY_CATEGORY,
                 CommandType.SORT_PRODUCTS_BY_PRICE,CommandType.FIND_PRODUCT);
+        onlyAdminAccessCommands = EnumSet.of(CommandType.PREPARE_MAIN_ADMIN_PAGE);
     }
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -45,7 +47,7 @@ public class RoleAccessFilter implements Filter {
             }
         } else {
             if(String.valueOf(session.getAttribute(Literal.ROLE)).equals(UserRole.CLIENT.toString())){
-                if(2 == 1){  //Add commands for admin only//
+                if(onlyAdminAccessCommands.stream().filter(o -> o.toString().equals(command.toUpperCase())).toArray().length > 0){
                     page = PagePath.AUTHORIZATION_PAGE;
                     requestDispatcher = request.getServletContext().getRequestDispatcher(page);
                     request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,

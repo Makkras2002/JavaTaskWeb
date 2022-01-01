@@ -40,14 +40,14 @@ public class LoginCommand implements CustomCommand {
                         request.getSession().setAttribute(Literal.LOGIN_NAME, foundUser.get().getLogin());
                         request.getSession().setAttribute(Literal.PASSWORD, foundUser.get().getPassword());
                         request.getSession().setAttribute(Literal.EMAIL, foundUser.get().getEmail());
+                        request.getSession().setAttribute(Literal.ROLE, foundUser.get().getUserRoleName());
                         if(enterAsAdmin){
-                            request.getSession().setAttribute(Literal.ROLE, UserRole.ADMIN);
+                            page = PagePath.MAIN_ADMIN_PAGE;
                         } else {
-                            request.getSession().setAttribute(Literal.ROLE, UserRole.CLIENT);
+                            page = PagePath.MAIN_CLIENT_PAGE;
                         }
                         List<ComponentOrder> componentOrders = new ArrayList<>();
                         request.getSession().setAttribute(Literal.ORDER, componentOrders);
-                        page = PagePath.MAIN_CLIENT_PAGE;
                     }else {
                         request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
                                 localizedTextExtractor.getText(currentLocale,"LOGIN_ERROR"));
