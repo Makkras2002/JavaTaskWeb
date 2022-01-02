@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="JavaTaskWeb:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d343d937-cc37-418d-bc9c-05f7baad5960" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/JavaTaskWeb.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Jsp File" />
+        <option value="JavaScript File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="21mRIvnWrwC1akKLL9JsIcPSn4W" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.47471264" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\foulder1.1\Pam\JavaTaskWeb\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\foulder1.1\Pam\JavaTaskWeb\src\main\webapp" />
+      <recent name="C:\foulder1.1\Pam\JavaTaskWeb\src\main\resources" />
+      <recent name="C:\foulder1.1\Pam\JavaTaskWeb\datasrc" />
+      <recent name="C:\foulder1.1\Pam\JavaTaskWeb\picture" />
+      <recent name="C:\foulder1.1\Pam\JavaTaskWeb\src\main" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.2">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.makkras.shop.test_main.Main" />
+      <module name="JavaTaskWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.makkras.shop.test_main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 10.0.2" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.2" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8888/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="JavaTaskWeb:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="c7938974-ce5a-4cc8-a7d7-2dc49f4b1778" />
+        <option name="HTTP_PORT" value="8888" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="64193" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="JavaTaskWeb:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d343d937-cc37-418d-bc9c-05f7baad5960" name="Default Changelist" comment="" />
+      <created>1638544201604</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638544201604</updated>
+      <workItem from="1638544203671" duration="829000" />
+      <workItem from="1638696304187" duration="24109000" />
+      <workItem from="1638725697488" duration="5000" />
+      <workItem from="1638793702750" duration="32592000" />
+      <workItem from="1638826767112" duration="8000" />
+      <workItem from="1638826798318" duration="7000" />
+      <workItem from="1638860278774" duration="3228000" />
+      <workItem from="1638868910075" duration="51000" />
+      <workItem from="1638869115285" duration="97000" />
+      <workItem from="1638869271792" duration="9000" />
+      <workItem from="1638869360559" duration="46000" />
+      <workItem from="1638879508129" duration="1672000" />
+      <workItem from="1638881271357" duration="438000" />
+      <workItem from="1638972148384" duration="205000" />
+      <workItem from="1638972395118" duration="154000" />
+      <workItem from="1639121371513" duration="4034000" />
+      <workItem from="1639125884757" duration="47000" />
+      <workItem from="1639306663337" duration="10482000" />
+      <workItem from="1639317254259" duration="39000" />
+      <workItem from="1639393816360" duration="24976000" />
+      <workItem from="1639420077846" duration="6000" />
+      <workItem from="1639420710352" duration="578000" />
+      <workItem from="1639421322077" duration="21000" />
+      <workItem from="1639426130855" duration="90000" />
+      <workItem from="1639465264133" duration="7111000" />
+      <workItem from="1639474314719" duration="9000" />
+      <workItem from="1639493187767" duration="168000" />
+      <workItem from="1639493372533" duration="599000" />
+      <workItem from="1639494180185" duration="56000" />
+      <workItem from="1639494422693" duration="1977000" />
+      <workItem from="1639496425633" duration="693000" />
+      <workItem from="1639584872763" duration="102000" />
+      <workItem from="1639584994259" duration="18000" />
+      <workItem from="1639585472462" duration="49000" />
+      <workItem from="1639586003040" duration="57000" />
+      <workItem from="1639664733000" duration="13195000" />
+      <workItem from="1639679463771" duration="23000" />
+      <workItem from="1639726517647" duration="3865000" />
+      <workItem from="1639731197678" duration="76000" />
+      <workItem from="1639915009386" duration="15530000" />
+      <workItem from="1639933959775" duration="6000" />
+      <workItem from="1639993471860" duration="1141000" />
+      <workItem from="1640009509000" duration="11238000" />
+      <workItem from="1640020844926" duration="11000" />
+      <workItem from="1640068862330" duration="8680000" />
+      <workItem from="1640080295517" duration="51000" />
+      <workItem from="1640259994635" duration="701000" />
+      <workItem from="1640260822868" duration="14342000" />
+      <workItem from="1640275278337" duration="4000" />
+      <workItem from="1640331282696" duration="4799000" />
+      <workItem from="1640336288275" duration="26000" />
+      <workItem from="1640336952775" duration="184000" />
+      <workItem from="1640337154846" duration="23000" />
+      <workItem from="1640427850204" duration="7186000" />
+      <workItem from="1640436192788" duration="10177000" />
+      <workItem from="1640446506936" duration="108000" />
+      <workItem from="1640519619034" duration="10327000" />
+      <workItem from="1640530040623" duration="21000" />
+      <workItem from="1640674914615" duration="9814000" />
+      <workItem from="1640688691411" duration="34000" />
+      <workItem from="1640773364362" duration="14953000" />
+      <workItem from="1640788455768" duration="8000" />
+      <workItem from="1640862321221" duration="2208000" />
+      <workItem from="1640864559931" duration="22000" />
+      <workItem from="1640866561886" duration="6305000" />
+      <workItem from="1640872930564" duration="26000" />
+      <workItem from="1640872971908" duration="12000" />
+      <workItem from="1640929782735" duration="3322000" />
+      <workItem from="1640933428343" duration="24000" />
+      <workItem from="1640933803571" duration="406000" />
+      <workItem from="1640934230427" duration="50000" />
+      <workItem from="1641037922557" duration="13555000" />
+      <workItem from="1641051580645" duration="10000" />
+      <workItem from="1641051899499" duration="24000" />
+      <workItem from="1641122752973" duration="10832000" />
+      <workItem from="1641133669695" duration="324000" />
+    </task>
+    <task id="LOCAL-00001" summary="Dao work started upd.">
+      <created>1638725665591</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638725665591</updated>
+    </task>
+    <task id="LOCAL-00002" summary="DAO and Connection Pool finished Upd.">
+      <created>1638826708683</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1638826708683</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Dao Ref Upd.">
+      <created>1638868455611</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1638868455611</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Refactoring Upd.">
+      <created>1638869177545</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1638869177545</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Exception throws Refactoring Upd.">
+      <created>1638881116816</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1638881116816</updated>
+    </task>
+    <task id="LOCAL-00006" summary="UserRole enum rework Upd.">
+      <created>1638881608341</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1638881608341</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Pool size connection check added Upd.">
+      <created>1638972332440</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1638972332440</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Style Refactoring Upd.">
+      <created>1639125731767</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1639125731767</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Mail sender and text localizer added Upd.">
+      <created>1639317195595</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1639317195595</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Login Control added Upd.">
+      <created>1639420036144</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1639420036144</updated>
+    </task>
+    <task id="LOCAL-00011" summary="LI fix Upd.">
+      <created>1639421273528</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1639421273528</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Web Refactoring Upd.">
+      <created>1639472010328</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1639472010328</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Properties Path Fix Upd.">
+      <created>1639474179115</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1639474179115</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Service added Upd.">
+      <created>1639496400675</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1639496400675</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Optional.empty fix Upd.">
+      <created>1639496772747</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1639496772747</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Registration + confirmation through email added Upd.">
+      <created>1639679394769</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1639679394769</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Registration + Web refactoring Upd.">
+      <created>1639731166794</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1639731166794</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Session invalidation handler added + servlets refactoring Upd.">
+      <created>1639933831097</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1639933831097</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Client Main Menu Upd.">
+      <created>1640020812726</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1640020812726</updated>
+    </task>
+    <task id="LOCAL-00020" summary="General refactoring Upd.">
+      <created>1640080260098</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1640080260098</updated>
+    </task>
+    <task id="LOCAL-00021" summary="pre ref Upd.">
+      <created>1640260688160</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1640260688160</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Localization RU/EN added Upd.">
+      <created>1640275248777</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1640275248777</updated>
+    </task>
+    <task id="LOCAL-00023" summary="f5 button blocker added Upd.">
+      <created>1640334979801</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1640334979801</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Encoding filter added Upd.">
+      <created>1640336056691</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1640336056691</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Redact login, password + user forms validator + filters added + general refactoring Upd.">
+      <created>1640446406648</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1640446406649</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Sort + Search added Upd.">
+      <created>1640530001508</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1640530001508</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Validators rework + refactoring Upd.">
+      <created>1640688660890</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1640688660890</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Order management for client added Upd.">
+      <created>1640788430723</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1640788430723</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Custom Jstl tag added Upd.">
+      <created>1640872888083</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1640872888083</updated>
+    </task>
+    <task id="LOCAL-00030" summary="sql.Date to LocalDate + general refactoring Upd.">
+      <created>1640933395351</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1640933395351</updated>
+    </task>
+    <task id="LOCAL-00031" summary="private constructor for Literal and PagePath Upd.">
+      <created>1640934171676</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1640934171676</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Main admin page added Upd.">
+      <created>1641051552359</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1641051552359</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Adding of product to catalog added Upd.">
+      <created>1641133478596</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1641133478597</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Login Control added Upd." />
+    <MESSAGE value="LI fix Upd." />
+    <MESSAGE value="Web Refactoring Upd." />
+    <MESSAGE value="Properties Path Fix Upd." />
+    <MESSAGE value="Service added Upd." />
+    <MESSAGE value="Optional.empty fix Upd." />
+    <MESSAGE value="Registration + confirmation through email added Upd." />
+    <MESSAGE value="Registration + Web refactoring Upd." />
+    <MESSAGE value="Session invalidation handler added + servlets refactoring Upd." />
+    <MESSAGE value="Client Main Menu Upd." />
+    <MESSAGE value="General refactoring Upd." />
+    <MESSAGE value="pre ref Upd." />
+    <MESSAGE value="Localization RU/EN added Upd." />
+    <MESSAGE value="f5 button blocker added Upd." />
+    <MESSAGE value="Encoding filter added Upd." />
+    <MESSAGE value="redact login, password + user forms validator + filters added Upd." />
+    <MESSAGE value="Redact login, password + user forms validator + filters added + general refactoring Upd." />
+    <MESSAGE value="Sort + Search added Upd." />
+    <MESSAGE value="Validators rework + refactoring Upd." />
+    <MESSAGE value="Order management for client added Upd." />
+    <MESSAGE value="Custom Jstl tag added Upd." />
+    <MESSAGE value="sql.Date to LocalDate + general refactoring Upd." />
+    <MESSAGE value="private constructor for Literal and PagePath Upd." />
+    <MESSAGE value="Main admin page added Upd." />
+    <MESSAGE value="Adding of product to catalog added Upd." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding of product to catalog added Upd." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
