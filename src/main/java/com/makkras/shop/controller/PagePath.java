@@ -10,7 +10,8 @@ public final class PagePath {
     public static final String CONFIRM_REGISTRATION_PAGE = "/pages/confirm_registration.jsp";
     public static final String RAW_ORDER_PAGE = "/pages/basket_show.jsp";
     public static final String ORDER_PAGE = "/pages/basket_show_wrapper.jsp";
-
+    public static final String RAW_ADD_PRODUCT_PAGE ="/pages/add_product.jsp";
+    public static final String ADD_PRODUCT_PAGE ="/pages/add_product_wrapper.jsp";
     private PagePath(){
     }
 }

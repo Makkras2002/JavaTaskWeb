@@ -17,4 +17,6 @@ public interface CustomProductService {
     List<ProductCategory> findAllProductCategoriesFromDb() throws ServiceException;
     Optional<Product> findProductById(Long productId) throws ServiceException;
     List<Product> findAllProductsFromDb() throws ServiceException;
+    Optional<Product> findProductByName(String name) throws ServiceException;
+    boolean addProductToDb(Product product) throws ServiceException;
 }

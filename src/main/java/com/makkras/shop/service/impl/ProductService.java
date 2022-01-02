@@ -103,6 +103,18 @@ public class ProductService implements CustomProductService {
         }
         return foundProduct;
     }
+    public Optional<Product> findProductByName(String name) throws ServiceException {
+        Optional<Product> foundProduct = Optional.empty();
+        try {
+            List<Product> dbSearchResult = productDao.findProductsByName(name);
+            if(dbSearchResult.size() > 0 ) {
+                foundProduct = Optional.ofNullable(dbSearchResult.get(0));
+            }
+        } catch (InteractionException e) {
+            throw new ServiceException(e.getMessage(),e);
+        }
+        return foundProduct;
+    }
     public List<Product> findAllProductsFromDb() throws ServiceException {
         List<Product> products = new ArrayList<>();
         try {
@@ -112,4 +124,17 @@ public class ProductService implements CustomProductService {
         }
         return products;
     }
+    public boolean addProductToDb(Product product) throws ServiceException {
+        try {
+            Optional<Long> createdProductId = Optional.ofNullable(productDao.create(product));
+            if(createdProductId.isPresent()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (InteractionException e) {
+            throw new ServiceException(e.getMessage(),e);
+        }
+    }
+
 }

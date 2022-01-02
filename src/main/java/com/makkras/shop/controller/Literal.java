@@ -8,6 +8,7 @@ public final class Literal {
     public static final String BRITISH_LOCALE = "en_GB";
     public static final String EMAIL = "email";
     public static final String AUTHORIZATION_ERROR_MESSAGE = "errorAuthMessage";
+    public static final String ADD_PRODUCT_ERROR_MESSAGE = "errorAddProductMessage";
     public static final String ORDER = "order";
     public static final String LOCALE_NAME = "locale";
     public static final String ERROR_REGISTRATION_MESSAGE = "errorRegistrationMessage";
@@ -27,12 +28,16 @@ public final class Literal {
     public static final String PRODUCT_MAX_PRICE = "max_price";
     public static final String PRODUCT_PRICE = "price";
     public static final String LOGIN_FORM_DATA_MAP = "login_form_data_map";
+    public static final String ADD_PRODUCT_FORM_DATA_MAP = "add_product_form_data_map";
     public static final String REGISTRATION_FORM_DATA_MAP = "registration_form_data_map";
     public static final String PRODUCT_ID = "product_id";
     public static final String PRODUCT_AMOUNT = "amount";
     public static final String PRODUCTS_FOR_ADMIN = "products";
     public static final String USERS_FOR_ADMIN = "users";
     public static final String ORDERS_FOR_ADMIN = "orders";
+    public static final String PRODUCT_IMAGE_PATH = "image";
+    public static final String PRODUCT_COMMENT = "comment";
+    public static final String PRODUCT_IN_STOCK_STATUS = "status";
 
 
 

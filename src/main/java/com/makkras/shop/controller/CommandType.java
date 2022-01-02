@@ -98,6 +98,16 @@ public enum CommandType {
         {
             this.command = new FillMainAdminMenuCommand();
         }
+    },
+    PREPARE_PRODUCT_ADDING_PAGE {
+        {
+            this.command = new FillProductAddingMenuCommand();
+        }
+    },
+    ADD_PRODUCT_TO_CATALOG {
+        {
+            this.command = new AddProductToCatalogCommand();
+        }
     };
     CustomCommand command;
     public CustomCommand getCurrentCommand(){

@@ -288,6 +288,10 @@
     </div>
     <div class="row" style="margin-top: 20px">
         <h2><fmt:message key="main_admin.products"/></h2>
+        <form method="post" action="/controller">
+            <input type="hidden" name="command" id="command9" value="prepare_product_adding_page"/>
+            <button type="submit" class="btn btn-success btn-lg"><fmt:message key="main_admin.add_product"/></button>
+        </form>
         <table class="table table-hover">
             <tbody id="productsTable">
             </tbody>

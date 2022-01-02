@@ -17,9 +17,9 @@
     </script>
 </head>
 <body class="p-2 bg-primary text-black bg-opacity-50" onkeydown="return (event.keyCode != 116)">
-<form method="post" action="/controller" name="confregform">
+<form method="post" action="/controller" name="get_prod_data_wrapper">
     <input type="hidden" name="command" id="command" value="confirm_registration">
 </form>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/autoformsubmitter.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/main_client_wrapper_form_autosubmitter.js"></script>
 </body>
 </html>
