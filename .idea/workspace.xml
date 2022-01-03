@@ -9,38 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d343d937-cc37-418d-bc9c-05f7baad5960" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/ChangeProductDataCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/FillAdminOrdersViewMenuCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/FillAdminUsersViewMenuCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/FillChangeProductDataMenuCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/change_product_page_handler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/orders_admin_view_handler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/users_admin_view_handler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/admin_orders_view_wrapper.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/admin_users_view_wrapper.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/change_product.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/orders_admin_view.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/users_admin_view.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/CommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/CommandType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/Literal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/Literal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/PagePath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/PagePath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/AddProductToCatalogCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/AddProductToCatalogCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/ChangeLocaleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/ChangeLocaleCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/FillMainAdminMenuCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/FillMainAdminMenuCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/impl/CustomProductDataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/impl/CustomProductDataValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/impl/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/impl/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/localized_text.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/localized_text.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/localized_text_en_GB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/localized_text_en_GB.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/localized_text_ru_RU.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/localized_text_ru_RU.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/main_admin_page_handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/main_admin_page_handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/add_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/add_product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/mainadmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/mainadmin.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="d343d937-cc37-418d-bc9c-05f7baad5960" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -317,7 +286,7 @@
       <workItem from="1641122752973" duration="10832000" />
       <workItem from="1641133669695" duration="528000" />
       <workItem from="1641134240909" duration="66000" />
-      <workItem from="1641208439002" duration="16635000" />
+      <workItem from="1641208439002" duration="17004000" />
     </task>
     <task id="LOCAL-00001" summary="Dao work started upd.">
       <created>1638725665591</created>
@@ -564,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641134187658</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Update product data command added + Admin menu refactoring Upd.">
+      <created>1641225513658</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1641225513658</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +559,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Web Refactoring Upd." />
     <MESSAGE value="Properties Path Fix Upd." />
     <MESSAGE value="Service added Upd." />
     <MESSAGE value="Optional.empty fix Upd." />
@@ -608,7 +583,8 @@
     <MESSAGE value="Adding of product to catalog added Upd." />
     <MESSAGE value="Refactoring Upd." />
     <MESSAGE value="Refactoring Upd x2." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring Upd x2." />
+    <MESSAGE value="Update product data command added + Admin menu refactoring Upd." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update product data command added + Admin menu refactoring Upd." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
