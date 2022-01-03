@@ -23,6 +23,12 @@ public class ChangeLocaleCommand implements CustomCommand {
         if(page.contains("add_product.jsp")) {
             page = PagePath.ADD_PRODUCT_PAGE;
         }
+        if(page.contains("users_admin_view.jsp")) {
+            page = PagePath.MAIN_ADMIN_USERS_VIEW_PAGE;
+        }
+        if(page.contains("orders_admin_view.jsp")) {
+            page = PagePath.MAIN_ADMIN_ORDERS_VIEW_PAGE;
+        }
         if(request.getSession().getAttribute(Literal.LOCALE_NAME) != null){
             if(request.getSession().getAttribute(Literal.LOCALE_NAME).equals(Literal.BRITISH_LOCALE)){
                 request.getSession().setAttribute(Literal.LOCALE_NAME,Literal.DEFAULT_LOCALE);

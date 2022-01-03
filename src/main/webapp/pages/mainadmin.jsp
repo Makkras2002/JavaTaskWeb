@@ -120,14 +120,6 @@
     <div id="productData" style="display: none">
         ${products}
     </div>
-    <div id="userData" style="display: none">
-        ${users}
-    </div>
-    <div id="orderData" style="display: none">
-        ${orders}
-    </div>
-
-
 
     <div id="prod_name" style="display: none">
         <fmt:message key="main_client.prod_name"/>
@@ -158,70 +150,6 @@
     </div>
     <div id="prod_change" style="display: none">
         <fmt:message key="main_admin.change_product_data"/>
-    </div>
-
-
-
-
-    <div id="user_login" style="display: none">
-        <fmt:message key="main_admin.user_login"/>
-    </div>
-    <div id="user_email" style="display: none">
-        <fmt:message key="main_admin.user_email"/>
-    </div>
-    <div id="user_status" style="display: none">
-        <fmt:message key="main_admin.user_online_status"/>
-    </div>
-    <div id="user_status_online" style="display: none">
-        <fmt:message key="main_admin.online_status_online"/>
-    </div>
-    <div id="user_status_offline" style="display: none">
-        <fmt:message key="main_admin.online_status_offline"/>
-    </div>
-    <div id="user_delete_user" style="display: none">
-        <fmt:message key="main_admin.user_deactivate"/>
-    </div>
-    <div id="user_role" style="display: none">
-        <fmt:message key="main_admin.user_role"/>
-    </div>
-    <div id="user_client" style="display: none">
-        <fmt:message key="main_admin.user_role_client"/>
-    </div>
-    <div id="user_admin" style="display: none">
-        <fmt:message key="main_admin.user_role_admin"/>
-    </div>
-    <div id="empty_users" style="display: none">
-        <fmt:message key="main_admin.empty_users"/>
-    </div>
-
-
-
-    <div id="order_user_login" style="display: none">
-        <fmt:message key="main_admin.order_user_login"/>
-    </div>
-    <div id="order_user_email" style="display: none">
-        <fmt:message key="main_admin.order_user_email"/>
-    </div>
-    <div id="order_status" style="display: none">
-        <fmt:message key="main_admin.order_is_completed"/>
-    </div>
-    <div id="order_status_completed" style="display: none">
-        <fmt:message key="main_admin.completed_status_completed"/>
-    </div>
-    <div id="order_status_not_completed" style="display: none">
-        <fmt:message key="main_admin.completed_status_not_completed"/>
-    </div>
-    <div id="order_date" style="display: none">
-        <fmt:message key="main_admin.order_date"/>
-    </div>
-    <div id="order_complete" style="display: none">
-        <fmt:message key="main_admin.complete_order"/>
-    </div>
-    <div id="order_components" style="display: none">
-        <fmt:message key="main_admin.order_components"/>
-    </div>
-    <div id="empty_orders" style="display: none">
-        <fmt:message key="main_admin.empty_orders"/>
     </div>
 
 <%--    <div class="row" style="margin-top: 40px">--%>
@@ -279,13 +207,6 @@
 <%--            </div>--%>
 <%--        </div>--%>
 <%--    </div>--%>
-    <div class="row" style="margin-top: 60px">
-        <h2><fmt:message key="main_admin.users"/></h2>
-        <table class="table table-hover">
-            <tbody id="usersTable">
-            </tbody>
-        </table>
-    </div>
     <div class="row" style="margin-top: 20px">
         <h2><fmt:message key="main_admin.products"/></h2>
         <form method="post" action="/controller">
@@ -297,12 +218,19 @@
             </tbody>
         </table>
     </div>
+    <div class="row" style="margin-top: 60px">
+        <h2><fmt:message key="main_admin.users"/></h2>
+        <form method="post" action="/controller">
+            <input type="hidden" name="command" id="command10" value="prepare_view_users_page"/>
+            <button type="submit" class="btn btn-success btn-lg"><fmt:message key="main_admin.view_all_users"/></button>
+        </form>
+    </div>
     <div class="row" style="margin-top: 20px">
         <h2><fmt:message key="main_admin.orders"/></h2>
-        <table class="table table-hover">
-            <tbody id="ordersTable">
-            </tbody>
-        </table>
+        <form method="post" action="/controller">
+            <input type="hidden" name="command" id="command11" value="prepare_view_orders_page"/>
+            <button type="submit" class="btn btn-success btn-lg"><fmt:message key="main_admin.view_all_orders"/></button>
+        </form>
     </div>
 </div>
 </div>

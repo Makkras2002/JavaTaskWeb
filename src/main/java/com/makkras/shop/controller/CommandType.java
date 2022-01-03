@@ -104,9 +104,29 @@ public enum CommandType {
             this.command = new FillProductAddingMenuCommand();
         }
     },
+    PREPARE_VIEW_USERS_PAGE {
+        {
+            this.command = new FillAdminUsersViewMenuCommand();
+        }
+    },
+    PREPARE_VIEW_ORDERS_PAGE {
+        {
+            this.command = new FillAdminOrdersViewMenuCommand();
+        }
+    },
     ADD_PRODUCT_TO_CATALOG {
         {
             this.command = new AddProductToCatalogCommand();
+        }
+    },
+    CHANGE_PRODUCT {
+        {
+            this.command = new FillChangeProductDataMenuCommand();
+        }
+    },
+    CHANGE_PRODUCT_DATA {
+        {
+            this.command = new ChangeProductDataCommand();
         }
     };
     CustomCommand command;

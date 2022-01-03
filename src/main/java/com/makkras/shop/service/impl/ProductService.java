@@ -136,5 +136,70 @@ public class ProductService implements CustomProductService {
             throw new ServiceException(e.getMessage(),e);
         }
     }
+    public boolean updateChangedFieldsInProduct(Product product) throws ServiceException {
+        Long productId = product.getProductId();
+        boolean isValidToChange = true;
+        String newName = null;
+        String newCategory = null;
+        BigDecimal newPrice = null;
+        String newComment = null;
+        Boolean newStatus = null;
+        String newImagePath = null;
+        try {
+            Optional<Product> initialProduct  = findProductById(productId);
+            if (initialProduct.isPresent()) {
+                if (!product.getProductName().trim().equals(initialProduct.get().getProductName())) {
+                    Optional<Product> productWithNewName = findProductByName(product.getProductName());
+                    if(!productWithNewName.isPresent()) {
+                        newName = product.getProductName();
+                    } else {
+                        isValidToChange = false;
+                    }
+                }
+                if (!product.getProductCategory().getCategory().equals(initialProduct.get().getProductCategory().getCategory())) {
+                    newCategory = product.getProductCategory().getCategory();
+                }
+                if (!product.getProductPrice().equals(initialProduct.get().getProductPrice())) {
+                    newPrice = product.getProductPrice();
+                }
+                if (!product.getProductComment().equals(initialProduct.get().getProductComment())) {
+                    newComment = product.getProductComment();
+                }
+                if(product.getPicturePath() != null) {
+                    if (!product.getPicturePath().equals(initialProduct.get().getPicturePath())) {
+                        newImagePath = product.getPicturePath();
+                    }
+                }
+                if (product.isInStock() != initialProduct.get().isInStock()) {
+                    newStatus = product.isInStock();
+                }
+            } else {
+                isValidToChange = false;
+            }
+            if (isValidToChange) {
+                if(newName != null) {
+                    productDao.updateProductName(newName,productId);
+                }
+                if (newCategory != null) {
+                    productDao.updateProductCategory(newCategory,productId);
+                }
+                if (newPrice != null) {
+                    productDao.updatePrice(newPrice,productId);
+                }
+                if(newComment != null) {
+                    productDao.updateComment(newComment,productId);
+                }
+                if(newStatus != null) {
+                    productDao.updateIsInStockStatus(newStatus,productId);
+                }
+                if(newImagePath != null) {
+                    productDao.updatePicturePath(newImagePath,productId);
+                }
+            }
+            return isValidToChange;
+        } catch (InteractionException e) {
+            throw new ServiceException(e.getMessage(),e);
+        }
+    }
 
 }

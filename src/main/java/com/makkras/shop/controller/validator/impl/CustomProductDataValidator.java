@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 public class CustomProductDataValidator implements ProductDataValidator {
     private static CustomProductDataValidator instance;
-    private static final String NUMERIC_STRING_CHECK_REGEX = "\\d+";
+    private static final String NUMERIC_STRING_CHECK_REGEX = "([-+]?[0-9]*\\.?[0-9]+)";
     private static final String IMAGE_FILE_PATH_REGEX = "([^\\s]+(\\.(?i)(jpe?g|png|gif|bmp))$)";
     private static final int MAX_STRING_LENGTH = 200;
     private static final int MIN_STRING_LENGTH = 1;
@@ -62,6 +62,7 @@ public class CustomProductDataValidator implements ProductDataValidator {
             result = false;
         }
         if(!price.matches(NUMERIC_STRING_CHECK_REGEX)){
+            System.out.println(price);
             formValues.replace(Literal.PRODUCT_PRICE,price,
                     localizedTextExtractor.getText(locale,"INVALID_FORM_SYNTAX"));
             result = false;
@@ -69,9 +70,9 @@ public class CustomProductDataValidator implements ProductDataValidator {
         Pattern p = Pattern.compile(IMAGE_FILE_PATH_REGEX);
         Matcher matcher = p.matcher(imagePath);
         if(!matcher.matches()) {
-            formValues.replace(Literal.PRODUCT_IMAGE_PATH,imagePath,
-                    localizedTextExtractor.getText(locale,"INVALID_FORM_SYNTAX"));
-            result = false;
+            if(!imagePath.isBlank()) {
+                result = false;
+            }
         }
         if(comment.length() < MIN_STRING_LENGTH) {
             formValues.replace(Literal.PRODUCT_COMMENT,comment,

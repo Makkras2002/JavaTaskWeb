@@ -9,6 +9,7 @@ public final class Literal {
     public static final String EMAIL = "email";
     public static final String AUTHORIZATION_ERROR_MESSAGE = "errorAuthMessage";
     public static final String ADD_PRODUCT_ERROR_MESSAGE = "errorAddProductMessage";
+    public static final String CHANGE_PRODUCT_ERROR_MESSAGE = "errorChangeProductMessage";
     public static final String ORDER = "order";
     public static final String LOCALE_NAME = "locale";
     public static final String ERROR_REGISTRATION_MESSAGE = "errorRegistrationMessage";
@@ -38,6 +39,7 @@ public final class Literal {
     public static final String PRODUCT_IMAGE_PATH = "image";
     public static final String PRODUCT_COMMENT = "comment";
     public static final String PRODUCT_IN_STOCK_STATUS = "status";
+    public static final String PRODUCT_FOR_CHANGE_DATA = "product_for_change_data";
 
 
 

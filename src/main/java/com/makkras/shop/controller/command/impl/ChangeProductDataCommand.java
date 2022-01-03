@@ -20,22 +20,22 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
-public class AddProductToCatalogCommand implements CustomCommand {
+public class ChangeProductDataCommand implements CustomCommand {
     private static Logger logger = LogManager.getLogger();
     private static final String IMAGE_LOCATION_FOLDER = "\\pictures\\";
-    private static final String DEFAULT_IMAGE = "\\pictures\\default.jpg";
     @Override
     public String execute(HttpServletRequest request) {
         String page = null;
         LocalizedTextExtractor localizedTextExtractor = LocalizedTextExtractor.getInstance();
+        String rawId = request.getParameter(Literal.PRODUCT_ID);
         String name = request.getParameter(Literal.PRODUCT_NAME);
         String rawPrice = request.getParameter(Literal.PRODUCT_PRICE);
         String category = request.getParameter(Literal.PRODUCT_CATEGORY);
         String imagePath = request.getParameter(Literal.PRODUCT_IMAGE_PATH);
         String comment = request.getParameter(Literal.PRODUCT_COMMENT);
         Map<String,String> formData = new HashMap<>();
+        formData.put(Literal.PRODUCT_ID,rawId);
         formData.put(Literal.PRODUCT_NAME,name);
         formData.put(Literal.PRODUCT_PRICE,rawPrice);
         formData.put(Literal.PRODUCT_CATEGORY,category);
@@ -58,32 +58,23 @@ public class AddProductToCatalogCommand implements CustomCommand {
                 String finalImagePath = null;
                 if(!imagePath.isBlank()) {
                     finalImagePath = IMAGE_LOCATION_FOLDER + imagePath;
-                } else {
-                    finalImagePath = DEFAULT_IMAGE;
                 }
-                Optional<Product> foundProduct = productService.findProductByName(name);
-                if(!foundProduct.isPresent()){
-                    BigDecimal price = BigDecimal.valueOf(Double.valueOf(rawPrice));
-                    Product product = new Product(name,price,isInStock,finalImagePath,comment,new ProductCategory(category));
-                    if (productService.addProductToDb(product)) {
-                        page = PagePath.MAIN_ADMIN_PAGE;
-                    } else {
-                        request.setAttribute(Literal.ADD_PRODUCT_ERROR_MESSAGE,
-                                localizedTextExtractor.getText(currentLocale,"UNEXPECTED_ERROR"));
-                        request.setAttribute(Literal.ADD_PRODUCT_FORM_DATA_MAP,formData);
-                        page = PagePath.RAW_ADD_PRODUCT_PAGE;
-                    }
+                BigDecimal price = BigDecimal.valueOf(Double.parseDouble(rawPrice));
+                Long productId = Long.parseLong(rawId);
+                Product product = new Product(productId,name,price,isInStock,finalImagePath,comment,new ProductCategory(category));
+                if (productService.updateChangedFieldsInProduct(product)) {
+                    page = PagePath.MAIN_ADMIN_PAGE;
                 } else {
-                    request.setAttribute(Literal.ADD_PRODUCT_ERROR_MESSAGE,
-                            localizedTextExtractor.getText(currentLocale,"PRODUCT_WITH_SUCH_NAME_ALREADY_EXISTS"));
-                    request.setAttribute(Literal.ADD_PRODUCT_FORM_DATA_MAP,formData);
-                    page = PagePath.RAW_ADD_PRODUCT_PAGE;
+                    request.setAttribute(Literal.CHANGE_PRODUCT_ERROR_MESSAGE,
+                            localizedTextExtractor.getText(currentLocale,"UNEXPECTED_ERROR"));
+                    request.setAttribute(Literal.PRODUCT_FOR_CHANGE_DATA,formData);
+                    page = PagePath.RAW_CHANGE_PRODUCT;
                 }
             } else {
-                request.setAttribute(Literal.ADD_PRODUCT_ERROR_MESSAGE,
+                request.setAttribute(Literal.CHANGE_PRODUCT_ERROR_MESSAGE,
                         localizedTextExtractor.getText(currentLocale,"INVALID_FORM_DATA_ERROR"));
-                request.setAttribute(Literal.ADD_PRODUCT_FORM_DATA_MAP,formData);
-                page = PagePath.RAW_ADD_PRODUCT_PAGE;
+                request.setAttribute(Literal.PRODUCT_FOR_CHANGE_DATA,formData);
+                page = PagePath.RAW_CHANGE_PRODUCT;
             }
         } catch (ServiceException e) {
             logger.error(e.getMessage(),e);
