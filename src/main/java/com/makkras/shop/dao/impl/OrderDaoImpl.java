@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrderDaoImpl implements OrderDao {
-    private static Logger logger = LogManager.getLogger();
     private static final String SQL_SELECT_ALL_COMPONENT_ORDERS_FOR_COMPLETE_ORDER_ID = """
             SELECT products.product_name, products.is_in_stock, product_categories.category, component_orders.ordered_product_amount, component_orders.ordered_product_full_price
             FROM component_orders JOIN products ON component_orders.product_id = products.product_id JOIN product_categories ON products.product_category_id = product_categories.category_id WHERE component_orders.component_order_id = ?""";
@@ -59,7 +58,7 @@ public class OrderDaoImpl implements OrderDao {
     UPDATE complete_orders SET complete_order_date  = ? WHERE complete_order_id = ?""";
     private static final String SQL_UPDATE_COMPLETE_ORDER_STATUS= """
     UPDATE complete_orders SET is_completed  = ? WHERE complete_order_id = ?""";
-
+    private static Logger logger = LogManager.getLogger();
     public OrderDaoImpl(){
     }
     @Override

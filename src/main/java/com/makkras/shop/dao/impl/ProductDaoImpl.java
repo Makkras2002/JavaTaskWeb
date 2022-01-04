@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDaoImpl implements ProductDao {
-    private static Logger logger = LogManager.getLogger();
 
 
     private static final String SQL_SELECT_ALL_PRODUCTS = """
@@ -79,7 +78,7 @@ public class ProductDaoImpl implements ProductDao {
     UPDATE products SET picture_path  = ? WHERE product_id = ?""";
     private static final String SQL_UPDATE_PRODUCT_PRICE= """
     UPDATE products SET product_price  = ? WHERE product_id = ?""";
-
+    private static Logger logger = LogManager.getLogger();
     public ProductDaoImpl(){
     }
     @Override

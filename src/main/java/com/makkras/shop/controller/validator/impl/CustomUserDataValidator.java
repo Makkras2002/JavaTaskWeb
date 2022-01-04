@@ -9,12 +9,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CustomUserDataValidator implements UserDataValidator {
-    private static CustomUserDataValidator instance;
     private static final String EMAIL_REGEX = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
     private static final int MIN_LOGIN_LENGTH = 1;
     private static final int MAX_LOGIN_LENGTH = 50;
     private static final int MAX_PASSWORD_LENGTH = 20;
     private static final int MIN_PASSWORD_LENGTH = 8;
+    private static CustomUserDataValidator instance;
     private CustomUserDataValidator(){
     }
     public static CustomUserDataValidator getInstance(){

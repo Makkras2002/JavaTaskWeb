@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductCategoryDaoImpl implements ProductCategoryDao {
-    private static Logger logger = LogManager.getLogger();
     private static final String SQL_SELECT_ALL_CATEGORIES = """
             SELECT category_id, category
             FROM product_categories""";
@@ -25,7 +24,7 @@ public class ProductCategoryDaoImpl implements ProductCategoryDao {
     private static final String SQL_UPDATE_CATEGORY_NAME = """
             UPDATE product_categories
             SET category = ? WHERE category = ?""";
-
+    private static Logger logger = LogManager.getLogger();
     public ProductCategoryDaoImpl(){
     }
     @Override

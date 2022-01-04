@@ -9,11 +9,11 @@ import java.util.regex.Pattern;
 
 
 public class CustomProductDataValidator implements ProductDataValidator {
-    private static CustomProductDataValidator instance;
     private static final String NUMERIC_STRING_CHECK_REGEX = "([-+]?[0-9]*\\.?[0-9]+)";
     private static final String IMAGE_FILE_PATH_REGEX = "([^\\s]+(\\.(?i)(jpe?g|png|gif|bmp))$)";
     private static final int MAX_STRING_LENGTH = 200;
     private static final int MIN_STRING_LENGTH = 1;
+    private static CustomProductDataValidator instance;
     private CustomProductDataValidator(){
     }
     public static CustomProductDataValidator getInstance(){

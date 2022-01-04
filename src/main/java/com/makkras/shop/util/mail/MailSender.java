@@ -16,8 +16,9 @@ import java.util.Properties;
 
 public class MailSender {
     private static MailSender instance;
-    private Properties properties;
     private static Logger logger = LogManager.getLogger();
+    private Properties properties;
+
     private MailSender(){
         try {
             properties =new Properties();

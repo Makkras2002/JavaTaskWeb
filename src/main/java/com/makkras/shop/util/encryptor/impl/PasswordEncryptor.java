@@ -8,8 +8,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class PasswordEncryptor implements CustomPasswordEncryptor {
-    private static Logger logger = LogManager.getLogger();
     private static final String ENCRYPTOR_SRC = "MD5";
+    private static Logger logger = LogManager.getLogger();
+
     @Override
     public String encryptPassword(String password){
         String encryptedPassword = null;

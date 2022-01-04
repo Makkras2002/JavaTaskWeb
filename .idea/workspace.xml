@@ -9,7 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d343d937-cc37-418d-bc9c-05f7baad5960" name="Default Changelist" comment="" />
+    <list default="true" id="d343d937-cc37-418d-bc9c-05f7baad5960" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/impl/CustomProductDataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/impl/CustomProductDataValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/impl/CustomUserDataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/impl/CustomUserDataValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/impl/OrderDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/impl/OrderDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/impl/ProductCategoryDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/impl/ProductCategoryDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/impl/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/impl/ProductDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/pool/CustomConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/pool/CustomConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/impl/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/impl/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/util/encryptor/impl/PasswordEncryptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/util/encryptor/impl/PasswordEncryptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/util/mail/MailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/util/mail/MailSender.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -286,7 +298,9 @@
       <workItem from="1641122752973" duration="10832000" />
       <workItem from="1641133669695" duration="528000" />
       <workItem from="1641134240909" duration="66000" />
-      <workItem from="1641208439002" duration="17004000" />
+      <workItem from="1641208439002" duration="17180000" />
+      <workItem from="1641225742675" duration="32000" />
+      <workItem from="1641280028630" duration="4936000" />
     </task>
     <task id="LOCAL-00001" summary="Dao work started upd.">
       <created>1638725665591</created>
@@ -540,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641225513658</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Check Upd.">
+      <created>1641225711384</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1641225711384</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,7 +580,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Properties Path Fix Upd." />
     <MESSAGE value="Service added Upd." />
     <MESSAGE value="Optional.empty fix Upd." />
     <MESSAGE value="Registration + confirmation through email added Upd." />
@@ -584,7 +604,8 @@
     <MESSAGE value="Refactoring Upd." />
     <MESSAGE value="Refactoring Upd x2." />
     <MESSAGE value="Update product data command added + Admin menu refactoring Upd." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update product data command added + Admin menu refactoring Upd." />
+    <MESSAGE value="Check Upd." />
+    <option name="LAST_COMMIT_MESSAGE" value="Check Upd." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

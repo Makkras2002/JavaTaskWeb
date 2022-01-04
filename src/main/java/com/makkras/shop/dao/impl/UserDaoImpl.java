@@ -15,8 +15,6 @@ import java.util.List;
 
 
 public class UserDaoImpl implements UserDao {
-    private static Logger logger = LogManager.getLogger();
-
     private static final String SQL_SELECT_ALL_USERS = """
             SELECT users.user_id,users.login,users.password,
             users.email,user_roles.role_name,users.is_active,users.is_online FROM users
@@ -57,6 +55,7 @@ public class UserDaoImpl implements UserDao {
     UPDATE users SET is_online  = ? WHERE login = ?""";
     private static final String SQL_UPDATE_USER_PASSWORD= """
     UPDATE users SET password  = ? WHERE login = ?""";
+    private static Logger logger = LogManager.getLogger();
 
 
     public UserDaoImpl(){

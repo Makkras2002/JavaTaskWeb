@@ -18,10 +18,10 @@ import java.util.List;
 import java.util.Optional;
 
 public class ProductService implements CustomProductService {
+    private static final String BLANK_CATEGORY_VALUE = "-";
     private static ProductService instance;
     private ProductDao productDao;
     private ProductCategoryDao productCategoryDao;
-    private static final String BLANK_CATEGORY_VALUE = "-";
     private ProductService(){
         productDao = new ProductDaoImpl();
         productCategoryDao = new ProductCategoryDaoImpl();
@@ -127,11 +127,7 @@ public class ProductService implements CustomProductService {
     public boolean addProductToDb(Product product) throws ServiceException {
         try {
             Optional<Long> createdProductId = Optional.ofNullable(productDao.create(product));
-            if(createdProductId.isPresent()) {
-                return true;
-            } else {
-                return false;
-            }
+            return createdProductId.isPresent();
         } catch (InteractionException e) {
             throw new ServiceException(e.getMessage(),e);
         }
