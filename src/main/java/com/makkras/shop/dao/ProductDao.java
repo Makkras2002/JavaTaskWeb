@@ -22,4 +22,5 @@ public interface ProductDao extends BaseDao<Product>{
     boolean updatePrice(BigDecimal newPrice, Long productId) throws InteractionException;
     boolean updatePicturePath(String newPicturePath, Long productId) throws InteractionException;
     boolean updateComment(String newComment, Long productId) throws InteractionException;
+    List<Product> findAllProductOutOfStock() throws InteractionException;
 }

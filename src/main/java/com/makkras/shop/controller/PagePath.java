@@ -17,6 +17,7 @@ public final class PagePath {
     public static final String RAW_MAIN_ADMIN_USERS_VIEW_PAGE = "/pages/users_admin_view.jsp";
     public static final String RAW_MAIN_ADMIN_ORDERS_VIEW_PAGE = "/pages/orders_admin_view.jsp";
     public static final String RAW_CHANGE_PRODUCT = "/pages/change_product.jsp";
+    public static final String ADMIN_REGISTRATION_PAGE = "/pages/admin_registration.jsp";
     private PagePath(){
     }
 }

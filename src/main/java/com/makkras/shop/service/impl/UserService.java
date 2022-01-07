@@ -117,6 +117,20 @@ public class UserService implements CustomUserService {
         }
 
     }
+    public boolean registerAdmin(String login,String password, String email) throws ServiceException {
+        User userForRegistration = new User(login, email, password,UserRole.ADMIN,true,false);
+        try {
+            Optional<Long> idOfCreatedUser = Optional.ofNullable(userDao.create(userForRegistration));
+            if(idOfCreatedUser.isPresent()){
+                return true;
+            }else {
+                return false;
+            }
+        } catch (InteractionException e){
+            throw new ServiceException(e.getMessage(),e);
+        }
+
+    }
     public void sendMessageAboutSuccessFullRegistrationOnUserEmail(String login, String email,String currentLocale){
         String finalRegistrationMessage = login+", "+ LocalizedTextExtractor.getInstance().getText(currentLocale, "SUCCESSFUL_REG_EMAIL_BODY");
         MailSender.getInstance().send(email,Literal.SUCCESSFUL_REG_EMAIL_HEADER,finalRegistrationMessage);

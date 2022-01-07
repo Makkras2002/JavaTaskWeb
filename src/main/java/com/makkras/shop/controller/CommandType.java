@@ -128,6 +128,26 @@ public enum CommandType {
         {
             this.command = new ChangeProductDataCommand();
         }
+    },
+    PREPARE_ADMIN_ADDING_PAGE {
+        {
+            this.command = new FillAdminAddingMenuCommand();
+        }
+    },
+    REGISTER_ADMIN {
+        {
+            this.command = new RegisterAdminCommand();
+        }
+    },
+    FIND_IN_STOCK_PRODUCTS {
+        {
+            this.command = new FindInStockProductsCommand();
+        }
+    },
+    FIND_OUT_OF_STOCK_STOCK_PRODUCTS {
+        {
+            this.command = new FindOutOfStockProductsCommand();
+        }
     };
     CustomCommand command;
     public CustomCommand getCurrentCommand(){

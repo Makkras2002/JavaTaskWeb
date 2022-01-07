@@ -124,6 +124,15 @@ public class ProductService implements CustomProductService {
         }
         return products;
     }
+    public List<Product> findAllOutOfStockProductsFromDb() throws ServiceException {
+        List<Product> products = new ArrayList<>();
+        try {
+            products = productDao.findAllProductOutOfStock();
+        } catch (InteractionException e) {
+            throw new ServiceException(e.getMessage(),e);
+        }
+        return products;
+    }
     public boolean addProductToDb(Product product) throws ServiceException {
         try {
             Optional<Long> createdProductId = Optional.ofNullable(productDao.create(product));

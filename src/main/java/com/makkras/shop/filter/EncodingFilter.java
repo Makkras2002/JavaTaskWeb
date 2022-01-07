@@ -1,4 +1,4 @@
-package com.makkras.shop.controller.filter;
+package com.makkras.shop.filter;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;

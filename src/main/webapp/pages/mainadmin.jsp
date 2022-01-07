@@ -151,68 +151,27 @@
     <div id="prod_change" style="display: none">
         <fmt:message key="main_admin.change_product_data"/>
     </div>
-
-<%--    <div class="row" style="margin-top: 40px">--%>
-<%--        <div class="col-4">--%>
-<%--            <form action="/controller" method="post">--%>
-<%--                <label for="command4"><fmt:message key="main_client.sort_form_name"/></label>--%>
-<%--                <select class="form-select" name="command" id="command4" aria-label="Default select example" required="required">--%>
-<%--                    <option value="sort_products_by_name"><fmt:message key="main_client.sort_by_name"/></option>--%>
-<%--                    <option value="sort_products_by_category"><fmt:message key="main_client.sort_by_category"/></option>--%>
-<%--                    <option value="sort_products_by_price"><fmt:message key="main_client.sort_by_price"/></option>--%>
-<%--                </select>--%>
-<%--                <button type="submit " class="btn btn-outline-success btn-sm" style="margin-top: 20px"><fmt:message key="main_client.sort"/></button>--%>
-<%--            </form>--%>
-<%--        </div>--%>
-<%--        <div class="col-4">--%>
-<%--            <button type="button" class="btn btn-outline-success btn-sm" style="margin-top: 82px; margin-left: -300px" data-bs-toggle="modal" data-bs-target="#staticBackdrop4">--%>
-<%--                <fmt:message key="main_client.search"/>--%>
-<%--            </button>--%>
-<%--            <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">--%>
-<%--                <div class="modal-dialog">--%>
-<%--                    <div class="modal-content">--%>
-<%--                        <div class="modal-header">--%>
-<%--                            <h5 class="modal-title" id="staticBackdropLabel4"><fmt:message key="main_client.search"/> ${pageContext.session.getAttribute("login")}</h5>--%>
-<%--                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--%>
-<%--                        </div>--%>
-<%--                        <div class="modal-body">--%>
-<%--                            <p><fmt:message key="main_client.search_explanation"/></p>--%>
-<%--                            <form action="/controller" method="post">--%>
-<%--                                <input type="text" id="command5" name="command" hidden="hidden" required="required" value="find_product"/>--%>
-<%--                                <div class="mb-3 w-25" style="margin-top: 40px" width="160px">--%>
-<%--                                    <label for="name" class="form-label" ><fmt:message key="main_client.prod_name"/></label>--%>
-<%--                                    <input type="text" maxlength="100" class="form-control" id="name" name="name" />--%>
-<%--                                </div>--%>
-<%--                                <div class="mb-3 w-25" style="margin-top: 40px" width="160px">--%>
-<%--                                    <label for="categories" class="form-label" ><fmt:message key="main_client.prod_category"/></label>--%>
-<%--                                    <select class="form-select" id="categories" name="category" aria-label="Default select example">--%>
-<%--                                    </select>--%>
-<%--                                </div>--%>
-<%--                                <div class="mb-3 w-25" style="margin-top: 40px" width="160px">--%>
-<%--                                    <label for="min_price" class="form-label" ><fmt:message key="main_client.prod_price_min"/></label>--%>
-<%--                                    <input type="number" min="0" class="form-control" id="min_price" name="min_price" />--%>
-<%--                                </div>--%>
-<%--                                <div class="mb-3 w-25" style="margin-top: 40px"  width="160px">--%>
-<%--                                    <label for="max_price" class="form-label" ><fmt:message key="main_client.prod_price_max"/></label>--%>
-<%--                                    <input type="number" min="0" class="form-control" id="max_price" name="max_price" />--%>
-<%--                                </div>--%>
-<%--                                <button type="submit " class="btn btn-outline-success btn-sm" style="margin-top: 20px"><fmt:message key="main_client.search"/></button>--%>
-<%--                            </form>--%>
-<%--                        </div>--%>
-<%--                        <div class="modal-footer">--%>
-<%--                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="main_client.close_window"/></button>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
     <div class="row" style="margin-top: 20px">
         <h2><fmt:message key="main_admin.products"/></h2>
-        <form method="post" action="/controller">
-            <input type="hidden" name="command" id="command9" value="prepare_product_adding_page"/>
-            <button type="submit" class="btn btn-success btn-lg"><fmt:message key="main_admin.add_product"/></button>
-        </form>
+        <div class="row justify-content-between">
+            <div class="col-4">
+                <form action="/controller" method="post">
+                    <input type="hidden" name="command" id="command9" value="prepare_product_adding_page"/>
+                    <button type="submit" class="btn btn-success btn-lg"><fmt:message key="main_admin.add_product"/></button>
+                </form>
+            </div>
+            <div class="col-4">
+                <form action="/controller" method="post">
+                    <label for="command4"><fmt:message key="main_admin.find_products"/></label>
+                    <select class="form-select" name="command" id="command4" aria-label="Default select example" required="required">
+                        <option value="prepare_main_admin_page">-</option>
+                        <option value="find_in_stock_products"><fmt:message key="main_admin.find_in_stock_products"/></option>
+                        <option value="find_out_of_stock_stock_products"><fmt:message key="main_admin.find_out_of_stock_products"/></option>
+                    </select>
+                    <button type="submit " class="btn btn-outline-success btn-sm" style="margin-top: 20px"><fmt:message key="main_admin.find_products"/></button>
+                </form>
+            </div>
+        </div>
         <table class="table table-hover">
             <tbody id="productsTable">
             </tbody>

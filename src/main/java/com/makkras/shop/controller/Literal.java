@@ -42,7 +42,6 @@ public final class Literal {
     public static final String PRODUCT_FOR_CHANGE_DATA = "product_for_change_data";
 
 
-
     private Literal(){
     }
 }

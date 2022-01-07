@@ -46,6 +46,11 @@ public class ProductDaoImpl implements ProductDao {
             products.product_price, products.is_in_stock,
             products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
             ON products.product_category_id = product_categories.category_id WHERE products.is_in_stock = true""";
+    private static final String SQL_SELECT_PRODUCTS_OUT_OF_STOCK = """
+            SELECT products.product_id, products.product_name,
+            products.product_price, products.is_in_stock,
+            products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
+            ON products.product_category_id = product_categories.category_id WHERE products.is_in_stock = false""";
     private static final String SQL_SELECT_PRODUCTS_IN_STOCK_AND_SORT_BY_NAME = """
             SELECT products.product_id, products.product_name,
             products.product_price, products.is_in_stock,
@@ -224,6 +229,11 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public List<Product> findAllProductInStock() throws InteractionException {
         List<Product> products = selectDataFromDbByQuery(SQL_SELECT_PRODUCTS_IN_STOCK);
+        return products;
+    }
+    @Override
+    public List<Product> findAllProductOutOfStock() throws InteractionException {
+        List<Product> products = selectDataFromDbByQuery(SQL_SELECT_PRODUCTS_OUT_OF_STOCK);
         return products;
     }
 

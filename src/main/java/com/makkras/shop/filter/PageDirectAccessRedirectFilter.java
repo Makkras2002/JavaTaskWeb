@@ -1,4 +1,4 @@
-package com.makkras.shop.controller.filter;
+package com.makkras.shop.filter;
 
 import com.makkras.shop.controller.PagePath;
 import jakarta.servlet.*;

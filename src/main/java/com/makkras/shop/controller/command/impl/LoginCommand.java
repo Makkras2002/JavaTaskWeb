@@ -5,7 +5,6 @@ import com.makkras.shop.controller.PagePath;
 import com.makkras.shop.controller.validator.impl.CustomUserDataValidator;
 import com.makkras.shop.entity.ComponentOrder;
 import com.makkras.shop.entity.User;
-import com.makkras.shop.entity.UserRole;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.impl.UserService;
 import com.makkras.shop.controller.command.CustomCommand;

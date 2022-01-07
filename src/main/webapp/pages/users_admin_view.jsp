@@ -121,6 +121,10 @@
     <%--    </div>--%>
     <div class="row" style="margin-top: 60px">
         <h2><fmt:message key="main_admin.users"/></h2>
+        <form method="post" action="/controller">
+            <input type="hidden" name="command" id="command9" value="prepare_admin_adding_page"/>
+            <button type="submit" class="btn btn-success btn-lg"><fmt:message key="main_admin.add_admin"/></button>
+        </form>
         <table class="table table-hover">
             <tbody id="usersTable">
             </tbody>

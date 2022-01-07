@@ -17,4 +17,5 @@ public interface CustomUserService {
     Optional<User> findUserWithLogin(String login) throws ServiceException;
     Optional<User> findUserWithLoginFromAllUsers(String login) throws ServiceException;
     List<User> findAllUsers() throws ServiceException;
+    boolean registerAdmin(String login,String password, String email) throws ServiceException;
 }

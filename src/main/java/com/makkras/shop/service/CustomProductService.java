@@ -20,4 +20,5 @@ public interface CustomProductService {
     Optional<Product> findProductByName(String name) throws ServiceException;
     boolean addProductToDb(Product product) throws ServiceException;
     boolean updateChangedFieldsInProduct(Product product) throws ServiceException;
+    List<Product> findAllOutOfStockProductsFromDb() throws ServiceException;
 }
