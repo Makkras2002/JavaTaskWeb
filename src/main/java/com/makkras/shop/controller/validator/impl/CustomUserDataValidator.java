@@ -2,6 +2,7 @@ package com.makkras.shop.controller.validator.impl;
 
 import com.makkras.shop.controller.Literal;
 import com.makkras.shop.controller.validator.UserDataValidator;
+import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.util.locale.LocalizedTextExtractor;
 
 import java.util.Map;
@@ -12,6 +13,7 @@ public class CustomUserDataValidator implements UserDataValidator {
     private static final String EMAIL_REGEX = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
     private static final int MIN_LOGIN_LENGTH = 1;
     private static final int MAX_LOGIN_LENGTH = 50;
+    private static final int MAX_EMAIL_LENGTH = 50;
     private static final int MAX_PASSWORD_LENGTH = 20;
     private static final int MIN_PASSWORD_LENGTH = 8;
     private static CustomUserDataValidator instance;
@@ -80,6 +82,17 @@ public class CustomUserDataValidator implements UserDataValidator {
             isValid = false;
         }
         return isValid;
+    }
+
+    public boolean validateUserSearchData(String rawLogin,String rawEmail) {
+        boolean result = true;
+        if(rawLogin.length() > MAX_LOGIN_LENGTH) {
+            result = false;
+        }
+        if(rawEmail.length() > MAX_EMAIL_LENGTH) {
+            result =false;
+        }
+        return result;
     }
 
 }

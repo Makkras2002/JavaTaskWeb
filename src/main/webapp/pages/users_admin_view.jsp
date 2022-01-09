@@ -63,72 +63,72 @@
     <div id="empty_users" style="display: none">
         <fmt:message key="main_admin.empty_users"/>
     </div>
-
-    <%--    <div class="row" style="margin-top: 40px">--%>
-    <%--        <div class="col-4">--%>
-    <%--            <form action="/controller" method="post">--%>
-    <%--                <label for="command4"><fmt:message key="main_client.sort_form_name"/></label>--%>
-    <%--                <select class="form-select" name="command" id="command4" aria-label="Default select example" required="required">--%>
-    <%--                    <option value="sort_products_by_name"><fmt:message key="main_client.sort_by_name"/></option>--%>
-    <%--                    <option value="sort_products_by_category"><fmt:message key="main_client.sort_by_category"/></option>--%>
-    <%--                    <option value="sort_products_by_price"><fmt:message key="main_client.sort_by_price"/></option>--%>
-    <%--                </select>--%>
-    <%--                <button type="submit " class="btn btn-outline-success btn-sm" style="margin-top: 20px"><fmt:message key="main_client.sort"/></button>--%>
-    <%--            </form>--%>
-    <%--        </div>--%>
-    <%--        <div class="col-4">--%>
-    <%--            <button type="button" class="btn btn-outline-success btn-sm" style="margin-top: 82px; margin-left: -300px" data-bs-toggle="modal" data-bs-target="#staticBackdrop4">--%>
-    <%--                <fmt:message key="main_client.search"/>--%>
-    <%--            </button>--%>
-    <%--            <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">--%>
-    <%--                <div class="modal-dialog">--%>
-    <%--                    <div class="modal-content">--%>
-    <%--                        <div class="modal-header">--%>
-    <%--                            <h5 class="modal-title" id="staticBackdropLabel4"><fmt:message key="main_client.search"/> ${pageContext.session.getAttribute("login")}</h5>--%>
-    <%--                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--%>
-    <%--                        </div>--%>
-    <%--                        <div class="modal-body">--%>
-    <%--                            <p><fmt:message key="main_client.search_explanation"/></p>--%>
-    <%--                            <form action="/controller" method="post">--%>
-    <%--                                <input type="text" id="command5" name="command" hidden="hidden" required="required" value="find_product"/>--%>
-    <%--                                <div class="mb-3 w-25" style="margin-top: 40px" width="160px">--%>
-    <%--                                    <label for="name" class="form-label" ><fmt:message key="main_client.prod_name"/></label>--%>
-    <%--                                    <input type="text" maxlength="100" class="form-control" id="name" name="name" />--%>
-    <%--                                </div>--%>
-    <%--                                <div class="mb-3 w-25" style="margin-top: 40px" width="160px">--%>
-    <%--                                    <label for="categories" class="form-label" ><fmt:message key="main_client.prod_category"/></label>--%>
-    <%--                                    <select class="form-select" id="categories" name="category" aria-label="Default select example">--%>
-    <%--                                    </select>--%>
-    <%--                                </div>--%>
-    <%--                                <div class="mb-3 w-25" style="margin-top: 40px" width="160px">--%>
-    <%--                                    <label for="min_price" class="form-label" ><fmt:message key="main_client.prod_price_min"/></label>--%>
-    <%--                                    <input type="number" min="0" class="form-control" id="min_price" name="min_price" />--%>
-    <%--                                </div>--%>
-    <%--                                <div class="mb-3 w-25" style="margin-top: 40px"  width="160px">--%>
-    <%--                                    <label for="max_price" class="form-label" ><fmt:message key="main_client.prod_price_max"/></label>--%>
-    <%--                                    <input type="number" min="0" class="form-control" id="max_price" name="max_price" />--%>
-    <%--                                </div>--%>
-    <%--                                <button type="submit " class="btn btn-outline-success btn-sm" style="margin-top: 20px"><fmt:message key="main_client.search"/></button>--%>
-    <%--                            </form>--%>
-    <%--                        </div>--%>
-    <%--                        <div class="modal-footer">--%>
-    <%--                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="main_client.close_window"/></button>--%>
-    <%--                        </div>--%>
-    <%--                    </div>--%>
-    <%--                </div>--%>
-    <%--            </div>--%>
-    <%--        </div>--%>
-    <%--    </div>--%>
     <div class="row" style="margin-top: 60px">
         <h2><fmt:message key="main_admin.users"/></h2>
-        <form method="post" action="/controller">
-            <input type="hidden" name="command" id="command9" value="prepare_admin_adding_page"/>
-            <button type="submit" class="btn btn-success btn-lg"><fmt:message key="main_admin.add_admin"/></button>
-        </form>
-        <table class="table table-hover">
-            <tbody id="usersTable">
-            </tbody>
-        </table>
+        <div class="row" style="margin-top: 40px">
+            <div class="col-4">
+                <form method="post" action="/controller">
+                    <input type="hidden" name="command" id="command9" value="prepare_admin_adding_page"/>
+                    <button type="submit" class="btn btn-success btn-lg"><fmt:message key="main_admin.add_admin"/></button>
+                </form>
+            </div>
+            <div class="col-4">
+                <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop4">
+                    <fmt:message key="main_admin.search_user"/>
+                </button>
+                <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel4"><fmt:message key="main_admin.search_user"/> ${pageContext.session.getAttribute("login")}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p><fmt:message key="main_admin.search_user_explanation"/></p>
+                                <form action="/controller" method="post">
+                                    <input type="text" id="command5" name="command" hidden="hidden" required="required" value="find_user"/>
+                                    <div class="mb-3 w-25" style="margin-top: 40px" width="160px">
+                                        <label for="login" class="form-label" ><fmt:message key="user_form.enter_login"/></label>
+                                        <input type="text" maxlength="100" class="form-control" id="login" name="login" />
+                                    </div>
+                                    <div class="mb-3 w-25" style="margin-top: 40px" width="160px">
+                                        <label for="email" class="form-label" ><fmt:message key="user_form.enter_gmail"/></label>
+                                        <input type="text" maxlength="100" class="form-control" id="email" name="email" />
+                                    </div>
+                                    <div class="mb-3 w-25" style="margin-top: 40px" width="160px">
+                                        <label for="role" class="form-label" ><fmt:message key="main_admin.user_role"/></label>
+                                        <select class="form-select" id="role" name="role" aria-label="Default select example">
+                                            <option value="-" selected="selected">-</option>
+                                            <option value="admin"><fmt:message key="main_admin.user_role_admin"/></option>
+                                            <option value="client"><fmt:message key="main_admin.user_role_client"/></option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3 w-25" style="margin-top: 40px" width="160px">
+                                        <label for="role" class="form-label" ><fmt:message key="main_admin.product_status"/></label>
+                                        <select class="form-select" id="status" name="status" aria-label="Default select example">
+                                            <option value="-" selected="selected">-</option>
+                                            <option value="online"><fmt:message key="main_admin.online_status_online"/></option>
+                                            <option value="offline"><fmt:message key="main_admin.online_status_offline"/></option>
+                                        </select>
+                                    </div>
+                                    <button type="submit " class="btn btn-outline-success btn-sm" style="margin-top: 20px"><fmt:message key="main_admin.search_user"/></button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><fmt:message key="main_client.close_window"/></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 40px">
+            <div style="color: red; font-weight: bolder; font-style: italic">${errorUserDeleteMessage}</div>
+            <table class="table table-hover">
+                <tbody id="usersTable">
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class="row" style="margin-top: 20px">
         <form method="post" action="/controller">

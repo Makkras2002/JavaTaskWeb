@@ -148,6 +148,16 @@ public enum CommandType {
         {
             this.command = new FindOutOfStockProductsCommand();
         }
+    },
+    FIND_USER {
+        {
+            this.command = new FindUserCommand();
+        }
+    },
+    DELETE_USER {
+        {
+            this.command = new DeleteUserCommand();
+        }
     };
     CustomCommand command;
     public CustomCommand getCurrentCommand(){

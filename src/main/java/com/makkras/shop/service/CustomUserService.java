@@ -18,4 +18,6 @@ public interface CustomUserService {
     Optional<User> findUserWithLoginFromAllUsers(String login) throws ServiceException;
     List<User> findAllUsers() throws ServiceException;
     boolean registerAdmin(String login,String password, String email) throws ServiceException;
+    List<User> findActiveUsersFromDbByParams(String login,String email,String role,Boolean status) throws ServiceException;
+    boolean deleteUser(String login) throws ServiceException;
 }

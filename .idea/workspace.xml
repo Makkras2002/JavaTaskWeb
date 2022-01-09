@@ -10,34 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d343d937-cc37-418d-bc9c-05f7baad5960" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/FillAdminAddingMenuCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/FindInStockProductsCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/FindOutOfStockProductsCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/RegisterAdminCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/filter/ScriptInjectionFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/admin_registration.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/DeleteUserCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login_password/login_password_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/login_password/login_password_file.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/CommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/CommandType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/ContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/listener/ContextListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/CustomSessionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/listener/CustomSessionListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/Literal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/Literal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/PagePath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/PagePath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/FillProductAddingMenuCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/FillProductAddingMenuCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/LoginCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/EncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/filter/EncodingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/PageDirectAccessRedirectFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/filter/PageDirectAccessRedirectFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/RoleAccessFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/filter/RoleAccessFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/ProductDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/impl/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/impl/ProductDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/UserDataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/UserDataValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/impl/CustomUserDataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/impl/CustomUserDataValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/impl/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/impl/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/impl/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/localized_text.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/localized_text.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/localized_text_en_GB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/localized_text_en_GB.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/localized_text_ru_RU.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/localized_text_ru_RU.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/mainadmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/mainadmin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/users_admin_view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/users_admin_view.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,13 +109,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

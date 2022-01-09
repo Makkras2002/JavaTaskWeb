@@ -6,4 +6,5 @@ public interface UserDataValidator {
     boolean validateUserRegistrationData(Map<String,String> formValues, String locale);
     boolean validateUserChangeLoginData(String newLogin);
     boolean validateUserChangePasswordData(String newPassword);
+    boolean validateUserSearchData(String rawLogin,String rawEmail);
 }
