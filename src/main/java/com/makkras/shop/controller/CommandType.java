@@ -158,6 +158,26 @@ public enum CommandType {
         {
             this.command = new DeleteUserCommand();
         }
+    },
+    SORT_ORDERS_BY_DATE {
+        {
+            this.command = new SortOrdersByDateCommand();
+        }
+    },
+    SORT_ORDERS_BY_USER_LOGIN {
+        {
+            this.command = new SortOrdersByLoginCommand();
+        }
+    },
+    FIND_ORDER {
+        {
+            this.command = new FindOrderCommand();
+        }
+    },
+    COMPLETE_ORDER {
+        {
+            this.command = new CompleteOrderCommand();
+        }
     };
     CustomCommand command;
     public CustomCommand getCurrentCommand(){

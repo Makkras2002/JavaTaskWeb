@@ -17,15 +17,15 @@ public class CustomUserDataValidator implements UserDataValidator {
     private static final int MAX_PASSWORD_LENGTH = 20;
     private static final int MIN_PASSWORD_LENGTH = 8;
     private static CustomUserDataValidator instance;
-    private CustomUserDataValidator(){
+    private CustomUserDataValidator() {
     }
-    public static CustomUserDataValidator getInstance(){
+    public static CustomUserDataValidator getInstance() {
         if(instance == null){
             instance = new CustomUserDataValidator();
         }
         return instance;
     }
-    public boolean validateUserLoginData(Map<String,String> formValues, String locale){
+    public boolean validateUserLoginData(Map<String,String> formValues, String locale) {
         boolean isValid = true;
         String login = formValues.get(Literal.LOGIN_TO_ADD_IN_FORM);
         String password = formValues.get(Literal.PASSWORD_TO_ADD_IN_FORM);
@@ -42,7 +42,7 @@ public class CustomUserDataValidator implements UserDataValidator {
         }
         return isValid;
     }
-    public boolean validateUserChangeLoginData(String newLogin){
+    public boolean validateUserChangeLoginData(String newLogin) {
         boolean isValid = true;
         String login = newLogin;
         if(login.length() > MAX_LOGIN_LENGTH || login.length() < MIN_LOGIN_LENGTH){
@@ -50,15 +50,15 @@ public class CustomUserDataValidator implements UserDataValidator {
         }
         return isValid;
     }
-    public boolean validateUserChangePasswordData(String newPassword){
+    public boolean validateUserChangePasswordData(String newPassword) {
         boolean isValid = true;
         String password = newPassword;
-        if(password.length() > MAX_PASSWORD_LENGTH || password.length() < MIN_PASSWORD_LENGTH){
+        if(password.length() > MAX_PASSWORD_LENGTH || password.length() < MIN_PASSWORD_LENGTH) {
             isValid = false;
         }
         return isValid;
     }
-    public boolean validateUserRegistrationData(Map<String,String> formValues, String locale){
+    public boolean validateUserRegistrationData(Map<String,String> formValues, String locale) {
         boolean isValid = true;
         Pattern pattern = Pattern.compile(EMAIL_REGEX);
         LocalizedTextExtractor localizedTextExtractor = LocalizedTextExtractor.getInstance();

@@ -10,18 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d343d937-cc37-418d-bc9c-05f7baad5960" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/DeleteUserCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/CompleteOrderCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/FindOrderCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/SortOrdersByDateCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/SortOrdersByLoginCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/OrderDataValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/impl/CustomOrderDataValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login_password/login_password_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/login_password/login_password_file.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/CommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/CommandType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/Literal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/Literal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/UserDataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/UserDataValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/ChangeLocaleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/ChangeLocaleCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/DeleteUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/DeleteUserCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/impl/CustomProductDataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/impl/CustomProductDataValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/impl/CustomUserDataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/impl/CustomUserDataValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/impl/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/OrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/impl/OrderDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/impl/OrderDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/impl/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/impl/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/localized_text.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/localized_text.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/localized_text_en_GB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/localized_text_en_GB.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/localized_text_ru_RU.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/localized_text_ru_RU.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/orders_admin_view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/orders_admin_view.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/users_admin_view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/users_admin_view.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,15 +118,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -308,6 +315,8 @@
       <workItem from="1641286895043" duration="736000" />
       <workItem from="1641287654464" duration="29000" />
       <workItem from="1641556867880" duration="6904000" />
+      <workItem from="1641735565418" duration="11000" />
+      <workItem from="1641812976982" duration="7704000" />
     </task>
     <task id="LOCAL-00001" summary="Dao work started upd.">
       <created>1638725665591</created>
@@ -582,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641287614395</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="User search + User delete added Upd.">
+      <created>1641735531766</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1641735531766</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,7 +617,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Registration + confirmation through email added Upd." />
     <MESSAGE value="Registration + Web refactoring Upd." />
     <MESSAGE value="Session invalidation handler added + servlets refactoring Upd." />
     <MESSAGE value="Client Main Menu Upd." />
@@ -626,7 +641,8 @@
     <MESSAGE value="Check Upd." />
     <MESSAGE value="static final before static refactoring Upd." />
     <MESSAGE value="Context destroy pool listener added Upd." />
-    <option name="LAST_COMMIT_MESSAGE" value="Context destroy pool listener added Upd." />
+    <MESSAGE value="User search + User delete added Upd." />
+    <option name="LAST_COMMIT_MESSAGE" value="User search + User delete added Upd." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

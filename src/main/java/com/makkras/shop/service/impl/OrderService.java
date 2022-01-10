@@ -49,13 +49,69 @@ public class OrderService implements CustomOrderService {
             }
         }
     }
-    public List<CompleteOrder> findAllOrdersFromDb() throws ServiceException{
+    public List<CompleteOrder> findAllOrdersFromDb() throws ServiceException {
         List<CompleteOrder> completeOrders = new ArrayList<>();
         try {
             completeOrders = orderDao.findAll();
             return completeOrders;
         } catch (InteractionException e) {
             throw new ServiceException(e.getMessage(),e);
+        }
+    }
+    public List<CompleteOrder> findAllOrdersFromDbAndSortByDate() throws ServiceException {
+        List<CompleteOrder> completeOrders = new ArrayList<>();
+        try {
+            completeOrders = orderDao.findAllCompletedOrdersAndSortByDate();
+            return completeOrders;
+        } catch (InteractionException e) {
+            throw new ServiceException(e.getMessage(),e);
+        }
+    }
+    public List<CompleteOrder> findAllOrdersFromDbAndSortByLogin() throws ServiceException {
+        List<CompleteOrder> completeOrders = new ArrayList<>();
+        try {
+            completeOrders = orderDao.findAllCompletedOrdersAndSortByUserLogin();
+            return completeOrders;
+        } catch (InteractionException e) {
+            throw new ServiceException(e.getMessage(),e);
+        }
+    }
+    public List<CompleteOrder> findOrdersFromDbByParams(String login,LocalDate startDate,LocalDate endDate,Boolean status) throws ServiceException {
+        List<CompleteOrder> allOrders = findAllOrdersFromDb();
+        List<CompleteOrder> requiredOrders = new ArrayList<>();
+        int counter = 0;
+        while (counter < allOrders.size()){
+            if(((allOrders.get(counter).getUser().getLogin().contains(login) && login.length()>3) || login.isBlank()) &&
+                    allOrders.get(counter).getCompleteOrderDate().isAfter(startDate) &&
+                            allOrders.get(counter).getCompleteOrderDate().isBefore(endDate)) {
+                if(status == null) {
+                    requiredOrders.add(allOrders.get(counter));
+                } else if(allOrders.get(counter).isCompleted() == status){
+                    requiredOrders.add(allOrders.get(counter));
+                }
+            }
+            counter++;
+        }
+        return requiredOrders;
+    }
+    public boolean completeOrder(Long orderId) throws ServiceException {
+        try {
+            List<CompleteOrder> order = orderDao.findOrdersById(orderId);
+            if(order.size() != 0) {
+                if(order.get(0).isCompleted()) {
+                    return false;
+                } else {
+                    if(orderDao.updateCompleteOrderStatus(true,orderId)) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            } else {
+                return false;
+            }
+        } catch (InteractionException e) {
+            throw  new ServiceException(e.getMessage(),e);
         }
     }
 }

@@ -80,7 +80,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel4"><fmt:message key="main_admin.search_user"/> ${pageContext.session.getAttribute("login")}</h5>
+                                <h5 class="modal-title" id="staticBackdropLabel4"><fmt:message key="main_admin.search_user"/></h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -104,7 +104,7 @@
                                         </select>
                                     </div>
                                     <div class="mb-3 w-25" style="margin-top: 40px" width="160px">
-                                        <label for="role" class="form-label" ><fmt:message key="main_admin.product_status"/></label>
+                                        <label for="status" class="form-label" ><fmt:message key="main_admin.product_status"/></label>
                                         <select class="form-select" id="status" name="status" aria-label="Default select example">
                                             <option value="-" selected="selected">-</option>
                                             <option value="online"><fmt:message key="main_admin.online_status_online"/></option>

@@ -14,15 +14,15 @@ public class CustomProductDataValidator implements ProductDataValidator {
     private static final int MAX_STRING_LENGTH = 200;
     private static final int MIN_STRING_LENGTH = 1;
     private static CustomProductDataValidator instance;
-    private CustomProductDataValidator(){
+    private CustomProductDataValidator() {
     }
-    public static CustomProductDataValidator getInstance(){
+    public static CustomProductDataValidator getInstance() {
         if(instance == null){
             instance = new CustomProductDataValidator();
         }
         return instance;
     }
-    public boolean validateProductSearchData(String rawName,String rawCategory,String rawMinPrice,String rawMaxPrice){
+    public boolean validateProductSearchData(String rawName,String rawCategory,String rawMinPrice,String rawMaxPrice) {
 
         boolean result = true;
         if(rawName.length() > MAX_STRING_LENGTH) {
@@ -61,7 +61,7 @@ public class CustomProductDataValidator implements ProductDataValidator {
                     localizedTextExtractor.getText(locale,"INVALID_FORM_SYNTAX"));
             result = false;
         }
-        if(!price.matches(NUMERIC_STRING_CHECK_REGEX)){
+        if(!price.matches(NUMERIC_STRING_CHECK_REGEX)) {
             System.out.println(price);
             formValues.replace(Literal.PRODUCT_PRICE,price,
                     localizedTextExtractor.getText(locale,"INVALID_FORM_SYNTAX"));

@@ -43,6 +43,13 @@ public final class Literal {
     public static final String USER_ONLINE_OFFLINE_STATUS = "offline";
     public static final String PRODUCT_FOR_CHANGE_DATA = "product_for_change_data";
     public static final String ERROR_USER_DELETE_MESSAGE = "errorUserDeleteMessage";
+    public static final String ORDER_START_DATE = "start_date";
+    public static final String ORDER_END_DATE = "end_date";
+    public static final String ORDER_COMPLETION_STATUS = "completion_status";
+    public static final String COMPLETED_ORDER_STATUS = "completed";
+    public static final String IN_PROGRESS_ORDER_STATUS = "in_progress";
+    public static final String ORDER_ID = "order_id";
+    public static final String ERROR_ORDER_COMPLETE_MESSAGE = "errorOrderCompleteMessage";
 
 
     private Literal(){

@@ -23,6 +23,11 @@ public class OrderDaoImpl implements OrderDao {
             complete_orders.complete_order_date, complete_orders.is_completed
             FROM complete_orders JOIN users
             ON complete_orders.user_id = users.user_id""";
+    private static final String SQL_SELECT_COMPLETE_ORDERS_BY_ID="""
+            SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active,
+            complete_orders.complete_order_date, complete_orders.is_completed
+            FROM complete_orders JOIN users
+            ON complete_orders.user_id = users.user_id WHERE complete_orders.complete_order_id = ?""";
     private static final String SQL_SELECT_ALL_FINISHED_ORDERS ="""
             SELECT complete_orders.complete_order_id, users.login, users.email, users.is_active,
             complete_orders.complete_order_date, complete_orders.is_completed
@@ -147,6 +152,40 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
+    public List<CompleteOrder> findOrdersById(Long id) throws InteractionException {
+        List<CompleteOrder> orders = new ArrayList<>();
+        List<ComponentOrder> componentOrders = new ArrayList<>();
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try {
+            connection = CustomConnectionPool.getInstance().getConnection();
+            statement = connection.prepareStatement(SQL_SELECT_COMPLETE_ORDERS_BY_ID);
+            statement.setLong(1,id);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                Long orderId = resultSet.getLong(1);
+                String login = resultSet.getString(2);
+                String email = resultSet.getString(3);
+                Boolean isActive = resultSet.getBoolean(4);
+                LocalDate orderDate = resultSet.getDate(5).toLocalDate();
+                Boolean isCompleted = resultSet.getBoolean(6);
+                componentOrders = selectComponentOrdersForCompleteOrderId(orderId);
+                orders.add(new CompleteOrder(orderId,orderDate,new User(login,email,isActive),isCompleted,componentOrders));
+            }
+        } catch (SQLException exception) {
+            throw new InteractionException(exception.getMessage());
+        }finally {
+            try {
+                closeStatement(statement);
+                closeConnection(connection);
+            } catch (InteractionException e) {
+                logger.error(e.getMessage());
+            }
+        }
+        return orders;
+    }
+
+    @Override
     public List<CompleteOrder> findAllOrdersByUser(User user) throws InteractionException {
         List<CompleteOrder> orders = new ArrayList<>();
         List<ComponentOrder> componentOrders = new ArrayList<>();
@@ -217,7 +256,7 @@ public class OrderDaoImpl implements OrderDao {
             statement.setBoolean(1,newStatus);
             statement.setLong(2,completeOrderId);
             int updRes = statement.executeUpdate();
-            if(updRes ==0){
+            if(updRes == 0){
                 return false;
             }
         } catch (SQLException exception) {
