@@ -96,11 +96,7 @@ public class UserService implements CustomUserService {
                 return false;
             }else {
                 foundUsers = userDao.findUserWithSuchEmail(email);
-                if(foundUsers.size() != 0){
-                    return false;
-                } else {
-                    return true;
-                }
+                return foundUsers.size() == 0;
             }
         } catch (InteractionException e) {
             throw new ServiceException(e.getMessage(),e);
@@ -110,11 +106,7 @@ public class UserService implements CustomUserService {
         User userForRegistration = new User(login, email, password,UserRole.CLIENT,true,true);
         try {
             Optional<Long> idOfCreatedUser = Optional.ofNullable(userDao.create(userForRegistration));
-            if(idOfCreatedUser.isPresent()){
-                return true;
-            }else {
-                return false;
-            }
+            return idOfCreatedUser.isPresent();
         } catch (InteractionException e){
             throw new ServiceException(e.getMessage(),e);
         }
@@ -124,11 +116,7 @@ public class UserService implements CustomUserService {
         User userForRegistration = new User(login, email, password,UserRole.ADMIN,true,false);
         try {
             Optional<Long> idOfCreatedUser = Optional.ofNullable(userDao.create(userForRegistration));
-            if(idOfCreatedUser.isPresent()){
-                return true;
-            }else {
-                return false;
-            }
+            return idOfCreatedUser.isPresent();
         } catch (InteractionException e){
             throw new ServiceException(e.getMessage(),e);
         }

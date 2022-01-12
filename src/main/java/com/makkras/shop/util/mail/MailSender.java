@@ -38,9 +38,7 @@ public class MailSender {
         try {
             MimeMessage message = initMessage(sendToMail,mailText,mailSubject);
             Transport.send(message);
-        } catch (MessagingException e) {
-            logger.error(e.getMessage());
-        } catch (InteractionException e) {
+        } catch (MessagingException | InteractionException e) {
             logger.error(e.getMessage());
         }
 

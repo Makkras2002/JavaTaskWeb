@@ -1,2 +1,2 @@
-2021-12-23 15:00:47 [main] [<init>] [49] FATAL com.makkras.shop.pool.CustomConnectionPool - Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
-2021-12-23 15:00:58 [main] [<init>] [49] FATAL com.makkras.shop.pool.CustomConnectionPool - Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
+2022-01-12 17:28:00 [main] [send] [42] ERROR makkras.shop.util.mail.MailSender - Illegal address
+2022-01-12 17:28:22 [main] [send] [42] ERROR makkras.shop.util.mail.MailSender - Invalid Addresses

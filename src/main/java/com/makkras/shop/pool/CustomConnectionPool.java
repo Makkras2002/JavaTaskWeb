@@ -26,7 +26,6 @@ public class CustomConnectionPool {
     }
     private CustomConnectionPool(){
         try {
-            Properties properties = new Properties();
             ResourceBundle bundle = ResourceBundle.getBundle("datasrc.databaseprop");
             String dbUrl = bundle.getString("jdbc.url");
             String dbUser = bundle.getString("jdbc.user");
