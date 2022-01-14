@@ -1,6 +1,9 @@
 package com.makkras.shop.controller.validator;
 import java.util.Map;
 
+/**
+ * The interface User data validator.
+ */
 public interface UserDataValidator {
     /**
      * Validate user login data and return boolean result if data is valid.

@@ -7,6 +7,9 @@ import com.makkras.shop.exception.InteractionException;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * The interface Product dao.
+ */
 public interface ProductDao extends BaseDao<Product>{
     /**
      * Find products by name and collect them in the list.

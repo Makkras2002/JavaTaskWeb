@@ -5,6 +5,9 @@ import com.makkras.shop.exception.InteractionException;
 
 import java.util.List;
 
+/**
+ * The interface Product category dao.
+ */
 public interface ProductCategoryDao extends BaseDao<ProductCategory>{
     /**
      * Find product category by name and collect them in the list.

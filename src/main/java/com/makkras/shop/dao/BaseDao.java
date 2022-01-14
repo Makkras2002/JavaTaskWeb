@@ -8,6 +8,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
+/**
+ * The interface Base dao.
+ *
+ * @param <T> the type parameter
+ */
 public interface BaseDao <T extends CustomEntity>{
     /**
      * Find all data from database and save in the list.

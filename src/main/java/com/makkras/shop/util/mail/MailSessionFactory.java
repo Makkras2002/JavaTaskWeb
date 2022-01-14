@@ -5,6 +5,9 @@ import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import java.util.Properties;
 
+/**
+ * The type Mail session factory.
+ */
 public class MailSessionFactory {
     private static MailSessionFactory instance;
     private MailSessionFactory(){

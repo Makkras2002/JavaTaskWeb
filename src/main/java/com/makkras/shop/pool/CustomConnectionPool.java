@@ -14,6 +14,9 @@ import java.util.ResourceBundle;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 
+/**
+ * The type Custom connection pool.
+ */
 public class CustomConnectionPool {
 
     private static final int DEFAULT_POOL_SIZE = 40;
@@ -22,6 +25,9 @@ public class CustomConnectionPool {
     private BlockingDeque<ProxyConnection> givenAwayConnections;
 
     private static class LoadCustomConnectionPool{
+        /**
+         * The Instance.
+         */
         static final CustomConnectionPool INSTANCE = new CustomConnectionPool();
     }
     private CustomConnectionPool(){
@@ -49,9 +55,21 @@ public class CustomConnectionPool {
             throw new RuntimeException(exception.getMessage());
         }
     }
+
+    /**
+     * Get instance of custom connection pool.
+     *
+     * @return the custom connection pool
+     */
     public static CustomConnectionPool getInstance(){
         return LoadCustomConnectionPool.INSTANCE;
     }
+
+    /**
+     * Get connection and return connection.
+     *
+     * @return the connection
+     */
     public Connection getConnection(){
         Connection connection =null;
         try {
@@ -62,6 +80,13 @@ public class CustomConnectionPool {
         }
         return connection;
     }
+
+    /**
+     * Release connection.
+     *
+     * @param connection the connection
+     * @throws PoolCustomException the pool custom exception
+     */
     public void releaseConnection(Connection connection) throws PoolCustomException {
         if(connection.getClass() != ProxyConnection.class){
             throw new PoolCustomException("Unauthorized connection appeared in pool.");
@@ -69,6 +94,10 @@ public class CustomConnectionPool {
         givenAwayConnections.remove(connection);
         freeConnections.offer((ProxyConnection) connection);
     }
+
+    /**
+     * Destroy pool.
+     */
     public void destroyPool(){
         int counter =0;
         while(counter < DEFAULT_POOL_SIZE){

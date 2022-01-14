@@ -2,6 +2,9 @@ package com.makkras.shop.util.locale;
 
 import com.makkras.shop.controller.Literal;
 
+/**
+ * The type Localized text extractor.
+ */
 public class LocalizedTextExtractor {
     private static LocalizedTextExtractor instance;
     private LocalizedTextExtractor(){

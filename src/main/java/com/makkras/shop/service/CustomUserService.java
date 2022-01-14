@@ -6,6 +6,9 @@ import com.makkras.shop.exception.ServiceException;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The interface Custom user service.
+ */
 public interface CustomUserService {
     /**
      * Find user with login and password and return optional result.

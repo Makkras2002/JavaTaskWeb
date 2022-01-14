@@ -6,6 +6,9 @@ import com.makkras.shop.exception.InteractionException;
 
 import java.util.List;
 
+/**
+ * The interface User dao.
+ */
 public interface UserDao extends BaseDao<User>{
 
     /**

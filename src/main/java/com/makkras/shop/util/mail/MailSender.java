@@ -14,6 +14,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * The type Mail sender.
+ */
 public class MailSender {
     private static MailSender instance;
     private static Logger logger = LogManager.getLogger();

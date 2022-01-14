@@ -1,5 +1,8 @@
 package com.makkras.shop.util.encryptor;
 
+/**
+ * The interface Custom password encryptor.
+ */
 public interface CustomPasswordEncryptor {
 
     /**

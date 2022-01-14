@@ -2,6 +2,9 @@ package com.makkras.shop.controller.validator;
 
 import java.util.Map;
 
+/**
+ * The interface Product data validator.
+ */
 public interface ProductDataValidator {
     /**
      * Validate product search data and return boolean result if data is valid.

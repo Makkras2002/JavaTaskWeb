@@ -7,6 +7,9 @@ import com.makkras.shop.exception.ServiceException;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * The interface Custom order service.
+ */
 public interface CustomOrderService {
     /**
      * Make order and send notification message on user email.

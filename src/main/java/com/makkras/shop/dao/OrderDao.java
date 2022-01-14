@@ -8,6 +8,9 @@ import java.sql.Date;
 import java.util.List;
 
 
+/**
+ * The interface Order dao.
+ */
 public interface OrderDao extends BaseDao<CompleteOrder>{
     /**
      * Find all finished orders and collect them in the list.

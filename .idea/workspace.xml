@@ -10,14 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d343d937-cc37-418d-bc9c-05f7baad5960" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/com/makkras/shop/controller/validator/impl/CustomProductDataValidatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/com/makkras/shop/controller/validator/impl/CustomUserDataValidatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/com/makkras/shop/util/locale/LocalizedTextExtractorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/com/makkras/shop/util/mail/MailSenderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaTaskWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaTaskWeb.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/CustomCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/CustomCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/OrderDataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/OrderDataValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/ProductDataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/validator/ProductDataValidator.java" afterDir="false" />
@@ -28,12 +21,15 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/ProductDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/pool/CustomConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/pool/CustomConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/pool/ProxyConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/pool/ProxyConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomOrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/CustomUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/service/impl/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/util/encryptor/CustomPasswordEncryptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/util/encryptor/CustomPasswordEncryptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/util/locale/LocaleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/util/locale/LocaleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/util/locale/LocalizedTextExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/util/locale/LocalizedTextExtractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/util/mail/MailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/util/mail/MailSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/util/mail/MailSessionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/util/mail/MailSessionFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,15 +116,13 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.2">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -414,7 +408,27 @@
       <workItem from="1641887753195" duration="1072000" />
       <workItem from="1641890596046" duration="42000" />
       <workItem from="1641890655820" duration="63000" />
-      <workItem from="1641989455481" duration="8551000" />
+      <workItem from="1641989455481" duration="8884000" />
+      <workItem from="1641998413394" duration="14000" />
+      <workItem from="1641999604631" duration="76000" />
+      <workItem from="1641999696735" duration="42000" />
+      <workItem from="1642005069061" duration="167000" />
+      <workItem from="1642005314853" duration="100000" />
+      <workItem from="1642076136752" duration="32000" />
+      <workItem from="1642076244234" duration="86000" />
+      <workItem from="1642077185221" duration="33000" />
+      <workItem from="1642077234494" duration="11000" />
+      <workItem from="1642078157934" duration="21000" />
+      <workItem from="1642078201851" duration="32000" />
+      <workItem from="1642078250072" duration="5000" />
+      <workItem from="1642078276369" duration="4000" />
+      <workItem from="1642079225658" duration="177000" />
+      <workItem from="1642079418038" duration="349000" />
+      <workItem from="1642079960176" duration="40000" />
+      <workItem from="1642080402283" duration="63000" />
+      <workItem from="1642080584823" duration="81000" />
+      <workItem from="1642080687702" duration="15000" />
+      <workItem from="1642144960888" duration="1998000" />
     </task>
     <task id="LOCAL-00001" summary="Dao work started upd.">
       <created>1638725665591</created>
@@ -703,7 +717,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641821274320</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="JavaDocs + tests added + refactoring Upd.">
+      <created>1641998378237</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1641998378237</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -722,7 +743,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Session invalidation handler added + servlets refactoring Upd." />
     <MESSAGE value="Client Main Menu Upd." />
     <MESSAGE value="General refactoring Upd." />
     <MESSAGE value="pre ref Upd." />
@@ -747,7 +767,8 @@
     <MESSAGE value="Context destroy pool listener added Upd." />
     <MESSAGE value="User search + User delete added Upd." />
     <MESSAGE value="Orders Sort + Orders search + Orders Completion added Upd." />
-    <option name="LAST_COMMIT_MESSAGE" value="Orders Sort + Orders search + Orders Completion added Upd." />
+    <MESSAGE value="JavaDocs + tests added + refactoring Upd." />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaDocs + tests added + refactoring Upd." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

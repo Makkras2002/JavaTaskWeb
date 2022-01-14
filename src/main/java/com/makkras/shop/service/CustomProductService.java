@@ -8,6 +8,9 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The interface Custom product service.
+ */
 public interface CustomProductService {
     /**
      * Find all products in stock from db and collect them in the list.
