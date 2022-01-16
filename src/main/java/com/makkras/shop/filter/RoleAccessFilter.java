@@ -23,7 +23,8 @@ public class RoleAccessFilter implements Filter {
         allowedToUnRegisteredAccessCommands = EnumSet.of(CommandType.REGISTER,CommandType.LOGIN,
                 CommandType.PREPARE_MAIN_CLIENT_PAGE,CommandType.CHANGE_LOCALE,CommandType.SORT_PRODUCTS_BY_NAME,CommandType.SORT_PRODUCTS_BY_CATEGORY,
                 CommandType.SORT_PRODUCTS_BY_PRICE,CommandType.FIND_PRODUCT);
-        onlyAdminAccessCommands = EnumSet.of(CommandType.PREPARE_MAIN_ADMIN_PAGE);
+        onlyAdminAccessCommands = EnumSet.of(CommandType.PREPARE_MAIN_ADMIN_PAGE, CommandType.PREPARE_ADMIN_ADDING_PAGE, CommandType.PREPARE_VIEW_ORDERS_PAGE,
+                CommandType.PREPARE_VIEW_USERS_PAGE, CommandType.PREPARE_PRODUCT_ADDING_PAGE);
     }
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
