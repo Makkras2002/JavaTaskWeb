@@ -21,7 +21,8 @@ public class LocaleNameFormatterTag extends SimpleTagSupport {
     @Override
     public void doTag() throws JspException {
         try {
-            String formattedLocaleName = initialLocaleName.toUpperCase(Locale.ROOT).replaceAll("_","-");
+            String formattedLocaleName = initialLocaleName.replaceAll("ru_","");
+            formattedLocaleName = formattedLocaleName.replaceAll("en_","");
             getJspContext().getOut().write(formattedLocaleName);
         } catch (Exception e) {
             throw new SkipPageException(e.getMessage());
