@@ -9,8 +9,6 @@ import com.makkras.shop.entity.ProductCategory;
 import com.makkras.shop.exception.InteractionException;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.CustomProductService;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

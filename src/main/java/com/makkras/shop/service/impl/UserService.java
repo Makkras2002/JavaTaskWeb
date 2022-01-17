@@ -3,7 +3,6 @@ package com.makkras.shop.service.impl;
 import com.makkras.shop.controller.Literal;
 import com.makkras.shop.dao.UserDao;
 import com.makkras.shop.dao.impl.UserDaoImpl;
-import com.makkras.shop.entity.Product;
 import com.makkras.shop.util.encryptor.impl.PasswordEncryptor;
 import com.makkras.shop.entity.User;
 import com.makkras.shop.entity.UserRole;
@@ -13,7 +12,6 @@ import com.makkras.shop.service.CustomUserService;
 import com.makkras.shop.util.locale.LocalizedTextExtractor;
 import com.makkras.shop.util.mail.MailSender;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
