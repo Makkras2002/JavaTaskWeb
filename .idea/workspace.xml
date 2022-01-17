@@ -10,7 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d343d937-cc37-418d-bc9c-05f7baad5960" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_12_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_12_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_4_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/com/makkras/shop/service/impl/ProductServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaTaskWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaTaskWeb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,26 +97,21 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.makkras.shop.service.impl" />
       <recent name="com.makkras.shop.util.mail" />
       <recent name="com.makkras.shop.util.locale" />
       <recent name="com.makkras.shop.controller.validator.impl" />
       <recent name="com.makkras.shop.controller.validator" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.2">
-    <configuration name="CustomOrderDataValidatorTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="JavaTaskWeb" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.makkras.shop.controller.validator.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.makkras.shop.controller.validator.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.makkras.shop.controller.validator.impl.CustomOrderDataValidatorTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+  <component name="RunManager" selected="TestNG.ProductServiceTest">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,6 +177,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.makkras.shop.util.mail" />
       <option name="MAIN_CLASS_NAME" value="com.makkras.shop.util.mail.MailSenderTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="JavaTaskWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.makkras.shop.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.makkras.shop.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.makkras.shop.service.impl.ProductServiceTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -273,11 +292,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ProductServiceTest" />
         <item itemvalue="TestNG.MailSenderTest" />
         <item itemvalue="TestNG.LocalizedTextExtractorTest" />
         <item itemvalue="TestNG.CustomUserDataValidatorTest" />
         <item itemvalue="TestNG.CustomProductDataValidatorTest" />
-        <item itemvalue="TestNG.CustomOrderDataValidatorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -420,6 +439,9 @@
       <workItem from="1642341379390" duration="583000" />
       <workItem from="1642341983211" duration="19000" />
       <workItem from="1642342206423" duration="88000" />
+      <workItem from="1642342709426" duration="440000" />
+      <workItem from="1642343166807" duration="10000" />
+      <workItem from="1642418725027" duration="3285000" />
     </task>
     <task id="LOCAL-00001" summary="Dao work started upd.">
       <created>1638725665591</created>
@@ -729,7 +751,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642341950879</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="LocaleNameFormatterTag refactoring Upd.">
+      <created>1642343138573</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1642343138573</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -748,7 +777,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pre ref Upd." />
     <MESSAGE value="Localization RU/EN added Upd." />
     <MESSAGE value="f5 button blocker added Upd." />
     <MESSAGE value="Encoding filter added Upd." />
@@ -773,7 +801,8 @@
     <MESSAGE value="JavaDocs + tests added + refactoring Upd." />
     <MESSAGE value="Java Docs refactoring Upd." />
     <MESSAGE value="RoleAccessFilter refactoring Upd." />
-    <option name="LAST_COMMIT_MESSAGE" value="RoleAccessFilter refactoring Upd." />
+    <MESSAGE value="LocaleNameFormatterTag refactoring Upd." />
+    <option name="LAST_COMMIT_MESSAGE" value="LocaleNameFormatterTag refactoring Upd." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
