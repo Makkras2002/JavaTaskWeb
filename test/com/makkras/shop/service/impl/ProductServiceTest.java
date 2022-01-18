@@ -71,7 +71,7 @@ public class ProductServiceTest {
     @AfterClass
     public void after() {
         try {
-            Mockito.verify(productServiceMock,Mockito.times(1)).findAllProductsInStockFromDb();
+            Mockito.verify(productServiceMock, Mockito.times(1)).findAllProductsInStockFromDb();
         } catch (ServiceException e) {
             logger.error(e.getMessage(),e);
         }

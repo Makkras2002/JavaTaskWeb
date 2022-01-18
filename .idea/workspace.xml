@@ -10,8 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d343d937-cc37-418d-bc9c-05f7baad5960" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/com/makkras/shop/service/impl/UserServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/com/makkras/shop/service/impl/OrderServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/makkras/shop/service/impl/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/makkras/shop/service/impl/ProductServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +99,7 @@
       <recent name="com.makkras.shop.controller.validator" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UserServiceTest">
+  <component name="RunManager" selected="TestNG.OrderServiceTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -106,23 +107,6 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CustomUserDataValidatorTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="JavaTaskWeb" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.makkras.shop.controller.validator.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.makkras.shop.controller.validator.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.makkras.shop.controller.validator.impl.CustomUserDataValidatorTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -154,6 +138,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.makkras.shop.util.mail" />
       <option name="MAIN_CLASS_NAME" value="com.makkras.shop.util.mail.MailSenderTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="JavaTaskWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.makkras.shop.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.makkras.shop.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.makkras.shop.service.impl.OrderServiceTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -286,11 +287,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.OrderServiceTest" />
         <item itemvalue="TestNG.UserServiceTest" />
         <item itemvalue="TestNG.ProductServiceTest" />
         <item itemvalue="TestNG.MailSenderTest" />
         <item itemvalue="TestNG.LocalizedTextExtractorTest" />
-        <item itemvalue="TestNG.CustomUserDataValidatorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -435,7 +436,13 @@
       <workItem from="1642342206423" duration="88000" />
       <workItem from="1642342709426" duration="440000" />
       <workItem from="1642343166807" duration="10000" />
-      <workItem from="1642418725027" duration="4107000" />
+      <workItem from="1642418725027" duration="4455000" />
+      <workItem from="1642423561160" duration="10000" />
+      <workItem from="1642426879086" duration="528000" />
+      <workItem from="1642427580527" duration="66000" />
+      <workItem from="1642428871096" duration="41000" />
+      <workItem from="1642432871318" duration="55000" />
+      <workItem from="1642489000882" duration="2743000" />
     </task>
     <task id="LOCAL-00001" summary="Dao work started upd.">
       <created>1638725665591</created>
@@ -759,7 +766,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642422461689</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="UserServiceTest with Mockito Added + Services Imports clean up Upd.">
+      <created>1642423527418</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1642423527418</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -778,7 +792,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="f5 button blocker added Upd." />
     <MESSAGE value="Encoding filter added Upd." />
     <MESSAGE value="redact login, password + user forms validator + filters added Upd." />
     <MESSAGE value="Redact login, password + user forms validator + filters added + general refactoring Upd." />
@@ -803,7 +816,8 @@
     <MESSAGE value="RoleAccessFilter refactoring Upd." />
     <MESSAGE value="LocaleNameFormatterTag refactoring Upd." />
     <MESSAGE value="ProductServiceTest with Mockito Added Upd." />
-    <option name="LAST_COMMIT_MESSAGE" value="ProductServiceTest with Mockito Added Upd." />
+    <MESSAGE value="UserServiceTest with Mockito Added + Services Imports clean up Upd." />
+    <option name="LAST_COMMIT_MESSAGE" value="UserServiceTest with Mockito Added + Services Imports clean up Upd." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
