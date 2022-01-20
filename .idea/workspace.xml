@@ -10,9 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d343d937-cc37-418d-bc9c-05f7baad5960" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/com/makkras/shop/service/impl/OrderServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/makkras/shop/service/impl/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/makkras/shop/service/impl/ProductServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/filter/EncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/EncodingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/filter/PageDirectAccessRedirectFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/PageDirectAccessRedirectFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/filter/RoleAccessFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/RoleAccessFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/filter/ScriptInjectionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/ScriptInjectionFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/listener/ContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/listener/ContextListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/listener/CustomSessionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/listener/CustomSessionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/add_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/add_product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/change_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/change_product.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +97,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.makkras.shop.controller" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.makkras.shop.service.impl" />
       <recent name="com.makkras.shop.util.mail" />
@@ -99,18 +108,7 @@
       <recent name="com.makkras.shop.controller.validator" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.OrderServiceTest">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.2">
     <configuration name="LocalizedTextExtractorTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="JavaTaskWeb" />
       <extension name="coverage">
@@ -442,7 +440,18 @@
       <workItem from="1642427580527" duration="66000" />
       <workItem from="1642428871096" duration="41000" />
       <workItem from="1642432871318" duration="55000" />
-      <workItem from="1642489000882" duration="2743000" />
+      <workItem from="1642489000882" duration="2928000" />
+      <workItem from="1642493227264" duration="708000" />
+      <workItem from="1642494011218" duration="14000" />
+      <workItem from="1642494201689" duration="998000" />
+      <workItem from="1642495248687" duration="26000" />
+      <workItem from="1642495313793" duration="20000" />
+      <workItem from="1642495359835" duration="44000" />
+      <workItem from="1642496061465" duration="65000" />
+      <workItem from="1642496140432" duration="34000" />
+      <workItem from="1642534900214" duration="163000" />
+      <workItem from="1642535094860" duration="151000" />
+      <workItem from="1642662481476" duration="1495000" />
     </task>
     <task id="LOCAL-00001" summary="Dao work started upd.">
       <created>1638725665591</created>
@@ -773,7 +782,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642423527418</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="OrderServiceTest added Upd.">
+      <created>1642493062673</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1642493062673</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -792,7 +808,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Encoding filter added Upd." />
     <MESSAGE value="redact login, password + user forms validator + filters added Upd." />
     <MESSAGE value="Redact login, password + user forms validator + filters added + general refactoring Upd." />
     <MESSAGE value="Sort + Search added Upd." />
@@ -817,7 +832,8 @@
     <MESSAGE value="LocaleNameFormatterTag refactoring Upd." />
     <MESSAGE value="ProductServiceTest with Mockito Added Upd." />
     <MESSAGE value="UserServiceTest with Mockito Added + Services Imports clean up Upd." />
-    <option name="LAST_COMMIT_MESSAGE" value="UserServiceTest with Mockito Added + Services Imports clean up Upd." />
+    <MESSAGE value="OrderServiceTest added Upd." />
+    <option name="LAST_COMMIT_MESSAGE" value="OrderServiceTest added Upd." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -42,7 +42,7 @@
             </div>
             <div class="mb-3 w-25" style="margin-top: 40px">
                 <label for="price" class="form-label"><fmt:message key="main_client.prod_price"/></label>
-                <input type="number" step="0.01" class="form-control" id="price" value="${add_product_form_data_map.price}" name="price" required="required"/>
+                <input type="number" step="0.01" min="1" class="form-control" id="price" value="${add_product_form_data_map.price}" name="price" required="required"/>
             </div>
             <div class="mb-3 w-25" style="margin-top: 40px">
                 <label for="category" class="form-label" > <fmt:message key="main_client.prod_category"/></label>

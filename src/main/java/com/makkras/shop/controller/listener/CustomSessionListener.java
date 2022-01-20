@@ -1,4 +1,4 @@
-package com.makkras.shop.listener;
+package com.makkras.shop.controller.listener;
 
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.impl.UserService;
