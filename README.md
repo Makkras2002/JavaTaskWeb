@@ -2,7 +2,7 @@
 # AutoParts Shop "Autoparts Pro+"
 The web system gives an opportunity to order different autoparts. The detailed information about the autoparts of each type is presented in form of the table where all important details about the autopart are described. The catalog data is moderated by the administrator. Administrator is also responsible for different kinds of user management operations.
 # User Roles
-- Unauthorised user can
+- Unauthorized user can
     + view autoparts catalog
     + login into the system
     + register into the system
