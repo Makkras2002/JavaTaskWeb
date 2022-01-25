@@ -11,14 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d343d937-cc37-418d-bc9c-05f7baad5960" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/filter/EncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/EncodingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/filter/PageDirectAccessRedirectFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/PageDirectAccessRedirectFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/filter/RoleAccessFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/RoleAccessFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/filter/ScriptInjectionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/ScriptInjectionFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/listener/ContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/listener/ContextListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/listener/CustomSessionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/listener/CustomSessionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/add_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/add_product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/change_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/change_product.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +69,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="TestNG" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.TestNG" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.47471264" />
@@ -451,7 +443,12 @@
       <workItem from="1642496140432" duration="34000" />
       <workItem from="1642534900214" duration="163000" />
       <workItem from="1642535094860" duration="151000" />
-      <workItem from="1642662481476" duration="1495000" />
+      <workItem from="1642662481476" duration="1756000" />
+      <workItem from="1642665375699" duration="25000" />
+      <workItem from="1642669280140" duration="664000" />
+      <workItem from="1642670218126" duration="84000" />
+      <workItem from="1642670315929" duration="34000" />
+      <workItem from="1643096625361" duration="253000" />
     </task>
     <task id="LOCAL-00001" summary="Dao work started upd.">
       <created>1638725665591</created>
@@ -789,7 +786,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642493062673</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Refactoring Upd.">
+      <created>1642665345109</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1642665345109</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -818,7 +822,6 @@
     <MESSAGE value="private constructor for Literal and PagePath Upd." />
     <MESSAGE value="Main admin page added Upd." />
     <MESSAGE value="Adding of product to catalog added Upd." />
-    <MESSAGE value="Refactoring Upd." />
     <MESSAGE value="Refactoring Upd x2." />
     <MESSAGE value="Update product data command added + Admin menu refactoring Upd." />
     <MESSAGE value="Check Upd." />
@@ -833,7 +836,8 @@
     <MESSAGE value="ProductServiceTest with Mockito Added Upd." />
     <MESSAGE value="UserServiceTest with Mockito Added + Services Imports clean up Upd." />
     <MESSAGE value="OrderServiceTest added Upd." />
-    <option name="LAST_COMMIT_MESSAGE" value="OrderServiceTest added Upd." />
+    <MESSAGE value="Refactoring Upd." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring Upd." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
