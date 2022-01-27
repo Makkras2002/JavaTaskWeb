@@ -4,8 +4,6 @@ import jakarta.servlet.jsp.JspException;
 import jakarta.servlet.jsp.SkipPageException;
 import jakarta.servlet.jsp.tagext.SimpleTagSupport;
 
-import java.util.Locale;
-
 
 public class LocaleNameFormatterTag extends SimpleTagSupport {
 

@@ -449,13 +449,12 @@
       <workItem from="1642670218126" duration="84000" />
       <workItem from="1642670315929" duration="34000" />
       <workItem from="1643096625361" duration="253000" />
-    </task>
-    <task id="LOCAL-00001" summary="Dao work started upd.">
-      <created>1638725665591</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1638725665591</updated>
+      <workItem from="1643097013569" duration="427000" />
+      <workItem from="1643108113140" duration="181000" />
+      <workItem from="1643108308615" duration="32000" />
+      <workItem from="1643202794506" duration="243000" />
+      <workItem from="1643203129395" duration="44000" />
+      <workItem from="1643232764716" duration="3459000" />
     </task>
     <task id="LOCAL-00002" summary="DAO and Connection Pool finished Upd.">
       <created>1638826708683</created>
@@ -793,7 +792,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642665345109</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="DataBase diagram added Upd.">
+      <created>1643097220750</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1643097220751</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -812,7 +818,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="redact login, password + user forms validator + filters added Upd." />
     <MESSAGE value="Redact login, password + user forms validator + filters added + general refactoring Upd." />
     <MESSAGE value="Sort + Search added Upd." />
     <MESSAGE value="Validators rework + refactoring Upd." />
@@ -837,7 +842,8 @@
     <MESSAGE value="UserServiceTest with Mockito Added + Services Imports clean up Upd." />
     <MESSAGE value="OrderServiceTest added Upd." />
     <MESSAGE value="Refactoring Upd." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring Upd." />
+    <MESSAGE value="DataBase diagram added Upd." />
+    <option name="LAST_COMMIT_MESSAGE" value="DataBase diagram added Upd." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

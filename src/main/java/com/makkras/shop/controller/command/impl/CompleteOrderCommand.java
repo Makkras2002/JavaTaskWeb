@@ -5,7 +5,6 @@ import com.makkras.shop.controller.Literal;
 import com.makkras.shop.controller.PagePath;
 import com.makkras.shop.controller.command.CustomCommand;
 import com.makkras.shop.entity.CompleteOrder;
-import com.makkras.shop.entity.User;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.impl.OrderService;
 import com.makkras.shop.util.locale.LocalizedTextExtractor;

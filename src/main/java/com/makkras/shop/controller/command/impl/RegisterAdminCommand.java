@@ -4,8 +4,6 @@ import com.makkras.shop.controller.Literal;
 import com.makkras.shop.controller.PagePath;
 import com.makkras.shop.controller.command.CustomCommand;
 import com.makkras.shop.controller.validator.impl.CustomUserDataValidator;
-import com.makkras.shop.entity.ComponentOrder;
-import com.makkras.shop.entity.UserRole;
 import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.impl.UserService;
 import com.makkras.shop.util.locale.LocalizedTextExtractor;
@@ -13,9 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class RegisterAdminCommand implements CustomCommand {
