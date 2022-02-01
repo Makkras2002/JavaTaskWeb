@@ -1,3 +1,0 @@
-2021-12-06 22:39:35 [main] [updateCompleteOrderStatus] [228] ERROR makkras.shop.dao.impl.OrderDaoImpl - ОШИБКА: столбец "complete_order_date" имеет тип date, а выражение - boolean
-  Подсказка: Перепишите выражение или преобразуйте его тип.
-  Позиция: 51

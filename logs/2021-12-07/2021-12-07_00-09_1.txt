@@ -1,1 +1,0 @@
-2021-12-07 00:09:43 [main] [<init>] [38] ERROR com.makkras.shop.pool.CustomConnectionPool - ВАЖНО: извините, уже слишком много клиентов (pgjdbc: autodetected server-encoding to be windows-1251, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)

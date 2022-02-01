@@ -1,1 +1,0 @@
-2021-12-05 19:18:29 [main] [create] [98] ERROR makkras.shop.dao.impl.UserDaoImpl - Запрос не вернул результатов.

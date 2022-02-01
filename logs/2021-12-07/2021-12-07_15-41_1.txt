@@ -1,1 +1,0 @@
-2021-12-07 15:41:40 [main] [<init>] [43] FATAL com.makkras.shop.pool.CustomConnectionPool - \resources\databaseprop.properties (Системе не удается найти указанный путь)

@@ -1,1 +1,0 @@
-2022-01-12 17:22:50 [main] [send] [42] ERROR makkras.shop.util.mail.MailSender - Local address contains dot-dot

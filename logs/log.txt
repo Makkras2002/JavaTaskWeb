@@ -1,2 +1,0 @@
-2022-01-17 15:40:35 [main] [findActiveUsersFromDbByParamsExceptionTest] [46] ERROR makkras.shop.service.impl.UserServiceTest - null
-com.makkras.shop.exception.ServiceException: null

@@ -1,2 +1,0 @@
-2021-12-23 14:55:18 [main] [<init>] [49] FATAL com.makkras.shop.pool.CustomConnectionPool - Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.
-2021-12-23 14:55:27 [main] [<init>] [49] FATAL com.makkras.shop.pool.CustomConnectionPool - Подсоединение по адресу localhost:5432 отклонено. Проверьте что хост и порт указаны правильно и что postmaster принимает TCP/IP-подсоединения.

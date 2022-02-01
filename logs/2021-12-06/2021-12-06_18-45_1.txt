@@ -1,2 +1,0 @@
-2021-12-06 18:45:05 [main] [updateCategoryName] [133] ERROR makkras.shop.dao.impl.ProductCategoryDaoImpl - ОШИБКА: ошибка синтаксиса (примерное положение: "=")
-  Позиция: 39

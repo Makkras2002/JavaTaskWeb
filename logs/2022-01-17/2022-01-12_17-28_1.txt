@@ -1,2 +1,0 @@
-2022-01-12 17:28:00 [main] [send] [42] ERROR makkras.shop.util.mail.MailSender - Illegal address
-2022-01-12 17:28:22 [main] [send] [42] ERROR makkras.shop.util.mail.MailSender - Invalid Addresses

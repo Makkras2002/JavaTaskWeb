@@ -1,3 +1,0 @@
-2021-12-12 14:58:05 [main] [send] [42] ERROR makkras.shop.util.mail.MailSender - 535-5.7.8 Username and Password not accepted. Learn more at
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials r25sm1014565lfi.166 - gsmtp
-

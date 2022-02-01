@@ -1,1 +1,0 @@
-2021-12-06 21:11:21 [main] [main] [45] ERROR com.makkras.shop.test_main.Main - Не указано значение для параметра 1.
