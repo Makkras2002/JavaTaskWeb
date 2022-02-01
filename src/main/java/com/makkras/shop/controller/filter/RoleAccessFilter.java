@@ -22,7 +22,7 @@ public class RoleAccessFilter implements Filter {
     public void init(FilterConfig filterConfig) throws ServletException {
         allowedToUnRegisteredAccessCommands = EnumSet.of(CommandType.REGISTER,CommandType.LOGIN,
                 CommandType.PREPARE_MAIN_CLIENT_PAGE,CommandType.CHANGE_LOCALE,CommandType.SORT_PRODUCTS_BY_NAME,CommandType.SORT_PRODUCTS_BY_CATEGORY,
-                CommandType.SORT_PRODUCTS_BY_PRICE,CommandType.FIND_PRODUCT);
+                CommandType.SORT_PRODUCTS_BY_PRICE,CommandType.FIND_PRODUCT, CommandType.CONFIRM_REGISTRATION);
         onlyAdminAccessCommands = EnumSet.of(CommandType.PREPARE_MAIN_ADMIN_PAGE, CommandType.PREPARE_ADMIN_ADDING_PAGE, CommandType.PREPARE_VIEW_ORDERS_PAGE,
                 CommandType.PREPARE_VIEW_USERS_PAGE, CommandType.PREPARE_PRODUCT_ADDING_PAGE);
     }
@@ -36,7 +36,7 @@ public class RoleAccessFilter implements Filter {
         String page = null;
         String currentLocale = String.valueOf(session.getAttribute(Literal.LOCALE_NAME));
         LocalizedTextExtractor localizedTextExtractor  = LocalizedTextExtractor.getInstance();
-        if(session.getAttribute(Literal.ROLE) == null){
+        if(session.getAttribute(Literal.ROLE) == null || session.getAttribute(Literal.PREPARED_FOR_REGISTRATION) != null){
             if(allowedToUnRegisteredAccessCommands.stream().filter(o -> o.toString().equals(command.toUpperCase())).toArray().length > 0){
                 filterChain.doFilter(request,response);
             } else {

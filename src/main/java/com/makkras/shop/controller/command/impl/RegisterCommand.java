@@ -43,6 +43,7 @@ public class RegisterCommand implements CustomCommand {
                         List<ComponentOrder> componentOrders = new ArrayList<>();
                         request.getSession().setAttribute(Literal.ORDER, componentOrders);
                         request.getSession().setAttribute(Literal.ROLE, UserRole.CLIENT);
+                        request.getSession().setAttribute(Literal.PREPARED_FOR_REGISTRATION, true);
                         userService.sendMessageAboutSuccessFullRegistrationOnUserEmail(login,email,currentLocale);
                         request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
                                 localizedTextExtractor.getText(currentLocale,"REGISTRATION_CONFIRMATION_AWAIT"));

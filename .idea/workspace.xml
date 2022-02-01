@@ -10,7 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d343d937-cc37-418d-bc9c-05f7baad5960" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8635cd4f-a8da-41fb-a1cc-01d5f0aa8519.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8635cd4f-a8da-41fb-a1cc-01d5f0aa8519.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8635cd4f-a8da-41fb-a1cc-01d5f0aa8519/storage_v2/_src_/database/Java_Pam_Web_Project.rtWhbw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8635cd4f-a8da-41fb-a1cc-01d5f0aa8519/storage_v2/_src_/database/Java_Pam_Web_Project.rtWhbw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/Literal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/Literal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/ConfRegCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/ConfRegCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/RegisterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/command/impl/RegisterCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/PageDirectAccessRedirectFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/PageDirectAccessRedirectFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/RoleAccessFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/makkras/shop/controller/filter/RoleAccessFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -455,13 +462,43 @@
       <workItem from="1643202794506" duration="243000" />
       <workItem from="1643203129395" duration="44000" />
       <workItem from="1643232764716" duration="3459000" />
-    </task>
-    <task id="LOCAL-00002" summary="DAO and Connection Pool finished Upd.">
-      <created>1638826708683</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1638826708683</updated>
+      <workItem from="1643269461912" duration="378000" />
+      <workItem from="1643269856405" duration="214000" />
+      <workItem from="1643282553472" duration="192000" />
+      <workItem from="1643282790851" duration="104000" />
+      <workItem from="1643379200475" duration="127000" />
+      <workItem from="1643379341704" duration="24000" />
+      <workItem from="1643380153052" duration="165000" />
+      <workItem from="1643380331710" duration="62000" />
+      <workItem from="1643462358169" duration="46000" />
+      <workItem from="1643462418836" duration="19000" />
+      <workItem from="1643462883034" duration="15000" />
+      <workItem from="1643462910595" duration="20000" />
+      <workItem from="1643463201040" duration="11000" />
+      <workItem from="1643463224645" duration="22000" />
+      <workItem from="1643465607741" duration="22000" />
+      <workItem from="1643465656623" duration="61000" />
+      <workItem from="1643465742770" duration="11000" />
+      <workItem from="1643465771140" duration="81000" />
+      <workItem from="1643466037557" duration="29000" />
+      <workItem from="1643466094316" duration="28000" />
+      <workItem from="1643644715419" duration="64000" />
+      <workItem from="1643646563539" duration="102000" />
+      <workItem from="1643698843716" duration="158000" />
+      <workItem from="1643699018802" duration="96000" />
+      <workItem from="1643699901129" duration="66000" />
+      <workItem from="1643699991683" duration="39000" />
+      <workItem from="1643700916384" duration="29000" />
+      <workItem from="1643700960757" duration="26000" />
+      <workItem from="1643701050059" duration="18000" />
+      <workItem from="1643701113303" duration="52000" />
+      <workItem from="1643703737537" duration="34000" />
+      <workItem from="1643703794880" duration="107000" />
+      <workItem from="1643712532492" duration="97000" />
+      <workItem from="1643712642864" duration="30000" />
+      <workItem from="1643713798870" duration="33000" />
+      <workItem from="1643713979695" duration="2044000" />
+      <workItem from="1643716193360" duration="731000" />
     </task>
     <task id="LOCAL-00003" summary="Dao Ref Upd.">
       <created>1638868455611</created>
@@ -799,7 +836,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643097220751</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Imports clean up Upd.">
+      <created>1643269786833</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1643269786834</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -818,7 +862,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Redact login, password + user forms validator + filters added + general refactoring Upd." />
     <MESSAGE value="Sort + Search added Upd." />
     <MESSAGE value="Validators rework + refactoring Upd." />
     <MESSAGE value="Order management for client added Upd." />
@@ -843,7 +886,8 @@
     <MESSAGE value="OrderServiceTest added Upd." />
     <MESSAGE value="Refactoring Upd." />
     <MESSAGE value="DataBase diagram added Upd." />
-    <option name="LAST_COMMIT_MESSAGE" value="DataBase diagram added Upd." />
+    <MESSAGE value="Imports clean up Upd." />
+    <option name="LAST_COMMIT_MESSAGE" value="Imports clean up Upd." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

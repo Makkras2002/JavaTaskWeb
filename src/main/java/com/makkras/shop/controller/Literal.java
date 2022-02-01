@@ -49,6 +49,7 @@ public final class Literal {
     public static final String COMPLETED_ORDER_STATUS = "completed";
     public static final String IN_PROGRESS_ORDER_STATUS = "in_progress";
     public static final String ORDER_ID = "order_id";
+    public static final String PREPARED_FOR_REGISTRATION = "prepared_for_reg";
     public static final String ERROR_ORDER_COMPLETE_MESSAGE = "errorOrderCompleteMessage";
 
 

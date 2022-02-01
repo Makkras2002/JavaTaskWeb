@@ -20,6 +20,7 @@ public class ConfRegCommand implements CustomCommand {
         String login = String.valueOf(request.getSession().getAttribute(Literal.LOGIN_NAME));
         String password = String.valueOf(request.getSession().getAttribute(Literal.PASSWORD));
         String email = String.valueOf(request.getSession().getAttribute(Literal.EMAIL));
+        request.getSession().removeAttribute(Literal.PREPARED_FOR_REGISTRATION);
         if(login != null && password != null && email != null){
             try {
                 if(UserService.getInstance().checkIfUserIsValidForRegistration(login,email)){

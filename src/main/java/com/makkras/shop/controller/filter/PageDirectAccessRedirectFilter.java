@@ -1,5 +1,6 @@
 package com.makkras.shop.controller.filter;
 
+import com.makkras.shop.controller.Literal;
 import com.makkras.shop.controller.PagePath;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
@@ -24,7 +25,8 @@ public class PageDirectAccessRedirectFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         String requestURL = String.valueOf(request.getRequestURL());
-        if(requestURL.contains(PagePath.AUTHORIZATION_PAGE) || requestURL.contains(PagePath.REGISTRATION_PAGE)){
+        if(requestURL.contains(PagePath.AUTHORIZATION_PAGE) || requestURL.contains(PagePath.REGISTRATION_PAGE)  ||
+                (requestURL.contains(PagePath.CONFIRM_REGISTRATION_PAGE) && request.getSession().getAttribute(Literal.PREPARED_FOR_REGISTRATION) != null)) {
             filterChain.doFilter(request,response);
         } else {
             response.sendRedirect(request.getContextPath() + indexPath);
