@@ -1,12 +1,8 @@
 package com.makkras.shop.util.mail;
 
-import com.makkras.shop.exception.InteractionException;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import javax.mail.MessagingException;
-
-import static org.testng.Assert.*;
 
 public class MailSenderTest {
     private MailSender mailSender;

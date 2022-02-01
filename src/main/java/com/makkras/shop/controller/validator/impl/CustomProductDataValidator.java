@@ -1,8 +1,8 @@
 package com.makkras.shop.controller.validator.impl;
+
 import com.makkras.shop.controller.Literal;
 import com.makkras.shop.controller.validator.ProductDataValidator;
 import com.makkras.shop.util.locale.LocalizedTextExtractor;
-
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

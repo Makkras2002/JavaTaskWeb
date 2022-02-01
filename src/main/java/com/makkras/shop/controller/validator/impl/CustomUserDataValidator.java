@@ -2,7 +2,6 @@ package com.makkras.shop.controller.validator.impl;
 
 import com.makkras.shop.controller.Literal;
 import com.makkras.shop.controller.validator.UserDataValidator;
-import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.util.locale.LocalizedTextExtractor;
 
 import java.util.Map;
