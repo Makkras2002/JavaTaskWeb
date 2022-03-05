@@ -1,8 +1,114 @@
-window.onload = function buildTableForm() {
-    let productData = document.getElementById("productData");
-    let products = JSON.parse(productData.innerHTML);
-    const tbody = document.querySelector("#productTable");
-    tbody.innerHTML = "";
+var current_page = 1;
+var records_per_page = 3;
+let productData = document.getElementById("productData");
+var products=  JSON.parse(productData.innerHTML);
+
+function prevPage()
+{
+    if (current_page > 1) {
+        current_page--;
+        changePage(current_page);
+    }
+}
+
+function nextPage()
+{
+    if (current_page < numPages()) {
+        current_page++;
+        changePage(current_page);
+    }
+}
+
+function changePage(page)
+{
+    var btn_next = document.getElementById("next");
+    var btn_prev = document.getElementById("prev");
+    var listing_table = document.querySelector("#productTable");
+    listing_table.innerHTML = "";
+    var page_span = document.getElementById("page");
+
+    if (page < 1) page = 1;
+    if (page > numPages()) page = numPages();
+
+    listing_table.innerHTML = "";
+
+    for (var i = (page-1) * records_per_page; i < (page * records_per_page) && i < products.length; i++) {
+        let tr = "";
+        if (i == (page-1) * records_per_page) {
+            tr +=
+                "<tr><td>" +
+                "N" +
+                "</td>" +
+                "<td>" +
+                document.getElementById("prod_name").innerText +
+                "</td>" +
+                "<td>" +
+                document.getElementById("prod_category").innerText +
+                "</td>" +
+                "<td>" +
+                document.getElementById("prod_price").innerText +
+                "</td>" +
+                "<td>" +
+                document.getElementById("prod_img").innerText +
+                "</td>" +
+                "<td>" +
+                document.getElementById("prod_comment").innerText +
+                "</td>" +
+                "<td>" +
+                document.getElementById("prod_amount").innerText +
+                "</td>" +
+                "</tr>";
+        }
+        tr +=
+            "<form id='"+i+"' method='post' action='\controller'><input form='"+i+"' type='hidden' name='command' id='command' value='add_product_to_bucket'/><input form='"+i+"' type='hidden' name='product_id' id='product_id' required='required' readonly='readonly' value='"+
+            products[i].productId +
+            "'/>" +
+            "</form>" +
+            "<tr><td>"+i+"</td>" +
+            "<td>" +
+            products[i].productName+
+            "</td>" +
+            "<td>" +
+            products[i].productCategory.category +
+            "</td>" +
+            "<td>" +
+            products[i].productPrice +
+            "</td>" +
+            "<td><img src='" +
+            products[i].picturePath+
+            "' alt='"+products[i].productName+"' width='120px' height='120px'/></td>" +
+            "<td>" +
+            products[i].productComment+
+            "</td>"+
+            "<td><input form='"+i+"' type='number' name='amount'  id='amount' min='1' max='100000' step='1' required='required'"+
+            "/></td>" +
+            "<td>" +
+            "<button form='"+i+"' type='submit' class='btn btn-primary'>"+document.getElementById("prod_add_to_basket").innerText+
+            "</button></td>"
+            +"</tr>";
+        listing_table.innerHTML += tr;
+    }
+    page_span.innerHTML = page;
+
+    if (page == 1) {
+        btn_prev.style.visibility = "hidden";
+    } else {
+        btn_prev.style.visibility = "visible";
+    }
+
+    if (page == numPages()) {
+        btn_next.style.visibility = "hidden";
+    } else {
+        btn_next.style.visibility = "visible";
+    }
+}
+
+function numPages()
+{
+    return Math.ceil(products.length / records_per_page);
+}
+
+window.onload = function() {
     let categoriesData = document.getElementById("categoriesForSearch");
     let categories = JSON.parse(categoriesData.innerHTML);
     let categoriesSelectList = document.getElementById("categories");
@@ -18,65 +124,5 @@ window.onload = function buildTableForm() {
             categoriesSelectList.add(option);
         }
     }
-    if (products.length > 0) {
-        let str = "";
-        for (let i = 0; i < products.length; i++) {
-            let tr = "";
-            if (i == 0) {
-                tr +=
-                    "<tr><td>" +
-                    "N" +
-                    "</td>" +
-                    "<td>" +
-                    document.getElementById("prod_name").innerText +
-                    "</td>" +
-                    "<td>" +
-                    document.getElementById("prod_category").innerText +
-                    "</td>" +
-                    "<td>" +
-                    document.getElementById("prod_price").innerText +
-                    "</td>" +
-                    "<td>" +
-                    document.getElementById("prod_img").innerText +
-                    "</td>" +
-                    "<td>" +
-                    document.getElementById("prod_comment").innerText +
-                    "</td>" +
-                    "<td>" +
-                    document.getElementById("prod_amount").innerText +
-                    "</td>" +
-                    "</tr>";
-            }
-            tr +=
-                "<form id='"+i+"' method='post' action='\controller'><input form='"+i+"' type='hidden' name='command' id='command' value='add_product_to_bucket'/><input form='"+i+"' type='hidden' name='product_id' id='product_id' required='required' readonly='readonly' value='"+
-                products[i].productId +
-                "'/>" +
-                "</form>" +
-                "<tr><td>"+i+"</td>" +
-                "<td>" +
-                products[i].productName+
-                "</td>" +
-                "<td>" +
-                products[i].productCategory.category +
-                "</td>" +
-                "<td>" +
-                products[i].productPrice +
-                "</td>" +
-                "<td><img src='" +
-                products[i].picturePath+
-                "' alt='"+products[i].productName+"' width='120px' height='120px'/></td>" +
-                "<td>" +
-                products[i].productComment+
-                "</td>"+
-                "<td><input form='"+i+"' type='number' name='amount'  id='amount' min='1' max='100000' step='1' required='required'"+
-                "/></td>" +
-                "<td>" +
-                "<button form='"+i+"' type='submit' class='btn btn-primary'>"+document.getElementById("prod_add_to_basket").innerText+
-                "</button></td>"
-                +"</tr>";
-            tbody.innerHTML += tr;
-        }
-    } else {
-        tbody.innerHTML = "<caption>" + document.getElementById("prod_empty_res").innerText +"</caption>";
-    }
-}
+    changePage(1);
+};

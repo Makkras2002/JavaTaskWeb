@@ -129,6 +129,17 @@
                 </tbody>
             </table>
         </div>
+        <div class="row" style="margin-top: 60px; margin-left: 300px">
+            <div class="col-4">
+                <button class="btn-warning" id="prev" type="button" onclick="prevPage()"><fmt:message key="pagination.backwards"/></button>
+            </div>
+            <div class="col-4" style="color: darkorange; margin-left: -100px">
+                <span id="page"></span>
+            </div>
+            <div class="col-4" style="margin-left: -150px">
+                <button class="btn-warning" id="next" type="button" onclick="nextPage()"><fmt:message key="pagination.forward"/></button>
+            </div>
+        </div>
     </div>
     <div class="row" style="margin-top: 20px">
         <form method="post" action="/controller">

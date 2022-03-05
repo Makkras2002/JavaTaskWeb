@@ -28,9 +28,7 @@
     <div id="productDataStartCategory" style="display: none">
         ${product_for_change_data.category}
     </div>
-    <div id="productDataStartName" style="display: none">
-        ${product_for_change_data.name}
-    </div>
+    <div id="productDataStartName" style="display: none">${product_for_change_data.name}</div>
     <div class="row" style="margin-top: 60px" align="center">
         <h2><fmt:message key="main_admin.change_product_form_name"/></h2>
         <form method="post" action="/controller" name="add_product_form" id="add_product_form">
@@ -38,7 +36,7 @@
             <input type="hidden" id="product_id" name="product_id" value="${product_for_change_data.product_id}" required="required"/>
             <div class="mb-3 w-25" style="margin-top: 40px">
                 <label for="name" class="form-label" ><fmt:message key="main_client.prod_name"/></label>
-                <input type="text" class="form-control" id="name" name="name" required="required"/>
+                <input type="text" class="form-control" id="name" name="name" value="${product_for_change_data.name}" required="required"/>
             </div>
             <div class="mb-3 w-25" style="margin-top: 40px">
                 <label for="price" class="form-label"><fmt:message key="main_client.prod_price"/></label>

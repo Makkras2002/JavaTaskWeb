@@ -3,6 +3,7 @@
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <%@ page isELIgnored="false" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     <fmt:setLocale value="${locale}" scope="session" />
     <fmt:setBundle basename="localized_text"/>
     <title>AutoPartsPlus</title>
@@ -227,6 +228,17 @@
             <tbody id="productTable">
             </tbody>
         </table>
+    </div>
+    <div class="row" style="margin-top: 60px; margin-left: 300px">
+        <div class="col-4">
+            <button class="btn-warning" id="prev" type="button" onclick="prevPage()"><fmt:message key="pagination.backwards"/></button>
+        </div>
+        <div class="col-4" style="color: darkorange; margin-left: -100px">
+            <span id="page"></span>
+        </div>
+        <div class="col-4" style="margin-left: -150px">
+            <button class="btn-warning" id="next" type="button" onclick="nextPage()"><fmt:message key="pagination.forward"/></button>
+        </div>
     </div>
 </div>
 </div>
