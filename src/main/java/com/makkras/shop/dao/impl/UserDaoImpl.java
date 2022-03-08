@@ -74,6 +74,7 @@ public class UserDaoImpl implements UserDao {
         try {
             PasswordEncryptor passwordEncryptor = new PasswordEncryptor();
             connection = CustomConnectionPool.getInstance().getConnection();
+            connection.setAutoCommit(false);
             statement = connection.prepareStatement(SQL_CREATE_USER,Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, user.getLogin());
             statement.setString(2,passwordEncryptor.encryptPassword(user.getPassword()));
@@ -82,6 +83,8 @@ public class UserDaoImpl implements UserDao {
             statement.setBoolean(5, user.isOnline());
             statement.setInt(6,user.getUserRoleId());
             statement.executeUpdate();
+            connection.commit();
+            connection.setAutoCommit(true);
             ResultSet resultSet = statement.getGeneratedKeys();
             if(resultSet.next()){
                 createdItemKey = resultSet.getLong(1);
