@@ -4,7 +4,7 @@ import com.makkras.shop.pool.CustomConnectionPool;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 
-import javax.servlet.annotation.WebListener;
+import jakarta.servlet.annotation.WebListener;
 
 @WebListener
 public class ContextListener implements ServletContextListener {
