@@ -14,6 +14,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+import static org.apache.logging.log4j.core.util.Loader.getClassLoader;
+
 /**
  * The type Mail sender.
  */
@@ -25,7 +27,7 @@ public class MailSender {
     private MailSender(){
         try {
             properties =new Properties();
-            properties.load(new FileReader("C:\\foulder1.1\\Pam\\JavaTaskWeb\\src\\main\\resources\\datasrc\\mailsend.properties"));
+            properties.load(getClassLoader().getResourceAsStream("datasrc\\mailsend.properties"));
 
         } catch (IOException e) {
             logger.error(e.getMessage());
