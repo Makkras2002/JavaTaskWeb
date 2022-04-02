@@ -3,7 +3,7 @@
     <Properties>
         <Property name="pattern1">%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} -> %msg%n</Property>
         <Property name="pattern_file">%d{yyyy-MM-dd HH:mm:ss} [%t] [%M] [%L] %-5level %logger{5} - %m%n</Property>
-        <Property name="LOG_FOLDER">logs</Property>
+        <Property name="LOG_FOLDER">C:\foulder1.1\Pam\JavaTaskWeb\logs</Property>
     </Properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
