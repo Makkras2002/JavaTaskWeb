@@ -6,6 +6,7 @@ import com.makkras.shop.exception.ServiceException;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -115,4 +116,12 @@ public interface CustomProductService {
      * @throws ServiceException the service exception
      */
     List<Product> findAllOutOfStockProductsFromDb() throws ServiceException;
+
+    /**
+     * Find all products selling statistics map.
+     *
+     * @return the map
+     * @throws ServiceException the service exception
+     */
+    Map<String,Integer> findAllProductsSellingStatistics() throws ServiceException;
 }

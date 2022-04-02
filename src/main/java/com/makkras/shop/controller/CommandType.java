@@ -178,6 +178,11 @@ public enum CommandType {
         {
             this.command = new CompleteOrderCommand();
         }
+    },
+    SHOW_PRODUCTS_SELLING_STATISTICS {
+        {
+            this.command = new ShowProductsSellingStatisticsCommand();
+        }
     };
     CustomCommand command;
     public CustomCommand getCurrentCommand(){

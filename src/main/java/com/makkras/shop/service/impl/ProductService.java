@@ -11,9 +11,7 @@ import com.makkras.shop.exception.ServiceException;
 import com.makkras.shop.service.CustomProductService;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class ProductService implements CustomProductService {
     private static final String BLANK_CATEGORY_VALUE = "-";
@@ -65,6 +63,15 @@ public class ProductService implements CustomProductService {
             throw new ServiceException(e.getMessage(),e);
         }
         return products;
+    }
+    public Map<String,Integer> findAllProductsSellingStatistics() throws ServiceException {
+        Map<String,Integer> productsSellingStatistics = new HashMap<>();
+        try {
+            productsSellingStatistics = productDao.findProductsSellingStatistics();
+        } catch (InteractionException e) {
+            throw new ServiceException(e.getMessage(),e);
+        }
+        return productsSellingStatistics;
     }
     public List<Product> findAllProductsInStockFromDbAndSortByPrice() throws ServiceException {
         List<Product> products = new ArrayList<>();

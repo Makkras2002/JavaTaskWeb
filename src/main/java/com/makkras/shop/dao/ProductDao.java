@@ -6,6 +6,7 @@ import com.makkras.shop.exception.InteractionException;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 /**
  * The interface Product dao.
@@ -147,4 +148,12 @@ public interface ProductDao extends BaseDao<Product>{
      * @throws InteractionException the interaction exception
      */
     List<Product> findAllProductOutOfStock() throws InteractionException;
+
+    /**
+     * Find products selling statistics map.
+     *
+     * @return the map
+     * @throws InteractionException the interaction exception
+     */
+    Map<String,Integer> findProductsSellingStatistics() throws InteractionException;
 }

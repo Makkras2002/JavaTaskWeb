@@ -140,6 +140,12 @@
     </div>
     <div class="row" style="margin-top: 20px">
         <form method="post" action="/controller">
+            <input type="hidden" name="command" id="command9" value="show_products_selling_statistics"/>
+            <button type="submit" class="btn btn-outline-primary"><fmt:message key="main_admin.products_selling_statistics"/></button>
+        </form>
+    </div>
+    <div class="row" style="margin-top: 20px">
+        <form method="post" action="/controller">
             <input type="hidden" name="command" id="command8" value="prepare_main_admin_page"/>
             <button type="submit" class="btn btn-outline-primary"><fmt:message key="main_admin.enter_menu"/></button>
         </form>

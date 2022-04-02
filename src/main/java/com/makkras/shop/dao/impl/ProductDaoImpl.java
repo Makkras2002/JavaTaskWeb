@@ -12,7 +12,9 @@ import org.apache.logging.log4j.Logger;
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ProductDaoImpl implements ProductDao {
 
@@ -71,6 +73,13 @@ public class ProductDaoImpl implements ProductDao {
             products.product_price, products.is_in_stock,
             products.picture_path, products.product_comment, products.product_category_id, product_categories.category FROM products JOIN product_categories
             ON products.product_category_id = product_categories.category_id WHERE products.is_in_stock = true AND products.product_price > ? AND products.product_price < ? ORDER BY products.product_price ASC""";
+    private static final String SQL_SELECT_PRODUCTS_SELLING_STATISTICS = """
+            SELECT product_name, SUM(ordered_product_amount) AS total_sold FROM complete_orders
+            JOIN component_orders ON complete_orders.complete_order_id = component_orders.component_order_id
+            JOIN products ON component_orders.product_id = products.product_id
+            WHERE complete_orders.is_completed = 'true'
+            GROUP BY product_name
+            ORDER BY SUM(ordered_product_amount) DESC""";
     private static final String SQL_UPDATE_PRODUCT_NAME= """
     UPDATE products SET product_name  = ? WHERE product_id = ?""";
     private static final String SQL_UPDATE_PRODUCT_CATEGORY= """
@@ -224,6 +233,30 @@ public class ProductDaoImpl implements ProductDao {
             }
         }
         return products;
+    }
+    @Override
+    public Map<String,Integer> findProductsSellingStatistics() throws InteractionException {
+        Map<String,Integer> productsSellingStatistics = new HashMap<>();
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try {
+            connection = CustomConnectionPool.getInstance().getConnection();
+            statement = connection.prepareStatement(SQL_SELECT_PRODUCTS_SELLING_STATISTICS);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                productsSellingStatistics.put(resultSet.getString(1),resultSet.getInt(2));
+            }
+        } catch (SQLException exception) {
+            throw new InteractionException(exception.getMessage());
+        }finally {
+            try {
+                closeStatement(statement);
+                closeConnection(connection);
+            } catch (InteractionException e) {
+                logger.error(e.getMessage());
+            }
+        }
+        return productsSellingStatistics;
     }
 
     @Override
