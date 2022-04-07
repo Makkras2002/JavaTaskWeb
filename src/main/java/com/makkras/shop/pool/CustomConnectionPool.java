@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -46,7 +47,7 @@ public class CustomConnectionPool {
                 }
             }
 
-        } catch (SQLException exception) {
+        } catch (SQLException | MissingResourceException exception) {
             logger.fatal(exception.getMessage());
             throw new RuntimeException(exception.getMessage());
         }
