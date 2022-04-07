@@ -29,10 +29,10 @@ public class CustomConnectionPool {
     }
     private CustomConnectionPool(){
         try {
-            ResourceBundle bundle = ResourceBundle.getBundle("datasrc.databaseprop");
-            String dbUrl = bundle.getString("jdbc.url");
-            String dbUser = bundle.getString("jdbc.user");
-            String dbPassword = bundle.getString("jdbc.password");
+            ResourceBundle bundle = ResourceBundle.getBundle(DataBaseProperties.DATABASE_PROPERTIES_FILE_NAME);
+            String dbUrl = bundle.getString(DataBaseProperties.DATABASE_URL_KEY);
+            String dbUser = bundle.getString(DataBaseProperties.DATABASE_USERNAME_KEY);
+            String dbPassword = bundle.getString(DataBaseProperties.DATABASE_PASSWORD_KEY);
             DriverManager.registerDriver(new org.postgresql.Driver());
             freeConnections = new LinkedBlockingDeque<>();
             givenAwayConnections = new LinkedBlockingDeque<>();
