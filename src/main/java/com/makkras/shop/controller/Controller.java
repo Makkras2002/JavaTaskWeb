@@ -25,12 +25,7 @@ public class Controller extends HttpServlet {
         String page;
         LocalizedTextExtractor localizedTextExtractor = LocalizedTextExtractor.getInstance();
         String currentLocale = req.getSession().getAttribute(Literal.LOCALE_NAME).toString();
-        CustomCommand command;
-        if(!req.getParameterMap().containsKey(Literal.COMMAND)){
-            command = CommandType.PREPARE_MAIN_CLIENT_PAGE.command;
-        } else {
-            command = CommandType.defineCommand(req.getParameter(Literal.COMMAND));
-        }
+        CustomCommand command  = CommandType.defineCommand(req.getParameter(Literal.COMMAND));
         page = command.execute(req);
         if(page != null){
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);

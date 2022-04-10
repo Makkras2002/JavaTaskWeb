@@ -194,7 +194,7 @@ public enum CommandType {
         try {
             currentEnum = CommandType.valueOf(requestCommand.toUpperCase());
         } catch (IllegalArgumentException e){
-            currentEnum = CommandType.EMPTY;
+            currentEnum = CommandType.PREPARE_MAIN_CLIENT_PAGE;
         }
         command =currentEnum.getCurrentCommand();
         return command;

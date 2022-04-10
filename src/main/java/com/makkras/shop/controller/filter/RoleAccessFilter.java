@@ -36,29 +36,37 @@ public class RoleAccessFilter implements Filter {
         String page = null;
         String currentLocale = String.valueOf(session.getAttribute(Literal.LOCALE_NAME));
         LocalizedTextExtractor localizedTextExtractor  = LocalizedTextExtractor.getInstance();
-        if(session.getAttribute(Literal.ROLE) == null || session.getAttribute(Literal.PREPARED_FOR_REGISTRATION) != null){
-            if(allowedToUnRegisteredAccessCommands.stream().filter(o -> o.toString().equals(command.toUpperCase())).toArray().length > 0){
-                filterChain.doFilter(request,response);
-            } else {
-                page = PagePath.AUTHORIZATION_PAGE;
-                requestDispatcher = request.getServletContext().getRequestDispatcher(page);
-                request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
-                        localizedTextExtractor.getText(currentLocale,"EXPIRED_SESSION_ERROR"));
-                requestDispatcher.forward(request,response);
-            }
+        if(command == null) {
+            page = PagePath.AUTHORIZATION_PAGE;
+            requestDispatcher = request.getServletContext().getRequestDispatcher(page);
+            request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
+                    localizedTextExtractor.getText(currentLocale,"EXPIRED_SESSION_ERROR"));
+            requestDispatcher.forward(request,response);
         } else {
-            if(String.valueOf(session.getAttribute(Literal.ROLE)).equals(UserRole.CLIENT.toString())){
-                if(onlyAdminAccessCommands.stream().filter(o -> o.toString().equals(command.toUpperCase())).toArray().length > 0){
+            if(session.getAttribute(Literal.ROLE) == null || session.getAttribute(Literal.PREPARED_FOR_REGISTRATION) != null){
+                if(allowedToUnRegisteredAccessCommands.stream().filter(o -> o.toString().equals(command.toUpperCase())).toArray().length > 0){
+                    filterChain.doFilter(request,response);
+                } else {
                     page = PagePath.AUTHORIZATION_PAGE;
                     requestDispatcher = request.getServletContext().getRequestDispatcher(page);
                     request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
-                            localizedTextExtractor.getText(currentLocale,"WRONG_ROLE_ACCESS_DENIAL"));
+                            localizedTextExtractor.getText(currentLocale,"EXPIRED_SESSION_ERROR"));
                     requestDispatcher.forward(request,response);
+                }
+            } else {
+                if(String.valueOf(session.getAttribute(Literal.ROLE)).equals(UserRole.CLIENT.toString())){
+                    if(onlyAdminAccessCommands.stream().filter(o -> o.toString().equals(command.toUpperCase())).toArray().length > 0){
+                        page = PagePath.AUTHORIZATION_PAGE;
+                        requestDispatcher = request.getServletContext().getRequestDispatcher(page);
+                        request.setAttribute(Literal.AUTHORIZATION_ERROR_MESSAGE,
+                                localizedTextExtractor.getText(currentLocale,"WRONG_ROLE_ACCESS_DENIAL"));
+                        requestDispatcher.forward(request,response);
+                    } else {
+                        filterChain.doFilter(request,response);
+                    }
                 } else {
                     filterChain.doFilter(request,response);
                 }
-            } else {
-                filterChain.doFilter(request,response);
             }
         }
     }
