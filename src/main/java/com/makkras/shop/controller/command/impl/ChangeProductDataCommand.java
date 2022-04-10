@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class ChangeProductDataCommand implements CustomCommand {
     private static Logger logger = LogManager.getLogger();
-    private static final String IMAGE_LOCATION_FOLDER = "\\pictures\\";
+    private static final String IMAGE_LOCATION_FOLDER = "pictures\\";
     @Override
     public String execute(HttpServletRequest request) {
         String page = null;
