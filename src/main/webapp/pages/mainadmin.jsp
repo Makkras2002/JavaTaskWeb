@@ -39,7 +39,7 @@
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col-4">
-                                                <form method="post" action="/controller">
+                                                <form method="post" action="${pageContext.request.contextPath}/controller">
                                                     <input type="hidden" name="command" id="command" value="logout" required="required"/>
                                                     <button type="submit" style="width: 160px" class="btn btn-primary btn-sm" style="margin-top: 20px"><fmt:message key="main_client.logout_profile"/></button>
                                                 </form>
@@ -68,13 +68,13 @@
                                         <h5 class="modal-title" id="staticBackdropLabel2"><fmt:message key="main_client.change_login"/></h5>
                                     </div>
                                     <div class="modal-body">
-                                        <form method="post" action="/controller">
+                                        <form method="post" action="${pageContext.request.contextPath}/controller">
                                             <input type="hidden" name="command" id="command2" value="change_login" required="required"/>
                                             <div class="mb-3 w-25" style="margin-top: 40px">
                                                 <label for="loginOrEmail" class="form-label" ><fmt:message key="user_form.enter_login"/></label>
                                                 <input type="text" class="form-control" id="loginOrEmail" name="login" required="required"/>
                                             </div>
-                                            <button type="submit " class="btn btn-outline-success btn-lg" style="margin-top: 40px"><fmt:message key="main_client.change_login"/></button>
+                                            <button type="submit" class="btn btn-outline-success btn-lg" style="margin-top: 40px"><fmt:message key="main_client.change_login"/></button>
                                         </form>
                                     </div>
                                     <div class="modal-footer">
@@ -90,7 +90,7 @@
                                         <h5 class="modal-title" id="staticBackdropLabel3"><fmt:message key="main_client.change_password"/></h5>
                                     </div>
                                     <div class="modal-body">
-                                        <form method="post" action="/controller">
+                                        <form method="post" action="${pageContext.request.contextPath}/controller">
                                             <input type="hidden" name="command" id="command3" value="change_password" required="required"/>
                                             <div class="mb-3 w-25" style="margin-top: 40px">
                                                 <label for="password" class="col-form-label"><fmt:message key="user_form.enter_password"/></label>
@@ -103,7 +103,7 @@
                                                         <fmt:message key="user_form.password_requirements"/>
                                                    </span>
                                             </div>
-                                            <button type="submit " class="btn btn-outline-success btn-lg" style="margin-top: 40px"><fmt:message key="main_client.change_password"/></button>
+                                            <button type="submit" class="btn btn-outline-success btn-lg" style="margin-top: 40px"><fmt:message key="main_client.change_password"/></button>
                                         </form>
                                     </div>
                                     <div class="modal-footer">
@@ -120,7 +120,9 @@
     <div id="productData" style="display: none">
         ${products}
     </div>
-
+    <div id="contextPath" style="display: none">
+        ${pageContext.request.contextPath}
+    </div>
     <div id="prod_name" style="display: none">
         <fmt:message key="main_client.prod_name"/>
     </div>
@@ -155,20 +157,20 @@
         <h2><fmt:message key="main_admin.products"/></h2>
         <div class="row justify-content-between">
             <div class="col-4">
-                <form action="/controller" method="post">
+                <form action="${pageContext.request.contextPath}/controller" method="post">
                     <input type="hidden" name="command" id="command9" value="prepare_product_adding_page"/>
                     <button type="submit" class="btn btn-success btn-lg"><fmt:message key="main_admin.add_product"/></button>
                 </form>
             </div>
             <div class="col-4">
-                <form action="/controller" method="post">
+                <form action="${pageContext.request.contextPath}/controller" method="post">
                     <label for="command4"><fmt:message key="main_admin.find_products"/></label>
                     <select class="form-select" name="command" id="command4" aria-label="Default select example" required="required">
                         <option value="prepare_main_admin_page">-</option>
                         <option value="find_in_stock_products"><fmt:message key="main_admin.find_in_stock_products"/></option>
                         <option value="find_out_of_stock_stock_products"><fmt:message key="main_admin.find_out_of_stock_products"/></option>
                     </select>
-                    <button type="submit " class="btn btn-outline-success btn-sm" style="margin-top: 20px"><fmt:message key="main_admin.find_products"/></button>
+                    <button type="submit" class="btn btn-outline-success btn-sm" style="margin-top: 20px"><fmt:message key="main_admin.find_products"/></button>
                 </form>
             </div>
         </div>
@@ -190,14 +192,14 @@
     </div>
     <div class="row" style="margin-top: 60px">
         <h2><fmt:message key="main_admin.users"/></h2>
-        <form method="post" action="/controller">
+        <form method="post" action="${pageContext.request.contextPath}/controller">
             <input type="hidden" name="command" id="command10" value="prepare_view_users_page"/>
             <button type="submit" class="btn btn-success btn-lg"><fmt:message key="main_admin.view_all_users"/></button>
         </form>
     </div>
     <div class="row" style="margin-top: 20px">
         <h2><fmt:message key="main_admin.orders"/></h2>
-        <form method="post" action="/controller">
+        <form method="post" action="${pageContext.request.contextPath}/controller">
             <input type="hidden" name="command" id="command11" value="prepare_view_orders_page"/>
             <button type="submit" class="btn btn-success btn-lg"><fmt:message key="main_admin.view_all_orders"/></button>
         </form>

@@ -24,8 +24,8 @@ import java.util.Optional;
 
 public class AddProductToCatalogCommand implements CustomCommand {
     private static Logger logger = LogManager.getLogger();
-    private static final String IMAGE_LOCATION_FOLDER = "\\pictures\\";
-    private static final String DEFAULT_IMAGE = "\\pictures\\default.jpg";
+    private static final String IMAGE_LOCATION_FOLDER = "pictures\\";
+    private static final String DEFAULT_IMAGE = "pictures\\default.jpg";
     @Override
     public String execute(HttpServletRequest request) {
         String page = null;

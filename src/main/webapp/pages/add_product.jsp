@@ -34,7 +34,7 @@
     </div>
     <div class="row" style="margin-top: 60px" align="center">
         <h2><fmt:message key="main_admin.add_product_form_name"/></h2>
-        <form method="post" action="/controller" name="add_product_form">
+        <form method="post" action="${pageContext.request.contextPath}/controller" name="add_product_form">
             <input type="hidden" id="command" name="command" required="required" value="add_product_to_catalog"/>
             <div class="mb-3 w-25" style="margin-top: 40px">
                 <label for="name" class="form-label" ><fmt:message key="main_client.prod_name"/></label>
@@ -67,7 +67,7 @@
     </div>
     <div align="center" style="margin-top: 160px">
         <div style="color: red; font-weight: bolder; font-style: italic">${errorAddProductMessage}</div>
-        <form method="post" action="/controller">
+        <form method="post" action="${pageContext.request.contextPath}/controller">
             <input type="hidden" name="command" id="command8" value="prepare_main_admin_page"/>
             <button type="submit" class="btn btn-outline-primary"><fmt:message key="main_admin.enter_menu"/></button>
         </form>

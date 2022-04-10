@@ -31,7 +31,7 @@
     <div id="productDataStartName" style="display: none">${product_for_change_data.name}</div>
     <div class="row" style="margin-top: 60px" align="center">
         <h2><fmt:message key="main_admin.change_product_form_name"/></h2>
-        <form method="post" action="/controller" name="add_product_form" id="add_product_form">
+        <form method="post" action="${pageContext.request.contextPath}/controller" name="add_product_form" id="add_product_form">
             <input type="hidden" id="command" name="command" required="required" value="change_product_data"/>
             <input type="hidden" id="product_id" name="product_id" value="${product_for_change_data.product_id}" required="required"/>
             <div class="mb-3 w-25" style="margin-top: 40px">
@@ -64,7 +64,7 @@
     </div>
     <div align="center" style="margin-top: 160px">
         <div style="color: red; font-weight: bolder; font-style: italic">${errorChangeProductMessage}</div>
-        <form method="post" action="/controller">
+        <form method="post" action="${pageContext.request.contextPath}/controller">
             <input type="hidden" name="command" id="command8" value="prepare_main_admin_page"/>
             <button type="submit" class="btn btn-outline-primary"><fmt:message key="main_admin.enter_menu"/></button>
         </form>

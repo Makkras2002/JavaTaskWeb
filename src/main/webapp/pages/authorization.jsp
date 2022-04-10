@@ -27,7 +27,7 @@
     </div>
 </div>
 <div align="center" class="align-middle">
-    <form action="/controller" method="post">
+    <form action="${pageContext.request.contextPath}/controller" method="post">
         <input type="text" id="command" name="command" hidden="hidden" required="required" value="login"/>
         <div class="mb-3 w-25" style="margin-top: 40px">
             <label for="loginOrEmail" class="form-label" ><fmt:message key="user_form.enter_login"/></label>
@@ -46,9 +46,9 @@
 </div>
 <div align="center" style="margin-top: 160px">
     <div style="color: red; font-weight: bolder; font-style: italic">${errorAuthMessage}</div>
-    <a href="/pages/registration.jsp" class="text-black"><fmt:message key="user_form.register"/></a>
+    <a href="${pageContext.request.contextPath}/pages/registration.jsp" class="text-black"><fmt:message key="user_form.register"/></a>
     <br/>
-    <a href="/index.jsp" class="text-black"><fmt:message key="user_form.catalog"/></a>
+    <a href="${pageContext.request.contextPath}/index.jsp" class="text-black"><fmt:message key="user_form.catalog"/></a>
     <br/>
 </div>
 

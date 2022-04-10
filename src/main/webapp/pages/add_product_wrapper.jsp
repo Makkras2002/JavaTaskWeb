@@ -10,7 +10,7 @@
     </script>
 </head>
 <body class="p-2 bg-primary text-black bg-opacity-50" onkeydown="return (event.keyCode != 116)">
-<form method="post" action="/controller" name="get_prod_data_wrapper">
+<form method="post" action="${pageContext.request.contextPath}/controller" name="get_prod_data_wrapper">
     <input type="hidden" name="command" id="command" value="prepare_product_adding_page">
 </form>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/main_client_wrapper_form_autosubmitter.js"></script>

@@ -63,14 +63,14 @@
         <h2><fmt:message key="main_admin.orders"/></h2>
         <div class="row" style="margin-top: 40px">
             <div class="col-4">
-                <form action="/controller" method="post">
+                <form action="${pageContext.request.contextPath}/controller" method="post">
                     <label for="command4"><fmt:message key="main_admin.sort_orders"/></label>
                     <select class="form-select" name="command" id="command4" aria-label="Default select example" required="required">
                         <option value="prepare_view_orders_page">-</option>
                         <option value="sort_orders_by_date"><fmt:message key="main_admin.sort_orders_by_date"/></option>
                         <option value="sort_orders_by_user_login"><fmt:message key="main_admin.sort_orders_by_login"/></option>
                     </select>
-                    <button type="submit " class="btn btn-outline-success btn-sm" style="margin-top: 20px"><fmt:message key="main_admin.sort_orders"/></button>
+                    <button type="submit" class="btn btn-outline-success btn-sm" style="margin-top: 20px"><fmt:message key="main_admin.sort_orders"/></button>
                 </form>
             </div>
             <div class="col-4">
@@ -86,7 +86,7 @@
                             </div>
                             <div class="modal-body">
                                 <p><fmt:message key="main_admin.search_order_explanation"/></p>
-                                <form action="/controller" method="post">
+                                <form action="${pageContext.request.contextPath}/controller" method="post">
                                     <input type="text" id="command5" name="command" hidden="hidden" required="required" value="find_order"/>
                                     <div class="mb-3 w-25" style="margin-top: 40px" width="300px">
                                         <label for="login" class="form-label" ><fmt:message key="user_form.enter_login"/></label>
@@ -108,7 +108,7 @@
                                         <label for="end_date" class="form-label" ><fmt:message key="main_admin.enter_order_end_date"/></label>
                                         <input type="date" class="form-control" id="end_date" name="end_date" />
                                     </div>
-                                    <button type="submit " class="btn btn-outline-success btn-sm" style="margin-top: 20px"><fmt:message key="main_admin.search_order"/></button>
+                                    <button type="submit" class="btn btn-outline-success btn-sm" style="margin-top: 20px"><fmt:message key="main_admin.search_order"/></button>
                                 </form>
                             </div>
                             <div class="modal-footer">
@@ -139,13 +139,13 @@
         </div>
     </div>
     <div class="row" style="margin-top: 20px">
-        <form method="post" action="/controller">
+        <form method="post" action="${pageContext.request.contextPath}/controller">
             <input type="hidden" name="command" id="command9" value="show_products_selling_statistics"/>
             <button type="submit" class="btn btn-outline-primary"><fmt:message key="main_admin.products_selling_statistics"/></button>
         </form>
     </div>
     <div class="row" style="margin-top: 20px">
-        <form method="post" action="/controller">
+        <form method="post" action="${pageContext.request.contextPath}/controller">
             <input type="hidden" name="command" id="command8" value="prepare_main_admin_page"/>
             <button type="submit" class="btn btn-outline-primary"><fmt:message key="main_admin.enter_menu"/></button>
         </form>

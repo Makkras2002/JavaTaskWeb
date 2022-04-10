@@ -27,7 +27,7 @@
     </div>
 </div>
 <div align="center" class="align-middle">
-    <form action="/controller" method="post">
+    <form action="${pageContext.request.contextPath}/controller" method="post">
         <input type="text" id="command" name="command" hidden="hidden" required="required" value="register"/>
         <div class="mb-3 w-25" style="margin-top: 40px">
             <label for="login" class="form-label" ><fmt:message key="user_form.enter_login"/></label>
@@ -53,7 +53,7 @@
 </div>
 <div align="center" style="margin-top: 100px">
     <div style="color: red; font-weight: bolder; font-style: italic">${errorRegistrationMessage}</div>
-    <a href="/pages/authorization.jsp" class="text-black"><fmt:message key="user_form.login"/></a>
+    <a href="${pageContext.request.contextPath}/pages/authorization.jsp" class="text-black"><fmt:message key="user_form.login"/></a>
     <br/>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

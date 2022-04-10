@@ -20,7 +20,7 @@
     </div>
 </div>
 <div align="center" class="align-middle">
-    <form action="/controller" method="post">
+    <form action="${pageContext.request.contextPath}/controller" method="post">
         <input type="text" id="command" name="command" hidden="hidden" required="required" value="register_admin"/>
         <div class="mb-3 w-25" style="margin-top: 40px">
             <label for="login" class="form-label" ><fmt:message key="user_form.enter_login"/></label>
@@ -41,12 +41,12 @@
                 <fmt:message key="user_form.password_requirements"/>
             </span>
         </div>
-        <button type="submit " class="btn btn-outline-success btn-lg" style="margin-top: 40px"><fmt:message key="user_form.register"/></button>
+        <button type="submit" class="btn btn-outline-success btn-lg" style="margin-top: 40px"><fmt:message key="user_form.register"/></button>
     </form>
 </div>
 <div align="center" style="margin-top: 100px">
     <div style="color: red; font-weight: bolder; font-style: italic">${errorRegistrationMessage}</div>
-    <form method="post" action="/controller">
+    <form method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" id="command8" value="prepare_main_admin_page"/>
         <button type="submit" class="btn btn-outline-primary"><fmt:message key="main_admin.enter_menu"/></button>
     </form>

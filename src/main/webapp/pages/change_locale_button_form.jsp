@@ -20,7 +20,7 @@
         <myTags:formatLocaleName initialLocaleName="${locale}"/>
     </div>
     <div class="col-4">
-        <form method="post" action="/controller">
+        <form method="post" action="${pageContext.request.contextPath}/controller">
             <input type="hidden" name="command" value="change_locale"/>
             <input type="hidden" name="path" value="${pageContext.request.requestURL}"/>
             <button type="submit" class="btn btn-primary btn-sm">

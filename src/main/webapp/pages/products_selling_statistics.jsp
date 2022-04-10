@@ -55,7 +55,7 @@
     </div>
     <div class="row" style="margin-top: 20px">
         <h2><fmt:message key="main_admin.orders"/></h2>
-        <form method="post" action="/controller">
+        <form method="post" action="${pageContext.request.contextPath}/controller">
             <input type="hidden" name="command" id="command11" value="prepare_view_orders_page"/>
             <button type="submit" class="btn btn-success btn-lg"><fmt:message key="main_admin.view_all_orders"/></button>
         </form>

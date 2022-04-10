@@ -34,7 +34,7 @@
                         <%@ include file="change_locale_button_form.jsp"%>
                     </div>
                     <div class="col-4">
-                        <a href="/index.jsp" style="width: 160px" class="btn btn-primary btn-sm"><fmt:message key="user_form.catalog"/></a>
+                        <a href="${pageContext.request.contextPath}/index.jsp" style="width: 160px" class="btn btn-primary btn-sm"><fmt:message key="user_form.catalog"/></a>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
     </div>
     <div class="row" style="margin-top: 60px">
         <div class="row">
-            <form method="post" action="/controller">
+            <form method="post" action="${pageContext.request.contextPath}/controller">
                 <input type="hidden" name="command" id="command" value="make_order"/>
                 <button type="submit" class="btn btn-outline-warning btn-lg"><fmt:message key="main_client.make_order"/></button>
             </form>

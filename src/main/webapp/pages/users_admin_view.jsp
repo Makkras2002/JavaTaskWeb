@@ -67,7 +67,7 @@
         <h2><fmt:message key="main_admin.users"/></h2>
         <div class="row" style="margin-top: 40px">
             <div class="col-4">
-                <form method="post" action="/controller">
+                <form method="post" action="${pageContext.request.contextPath}/controller">
                     <input type="hidden" name="command" id="command9" value="prepare_admin_adding_page"/>
                     <button type="submit" class="btn btn-success btn-lg"><fmt:message key="main_admin.add_admin"/></button>
                 </form>
@@ -85,7 +85,7 @@
                             </div>
                             <div class="modal-body">
                                 <p><fmt:message key="main_admin.search_user_explanation"/></p>
-                                <form action="/controller" method="post">
+                                <form action="${pageContext.request.contextPath}/controller" method="post">
                                     <input type="text" id="command5" name="command" hidden="hidden" required="required" value="find_user"/>
                                     <div class="mb-3 w-25" style="margin-top: 40px" width="160px">
                                         <label for="login" class="form-label" ><fmt:message key="user_form.enter_login"/></label>
@@ -111,7 +111,7 @@
                                             <option value="offline"><fmt:message key="main_admin.online_status_offline"/></option>
                                         </select>
                                     </div>
-                                    <button type="submit " class="btn btn-outline-success btn-sm" style="margin-top: 20px"><fmt:message key="main_admin.search_user"/></button>
+                                    <button type="submit" class="btn btn-outline-success btn-sm" style="margin-top: 20px"><fmt:message key="main_admin.search_user"/></button>
                                 </form>
                             </div>
                             <div class="modal-footer">
@@ -142,7 +142,7 @@
         </div>
     </div>
     <div class="row" style="margin-top: 20px">
-        <form method="post" action="/controller">
+        <form method="post" action="${pageContext.request.contextPath}/controller">
             <input type="hidden" name="command" id="command8" value="prepare_main_admin_page"/>
             <button type="submit" class="btn btn-primary"><fmt:message key="main_admin.enter_menu"/></button>
         </form>
