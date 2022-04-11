@@ -15,7 +15,6 @@ public class ChangeLocaleCommand implements CustomCommand {
     @Override
     public String execute(HttpServletRequest request) {
         String page = request.getParameter(Literal.PAGE_PATH);
-        page = page.replace("http://localhost:8888","");
         if(page.contains(MAIN_CLIENT_PAGE_PATH_PART)) {
             page = PagePath.MAIN_CLIENT_PAGE;
         }
