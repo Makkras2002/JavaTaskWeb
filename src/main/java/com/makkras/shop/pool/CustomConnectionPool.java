@@ -16,7 +16,7 @@ import java.util.concurrent.LinkedBlockingDeque;
  */
 public class CustomConnectionPool {
 
-    private static final int DEFAULT_POOL_SIZE = 40;
+    private static final int DEFAULT_POOL_SIZE = 15;
     private static Logger logger = LogManager.getLogger();
     private BlockingDeque<ProxyConnection> freeConnections;
     private BlockingDeque<ProxyConnection> givenAwayConnections;
